@@ -1,0 +1,32 @@
+
+ // Wrapper
+.wrapper {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
+  @include media-query($on-laptop) {
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
+  @include media-query($on-smartphone){
+    max-width: 480px;
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
+}
+//estilos para el curpo del post y page
+.inner-post{
+  @extend %flexbox-space-between;
+ width: 100%;
+ .post{
+  width: 68%;
+  @include media-query($content-block){
+   width: 100%;
+   max-width: 100%;
+  }
+ }
+}
+
+

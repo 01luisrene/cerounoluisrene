@@ -1,0 +1,52 @@
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li><span class="footer-name-app">{{@blog.title}}</span></li>
+          <div class="separador"></div>
+          <li>
+          {{#if facebook}}<a href="{{facebook_url}}"><span></span> Facebook</a>{{/if}}
+        </ul>
+        <img src="{{asset "images/logo.png"}}" alt="01luisrene.com" title="Logo" style="display: block; margin: 0 auto;" width="100">
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <span class="title-footer">Redes Sociales</span>
+        <ul class="social-media-list">
+          <li>
+            <i class="ion-social-twitter-outline"></i> <a href="">Twitter</a>
+          </li>
+          <li>
+          <i  class="ion-social-googleplus-outline"></i> <a href="">Google Plus</a>
+          </li>
+          <li>
+          <i class="ion-social-facebook-outline"></i> <a href="">Facebook</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-3">
+        <span class="title-footer">Descripción</span>
+        <p>{{@blog.description}}</p>
+      </div>
+    </div>
+      <!-- div para copy -->
+      <div class="footer-col copy">
+        <p class="copy-parrafo">&copy; 2015 - {{date format="YYYY"}} ( Todos los Derechos Reservados ) - Webmaster: <b>Luis Rene Mas Mas</b></a>
+        </p>
+      </div>
+  </div>
+</footer>
+<!-- Política de cookies  -->
+<div class="barra-aceptacion-cookie" id="js_barra_aceptacion_cookie" style="display: none;">
+  <p> Solicitamos su permiso para obtener datos estadísticos de su navegación en esta web, en cumplimiento del Real Decreto-ley 13/2012. Si continúa navegando consideramos que acepta el uso de cookies. 
+  <a href="/politica-cookies/"  class="info-cookie" target="_blank">Más información</a>
+  <button id="js_btn_cookie" class="btn-cookie btn-link">Ok</button>
+  </p>
+</div>
+
+<!-- Botón up -->
+<a href="#" id="js_up" class="boton-subir">
+  <i class="ion-jet" aria-hidden="true"></i>
+</a>

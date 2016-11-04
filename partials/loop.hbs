@@ -1,0 +1,35 @@
+{{!-- Previous/next page links - only displayed on page 2+ --}}
+<div class="extra-pagination inner">
+    {{pagination}}
+</div>
+
+<section class="loop__articles">
+{{#foreach posts}}
+  <article class="item-article {{post_class}}">
+    {{#if image}}
+    <a class="img-link" href="{{ url }}">
+      <img class="loop-image" src="{{image}}" alt="imagen - {{ title }}">
+    </a>
+    {{/if}}
+    <header class="loop-header">
+      <h2 class="loop-title" >
+        <a class="loop-link" href="{{ url}}">{{ title }}</a>
+      </h2>
+      <span class="loop-meta"><i class="ion-calendar"></i> <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time></span>
+    </header>
+    <section class="loop-description">
+      {{excerpt words="26"}}
+    </section>
+    <footer class="loop-footer">
+      <a class="btn btn-home" href="{{url}}">Leer m&aacute;s <i class="ion-ios-arrow-forward"></i></a>
+    </footer>
+  </article>
+{{/foreach}}
+</section>
+<div class="btn-more-articles">
+ <a href="/lista-articulos/">Ver más artículos...</a>
+</div>
+
+ {{pagination}}
+
+<p class="rss-subscribe">Suscribete <a class="ion-social-rss" href="{{@blog.url}}/rss/" target="_blank"></a> vía rss</p>

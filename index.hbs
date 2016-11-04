@@ -1,0 +1,40 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+<section class="front">
+    <div class="wrapper">
+      <h1 class="author-name">Luis Rene Mas Mas</h1>
+      <img class="author-img" src="{{asset "images/author_front.jpg"}}" title="Autor del blog 01luisrene.com"/>
+      <p class="author-description">
+        {{@blog.description}}
+      </p>
+      <ul class="networking-list">
+        <li class="item">
+          <a class="link ion-social-facebook facebook" href="" target="_blank"></a>
+        </li>
+        <li class="item">
+          <a class="link ion-social-twitter twitter" href="" target="_blank"></a>
+        </li>
+        <li class="item">
+          <a class="link ion-social-youtube youtube" href="" target="_blank"></a>
+        </li>
+        <li class="item">
+          <a class="link ion-social-octocat github" href="" target="_blank"></a>
+        </li>
+         <li class="item">
+          <a class="link ion-social-googleplus google-plus" href="" target="_blank"></a>
+        </li>
+      </ul>
+      <a class="link-lc" href="/sobre-mi#stacks">
+        <img class="languages-code" src="/assets/images/code_languages.png" alt="Languages de programación">
+      </a>
+    </div>
+  </section>
+{{!-- The main content area on the homepage --}}
+<main class="page-content print-hidden" role="main">
+<div class="loop__content">
+
+    {{!-- The tag below includes the post loop - partials/loop.hbs --}}
+    {{> "loop"}}
+</div>
+</main>
