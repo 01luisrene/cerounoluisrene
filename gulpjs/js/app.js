@@ -1,5 +1,6 @@
 'use strict';
-var agente = navigator.userAgent.toLowerCase();
+var agente = navigator.userAgent.toLowerCase(),
+    menu_mobile = $('#js_menu_mobile');
 
 var cerounoluisrene = (function ($) {
 
@@ -21,22 +22,18 @@ var
   displayMenu = function(){
   	$('#js_icon_menu').on('click', function(e) {
       e.preventDefault();
-      $('#js_box_main_menu').css({
+      menu_mobile.css({
         display: 'block'
       });
-      $('#js_box_main_menu').addClass('bounceInRight').removeClass('fadeOutRight');
+      menu_mobile.addClass('bounceInRight').removeClass('fadeOutRight');
     });
   },
   closeMenu = function(){
-    $('#js_icon_cerrar').on('click', function(e) {
-      e.preventDefault();
-      $('#js_box_main_menu').removeAttr('style');
-      $('#js_box_main_menu').addClass('fadeOutRight').removeClass('bounceInRight');
-    });
-    $('#js_box_main_menu').on('click', function(e) {
-      if(e.target == this){
-        $(this).addClass('fadeOutRight').removeClass('bounceInRight');
-      }
+    $('#js_icon_cerrar').on('click', function(event) {
+      event.preventDefault();
+      menu_mobile.removeAttr('style');
+      menu_mobile.addClass('fadeOutRight').removeClass('bounceInRight');
+      setTimeout(function(){ menu_mobile.css('display', 'none'); }, 400);
     });
   },
   //search artículos
@@ -44,21 +41,8 @@ var
 	  $('#js_campo_buscador').ghostHunter({
 	    results             : '#js_resultados',
 	    onKeyUp             : !0,
-	    rss                 : '/rss.xml',
+	    rss                 : '/rss/',
 	    displaySearchInfo   : true
-	  });
-	  $('#js_campo_buscador').on('keyup', function() {
-	  	var $caja_buscar = $('#js_campo_buscador').val().length;
-		  if($caja_buscar > 0){
-	  		$('#js_lista_articulos').css({
-	  			display: 'none'
-	  		});
-		  }
-		  if($caja_buscar == 0){
-		  	$('#js_lista_articulos').css({
-  				display: 'block'
-  			});
-		  }
 	  });
   },
   politicaCookies = function(){
@@ -88,17 +72,26 @@ var
         display: 'block'
       });
      }
-		$('#js_btn_cookie').on('click', function(e) {
-		  e.preventDefault();
-		  user = '01luisrene';
-		  if (user != "" && user != null) {
-		    setCookie("_01lr", user, 30);
-		    $('#js_barra_aceptacion_cookie').css({
-          display: 'none'
-        });
-		    console.log("cookie creada: " + user);
-		   }
-		});
+    
+    function crearCookie(){
+      user = '01luisrene';
+      if (user != "" && user != null) {
+        
+          setCookie("_01lr", user, 30);
+          $('#js_barra_aceptacion_cookie').addClass("animated zoomOutDown");
+          setTimeout(function(){
+            $('#js_barra_aceptacion_cookie').css({
+              display: 'none'
+            });
+          }, 300);
+          console.log("cookie ❤ " + user + " creada.");
+       }
+    }
+      $('#js_btn_cookie').on('click', function(e) {
+        e.preventDefault();
+        crearCookie();
+      });
+      setTimeout(function(){crearCookie();}, 15000);
   },
   botonUp = function(){
     $(window).scroll(function(){

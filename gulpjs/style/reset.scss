@@ -3,9 +3,14 @@ body, h1, h2, h3, h4, h5, h6,p, blockquote, pre, hr,dl, dd, ol, ul, figure {marg
 p, div, header, main, article, section, aside, footer, figure, hgroup, nav{
   display:block;
 }
-//Display bloque
-%display-block{
-  display: block;
+::-moz-selection { 
+    color: #171717;
+    background: #00A653;
+}
+
+::selection {
+    color: #171717; 
+    background: #00A653;
 }
 
 *, *::before, *::after{
@@ -13,10 +18,20 @@ p, div, header, main, article, section, aside, footer, figure, hgroup, nav{
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
+@font-face {
+  font-family: 'monacoregular';
+  src: url('../fonts/monaco-webfont.eot');
+  src: url('../fonts/monaco-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/monaco-webfont.woff') format('woff'),
+       url('../fonts/monaco-webfont.ttf') format('truetype'),
+       url('../fonts/monaco-webfont.svg#monacoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 body {
-  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  background-color: #688B95;
+  font: $base-font-weight $base-font-size $base-font-family;
   color: $text-color;
-  background-color: $background-color;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -53,19 +68,19 @@ h2, h3, h4, h5, h6 {
 }
 h1{
     font-size: 3em;
-    font-family: $base-font-family;
+    font-family: $lato-font-family;
     font-weight: 700;
     line-height: normal;
 }
 h2 {
   font-size: 2em;
-  font-family: $base-font-family;
+  font-family: $lato-font-family;
   font-weight: 700;
   text-transform: uppercase;
 }
 h3 {
   font-size: 1.3em;
-  font-family: $base-font-family;
+  font-family: $lato-font-family;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -76,9 +91,10 @@ address {
 
 a {
   color: #00b058;
+  cursor: pointer;
   -webkit-transition: 1s;
   text-decoration: none;
-  transition: 1s;
+  transition: .500s;
   &:visited{
     color: #00b058;
     text-decoration: underline;
@@ -118,6 +134,7 @@ kbd{
  }
 pre,
 code {
+    font-family: $monaco-font-family;
     font-size: 15px;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
@@ -134,6 +151,10 @@ pre {
         padding-right: 0;
         padding-left: 0;
     }
+}
+//Display bloque
+%display-block{
+  display: block;
 }
 //flexbox
 %flexbox-center{

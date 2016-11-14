@@ -17,9 +17,6 @@
 .btn{
   display: inline-block;
   border: 1px solid transparent;
-  -moz-border-radius:6px;
-  -webkit-border-radius:6px;
-  border-radius:6px;
   cursor:pointer;
   color:#333333;
   font-size:15px;
@@ -62,7 +59,7 @@
   color:lighten($text-color, 13%);
   padding:10px 31px;
   text-decoration:none;
-  margin-left: -71px;
+  margin-left: -87px;
   position: absolute;
   top: 0;
   left: 50%;

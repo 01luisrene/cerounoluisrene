@@ -1,35 +1,54 @@
 {{!-- Previous/next page links - only displayed on page 2+ --}}
-<div class="extra-pagination inner">
-    {{pagination}}
-</div>
-
 <section class="loop__articles">
 {{#foreach posts}}
-  <article class="item-article {{post_class}}">
-    {{#if image}}
-    <a class="img-link" href="{{ url }}">
-      <img class="loop-image" src="{{image}}" alt="imagen - {{ title }}">
-    </a>
-    {{/if}}
-    <header class="loop-header">
-      <h2 class="loop-title" >
-        <a class="loop-link" href="{{ url}}">{{ title }}</a>
-      </h2>
-      <span class="loop-meta"><i class="ion-calendar"></i> <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time></span>
+{{!-- Primer Articulo --}}
+  <article class="item-article {{post_class}} {{#if @first}} primer-articulo" style="background-image: url({{image}}){{else}}no-first{{/if}}">
+  {{#if @first}}
+    <header>
+    <h2 class="item-article-title" >
+        <a class="item-article-link" href="{{ url}}">{{ title }}</a>
+    </h2>
     </header>
-    <section class="loop-description">
-      {{excerpt words="26"}}
+    <section class="item-article-description">
+      {{excerpt words="35"}}...
     </section>
-    <footer class="loop-footer">
-      <a class="btn btn-home" href="{{url}}">Leer m&aacute;s <i class="ion-ios-arrow-forward"></i></a>
+    <footer>
+      <span class="item-article-meta"> 
+      {{#author}}
+        {{#if image}}
+        <img src="{{image}}" alt="{{name}}'s Picture" />
+        {{/if}}
+        <small>{{name}}</small>
+      {{/author}} 
+      | <time class="post-date fa fa-calendar-o" datetime="{{date format="YYYY-MM-DD"}}"> <small>{{date format="DD MMMM YYYY"}}</small></time></span>
     </footer>
+  {{!--Fin Primer Articulo --}}
+  {{else}}
+    <header class="item-article-header">
+    {{#if image}}
+      <img class="item-article-image" src="{{image}}" alt="imagen - {{ title }}">
+    {{/if}}
+      <h2 class="item-article-title" >
+        <a class="item-article-link" href="{{ url}}">{{ title }}</a>
+      </h2>
+      <span class="item-article-meta">
+      {{#author}}
+        {{#if image}}
+        <img src="{{image}}" alt="{{name}}'s Picture" />
+        {{/if}}
+        <small>{{name}}</small>
+      {{/author}} 
+      | <time class="post-date fa fa-calendar-o" datetime="{{date format="YYYY-MM-DD"}}"> <small>{{date format="DD MMMM YYYY"}}</small></time></span>
+    </header>
+    <section class="item-article-description">
+      {{excerpt words="30"}}...
+    </section>
+    <footer class="item-article-footer">
+      <a class="btn btn-home" href="{{url}}">Seguir leyendo <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+    </footer>
+  {{/if}}
   </article>
 {{/foreach}}
 </section>
-<div class="btn-more-articles">
- <a href="/lista-articulos/">Ver más artículos...</a>
-</div>
 
- {{pagination}}
-
-<p class="rss-subscribe">Suscribete <a class="ion-social-rss" href="{{@blog.url}}/rss/" target="_blank"></a> vía rss</p>
+{{pagination}}

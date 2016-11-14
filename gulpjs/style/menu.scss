@@ -70,22 +70,6 @@
     margin-bottom: 0;
   .lista-item{
     display: inline-block;
-    &:first-child a:hover::before{
-      color: $text-color;
-    }
-    .home, &:first-child a{
-      border: thin solid transparent;
-      color: $text-white;
-      padding: .5em .5em;
-      font-size: 14px;
-      font-weight: normal;
-      &::before{
-        content: "\f448";
-        color: $text-white;
-        font-family: "ionicons";
-        margin-right: 3px;
-      }
-    }
     .link{
       border: thin solid transparent;
       color: $text-white;
@@ -94,13 +78,8 @@
       font-weight: normal;
       &:hover{
         background: $text-white;
-        box-shadow: none !important;
         border: thin solid transparent;
         color: #2A2A2A;
-      }
-      small{
-        display: inline-block;
-        padding: .5em;
       }
     }
   }
@@ -120,7 +99,7 @@
     font-size: 1.8em;
     text-decoration: none;
     margin-top: -3px;
-    
+    transition: 0s;
     @include media-query($content-width){
       margin-right: 15px;
     }
@@ -178,27 +157,23 @@
 }
 
 //============= estilos menú móvil
-.main-menu-mobile{
-  background: transparent;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 9999999995;
-}
-.main-menu{
+.menu-mobile{
   @extend %display-block;
   background:$bg-menu;
-  padding: 15px;
+  transition: .500s;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
   position: fixed;
   right: 0;
   top:0;
   height: 100%;
   width: 350px;
+  z-index: 999999999;
   @include media-query($on-palm){
     background: rgba(35,34,45,.95);
-    width: 100%;
+    width: 75%;
   }
   //ESTILOS PARA SMARTPHONE DE 320PX POR 240PX
   @include media-query($on-smartphone){
@@ -215,8 +190,11 @@
   }
   .logo-menu-mobile{
     @extend %display-block;
-  	margin: 0 auto;
+  	margin: 0 auto 20px auto;
     height: 80px;
+    @include media-query($on-smartphone){
+      height: 45px;
+    }
   }
 }
 //Menu mobile

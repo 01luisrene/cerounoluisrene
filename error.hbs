@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Página no encontrada</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <style type="text/css" media="screen">
+    * {
+            line-height: 1.2;
+            margin-bottom: 15px;
+    }
+    html {
+      display: table;
+      height: 100%;
+      text-align: center;
+      width: 100%;
+      margin: 0;
+        }
+    body {
+      display: table-cell;
+    	background:#fff url('/assets/images/template/desierto.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    	font-family:sans-serif; 
+    	margin:0;
+      vertical-align:middle;
+		}
+    a.home, a { color:#333333; text-decoration:none; font-size: 1.5em; }
+    a.home:hover { text-decoration:underline; text-shadow: 3px 0px 0px rgba(255, 255, 255, 1);}
+    p{
+    	font-size:1.5em;
+    }
+    .not-found{
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+    .numero-error, .texto-error{
+      display: block;
+      margin-bottom: 0;
+      width: 45%;
+    }
+    .numero-error{
+    	color: #E82A33;
+    	font-size: 10vw;
+    	text-shadow: 3px 0px 0px rgba(42, 42, 42, .90);
+      text-align: right;
+    }
+    .texto-error{
+      border-left:  4px solid #2D2727;
+      color: #E82A33;
+      font-size: 4vw;
+      text-align: left;
+      padding-left:  15px;
+    }
+    h3{
+    	font-size: 2em;
+    }
+    strong{
+		font-weight: bold;
+    }
+    .content{
+      background: rgba(255, 255, 255, .5);
+    	text-align:center;
+    	margin:0 auto;
+    	padding: 3em 1.5em 1.5em 1.5em;
+    	height:100%;
+    	width:50%;
+    }
+    .title-not-found{
+    	color: #111;
+      margin:0;
+    }
+    .pagina-inicio{
+      background: #F9F87B;
+      border:  2px solid #474A4B;
+      border-radius: 5px;
+      font-size:16px;
+      color:#474A4B;
+      text-decoration: underline !important;
+      padding: 15px;
+    }
+    .pagina-inicio:.hover{
+      text-decoration: none;
+    }
+    @media (max-width: 700px){
+      .content{
+        padding: 3em 2% 1.5em 2%;
+        width:96%;
+      }
+    }
+  </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1 class="title-not-found"><a class="home" href="http://01luisrene.com" title="Home"><i class="ion-ios-home"></i></a></h1>
+
+      <p> Mil disculpas amigo usuario</p>
+
+      <section class="not-found">
+      <span class="numero-error">404 </span><span class="texto-error">Not <br> Found</span>
+      </section>
+      <h3><i class="ion-link"></i> Página no encontrada</h3>
+      <p>Ooops. Parece que has seguido un vínculo roto.</p>
+      <p><a class="pagina-inicio" href="/">Ir a la página de inicio</a></p>
+    </div>
+  </body>
+</html>

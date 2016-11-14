@@ -3,11 +3,12 @@
 <head>
     {{> "head"}}
 </head>
-<body class="{{body_class}} nav-closed">
-
-    {{!-- The blog navigation links --}}
-    {{navigation}}
-
+<body class="{{body_class}}">
+    <!--[if lt IE 9]>
+    <div class="browser-antiguo">
+        <p class="browserupgrade">Está utilizando un navegador <strong>antiguo</strong>. Por favor <a href="http://browsehappy.com/">actualice su navegador</a> para mejorar su experiencia.</p>
+    </div>
+     <![endif]-->  
     <div class="site-wrapper">
 
         {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
@@ -17,15 +18,17 @@
         {{> "footer"}}
 
     </div>
-
     {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
     {{!-- Fitvids makes video embeds responsive and awesome --}}
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    {{!-- The main JavaScript file for Casper --}}
+    {{!-- The main JavaScript file for 01luisrene --}}
     <script type="text/javascript" src="{{asset "js/app.min.js"}}"></script>
-
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57004124cf559f51"></script> 
+    {{#is "post"}}
+        {{> "scripstPost"}}
+    {{/is}}
 </body>
 </html>

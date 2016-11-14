@@ -1,28 +1,54 @@
 {{!< default}}
-
-{{!-- The comment above "< default" means - insert everything in this file into
-    the {{{body}}} of the default.hbs template, containing the blog header/footer. --}}
+{{#post}}
+<!-- Header principal -->
+<header class="main-header {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+{{!-- Links de Navegación del Blog --}}
+<div id="header" class="site-header headroom">
+    {{navigation}}
+</div>
+<section class="meta-header wrapper">
+<h1 class="post-title">{{title}}</h1>
+<p class="post-meta">
+    <i class="ion-calendar"></i> <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">
+    {{date format="DD MMMM YYYY"}}</time> &nbsp; 
+    {{#if tags}}<i class="ion-pricetags"></i> <span class="post-tag">{{tags separator=" " limit="4"}}</span>{{/if}}
+</p>
+</section>
+</header>
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
-{{#post}}
-
-<main class="content" role="main">
-<div class=" wrapper inner-post">
+<div align="center" class="wrapper pub-top">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!--Publish-001 -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-3311622925293570"
+       data-ad-slot="4058532046"
+       data-ad-format="auto"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<main class="content wrapper inner-post" role="main">
     <article class="{{post_class}}">
-        <header class="post-header">
-            <h1 class="post-title">{{title}}</h1>
-            <section class="post-meta">
-                <p>
-                    <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">
-                    {{date format="DD MMMM YYYY"}}</time> {{#if "tags"}}&nbsp; <i class="ion-ios-pricetags"></i> {{tags}}{{/if}}
-                </p>
-                <img src="{{image}}" alt="imagen - {{title}}">
-            </section>
-        </header>
-
         <section class="post-content">
+            <div class="addthis_sharing_toolbox" style="text-align: center;"></div>
             {{content}}
         </section>
+        <div align="center" class="pub-all">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- publisher-footer-web -->
+        <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-3311622925293570"
+                 data-ad-slot="2571465647"
+                 data-ad-format="auto"></ins>
+        <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        </div>
+        <h3>Te gusto este artículo, ayudame compartiéndolo :)</h3>
+        <div class="addthis_sharing_toolbox"></div>
 
         <footer class="post-footer">
 
@@ -41,55 +67,79 @@
                 {{#if bio}}
                     <p>{{bio}}</p>
                 {{else}}
-                    <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                    <p>Leer <a href="{{url}}">más posts</a> de este autor.</p>
                 {{/if}}
-                <div class="author-meta">
-                    {{#if location}}<span class="author-location ion-ios-location">{{location}}</span>{{/if}}
-                    {{#if website}}&nbsp;&nbsp;<span class="author-link ion-android-globe"><a href="{{website}}">{{website}}</a></span>{{/if}}
-                </div>
+                <ul class="author-links">
+                    {{#if location}}
+                      <li>
+                        <i class="ion-ios-location"></i>
+                        <span>{{location}}</span>
+                      </li>
+                    {{/if}}
+                    {{#if website}}
+                      <li>
+                        <i class="ion-android-globe"></i>
+                        <a href="{{website}}" target="_blank">{{website}}</a>
+                      </li>
+                    {{/if}}
+                    {{#if twitter}}
+                      <li>
+                        <i class="ion-social-twitter"></i>
+                        <a href="{{twitter_url}}" target="_blank">{{twitter}}</a>
+                      </li>
+                    {{/if}}
+                    {{#if facebook}}
+                      <li>
+                        <i class="ion-social-facebook"></i>
+                        <a href="{{facebook_url}}" target="_blank">{{@blog.facebook}}</a>
+                      </li>
+                    {{/if}}
+                </ul>
             </section>
 
         {{/author}}
 
-            {{!-- Email subscribe form at the bottom of the page --}}
-            {{#if @labs.subscribers}}
-            <section class="gh-subscribe">
-                <h3 class="gh-subscribe-title">Subscribe to {{@blog.title}}</h3>
-                <p>Get the latest posts delivered right to your inbox.</p>
-                {{subscribe_form placeholder="Your email address"}}
-                <span class="gh-subscribe-rss">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">via RSS</a> with Feedly!</span>
-            </section>
-            {{/if}}
-
+        {{!-- Email subscribe form at the bottom of the page --}}
+        {{#if @labs.subscribers}}
+        <section class="gh-subscribe">
+            <h3 class="gh-subscribe-title">Suscribirse a {{@blog.title}}</h3>
+            <p>Obtén los últimos mensajes publicados directamente en tu bandeja de entrada.</p>
+            {{subscribe_form placeholder="Your email address"}}
+            <span class="gh-subscribe-rss">O suscríbase <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">vía RSS</a> con Feedly!</span>
+        </section>
+        {{/if}}
         </footer>
+        {{!-- Links to Previous/Next posts --}}
+        <aside class="read-next">
+            {{#next_post}}
+            <a class="read-next-story next {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+                <h4 class="title-read-next">{{title}}</h4>
+                <p class="parrafo-read-next">{{excerpt words="19"}}&hellip;</p>
+            </a>
+            {{else}}
+            <span class="read-next-story next" style="background-image: url({{asset "images/template/desierto.jpg"}})">
+                <button class="btn btn-read-next">Previous</button>
+                <p class="parrafo-next">No hay más posts</p>
+            </span>
+            {{/next_post}}
+
+            {{#prev_post}}
+            <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+                <h4 class="title-read-next">{{title}}</h4>
+                <p class="parrafo-read-next">{{excerpt words="19"}}&hellip;</p>
+            </a>
+            {{else}}
+            <span class="read-next-story prev" style="background-image: url({{asset "images/template/desierto.jpg"}})">
+                <button class="btn btn-read-next">Next</button>
+                <p class="parrafo-prev">No hay más posts</p>
+            </span>
+            {{/prev_post}}
+        </aside>
+
+        <h2>Comparte tu opinión</h2>
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
     </article>
-    <aside class="widget-content">
-        <div class="widget ultimos-tweets">
-            <h3>Últimos Tweets</h3>
-            <a class="twitter-timeline" href="https://twitter.com/01luisrene" data-tweet-limit="7" data-chrome="noborders  nofooter noheader transparent">Tweets by 01luisrene</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
-    </aside>
-</div>
+    {{> "aside"}}
 </main>
-
-{{!-- Links to Previous/Next posts --}}
-<aside class="read-next">
-    {{#next_post}}
-    <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-        <section class="post">
-            <h2>{{title}}</h2>
-            <p>{{excerpt words="19"}}&hellip;</p>
-        </section>
-    </a>
-    {{/next_post}}
-    {{#prev_post}}
-    <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-        <section class="post">
-            <h2>{{title}}</h2>
-            <p>{{excerpt words="19"}}&hellip;</p>
-        </section>
-    </a>
-    {{/prev_post}}
-</aside>
-
 {{/post}}

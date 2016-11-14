@@ -16,6 +16,9 @@
 .social-media-list {
     list-style: none;
     margin-left: 0;
+    .fa{
+      width: 20px;
+    }
 }
 .footer-col-wrapper {
   @extend %flexbox-flex-end;
@@ -26,12 +29,13 @@
 
 .footer-col {
  // padding-left: $spacing-unit / 2;
-  .title-footer{
+  .footer-title{
     @extend %display-block;
     color: #fff;
+    font-family: $lato-font-family;
     font-size: 1.3em;
-    text-transform: uppercase;
     font-weight: 700;
+    letter-spacing: 1px;
     margin-bottom: $spacing-unit / 2;
     width: 100%;
   }
@@ -88,25 +92,23 @@
 .footer-name-app {
   @extend %display-block;
   color: $color-name-app;
-  font-family:$roboto-font-family;
+  font-family:$monaco-font-family;
   font-size: 1.3em;
-  text-transform: uppercase;
-  font-weight: 700;
   margin-bottom: $spacing-unit / 2;
   @include media-query($on-smartphone) {
       font-size: 1.5em;
   }
 }
-.name-app:before {
+.footer-name-app:before {
   color: #fff;
-  content: '{ ';
-  font-family: $roboto-font-family;
+  content: '{';
+  font-family: $monaco-font-family;
   text-shadow: none;
 }
-.name-app:after {
+.footer-name-app:after {
   color: #fff;
-  content: ' }';
-  font-family: $roboto-font-family;
+  content: '}';
+  font-family: $monaco-font-family;
   text-shadow: none;
 }
 

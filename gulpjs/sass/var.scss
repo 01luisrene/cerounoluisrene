@@ -1,9 +1,10 @@
 @charset "utf-8";
 
 // Our variables
-$base-font-family: "Noto Sans", Helvetica, Arial, sans-serif;
-$roboto-font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
+$base-font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+$monaco-font-family: 'monacoregular';
+$lato-font-family: 'Lato', sans-serif;
+$base-font-size:   19px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
@@ -33,6 +34,12 @@ $color-name: #00974B;
 $color-name-app: rgba(0,117,234,1);
 $color-link-foo: #FD7E00;
 $color-green: rgba(25, 176, 119, 0.8);
+
+//Lista de Redes Sociales Front
+$redes-height: 3em;
+$redes-width: 3em;
+$redes-font-size: 2em;
+
 //redes sociales
 $facebook: #3864a3;
 $twitter: #4391e8;

@@ -18,7 +18,8 @@
 
 // post & page
 .page-content, .content{
-  padding: 1em 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
   position:relative;
   z-index: 2;
 }
@@ -26,15 +27,29 @@
   margin-bottom: 15px;
 }
 
-//style page, sobre mi, contato
-
 .post-header {
-    margin-bottom: $spacing-unit;
+  margin-bottom: $spacing-unit;
+}
+.post-meta{
+  .ion-calendar{
+    color:#1091FF;
+  }
+  .ion-pricetags{
+    color: $color-name;
+  }
+  .post-tag a{
+    display: inline-block;
+    background: transparent;
+    border: thin solid #646464;
+    border-radius: 15px;
+    color: $text-color;
+    padding: .1em .5em;
+    margin-top: .5em;
+  }
 }
 .post-title {
     font: 3em $base-font-family;
     font-weight: 700;
-    text-align: left;
     font-size: 42px;
     letter-spacing: -1px;
     line-height: 1;
@@ -48,16 +63,163 @@
       line-height: 34px;
     }
 }
-//stacks Luis Rene Mas Mas
-.stacks{
-  .stack-lista{
-    @extend %flexbox-space-between;
-    list-style-type: none;
+
+.post-footer {
+    position: relative;
+    margin: 3em 0 2em 0;
+    padding: 4rem 0 0 0;
+    border-top: #454545 1px solid;
+    text-align: center;
+}
+.author-image {
+    background: #F4F4F4;
+    border:thin solid #282828;
+    display: block;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    margin-left: -40px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 6px;
+    z-index: 2;
+    box-shadow: #E7EEF2 0 0 2px 2px;
+}
+.author-image .img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 50%;
+}
+
+.author-links {
     padding: 0;
+    margin: 1em 0;
+    list-style: none;
+    font-size: 1em;
+    line-height: 1;
+    font-style: italic;
+    color: #3C3D34;
     li{
-      display: inline-block;
-      width: 33%;
+      &:not(:last-child){
+        margin-bottom: 10px;
+      }
     }
+    a{
+      color: #3C3D34;
+    }
+}
+.gh-subscribe{
+  border: 2px solid;
+  padding: 1em .5em;
+  margin-top: 1em;
+}
+
+//Formulario de suscripción
+.form-subscribe{
+  .form-group input{
+    padding: .5em;
+    width: 40%;
+    @include media-query($on-laptop){
+      width: 80%;
+    }
+    @include media-query($on-smartphone){
+      width: 100%;
+    }
+  }
+  button{
+    border: thin solid #464444;
+    margin: .5em auto;
+  }
+}
+//paginación del post
+.read-next{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  margin: 1em 0;
+  position: relative;
+  @include media-query(700px){
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+.next::before{
+    background: #3D3C3C;
+  border-right: 4px solid rgba(0,151,75, .7);
+  border-bottom: 4px solid rgba(0,151,75, .7);
+  color: $text-white;
+  content: "« Siguiente";
+  padding: .1em .3em;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+
+}
+.prev::after{
+  background: #3D3C3C;
+  border-left: 4px solid rgba(0,151,75, .7);
+  border-bottom: 4px solid rgba(0,151,75, .7);
+  color: $text-white;
+  content: "Anterior »";
+  padding: .1em .3em;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+
+}
+.read-next-story{
+  background: no-repeat center center;
+  background-size: cover;
+  border: 4px solid rgba(0,151,75, .7);
+  color: inherit !important;
+  overflow: hidden;
+  padding: .5em;
+  width: 48%;
+  @include media-query(700px){
+    min-height: 140px;
+    width: 100%;
+    &:not(:last-child){
+      margin-bottom: 15px;
+    }
+  }
+  &:not(.prev, .next){
+    cursor: pointer;
+  }
+  &:hover{
+    border: 4px solid rgba(0,151,75, 1);
+    text-decoration: none !important;
+  }
+  .title-read-next{
+    color: initial;
+    margin-top: 25px;
+    font-weight: 900;
+    padding: 0 .5em;
+  }
+  .parrafo-read-next{
+    background: rgba(255,255,255, .6);
+    color: $text-color;
+    font-size: 15px;
+    padding: .5em;
+  }
+  //
+  .btn-read-next{
+    border: thin solid #8D8C8C;
+    border-radius: 3px;
+    display: block;
+    margin: 20px auto 0 auto;
+  }
+  .parrafo-next, .parrafo-prev{
+    background: rgba(255,255,255, .6);
+    text-align: center;
+    padding: .5em;
+    margin-top: 15px;
   }
 }
 .post-content {
@@ -96,6 +258,7 @@ p{
 }
 //estilo iframe de codepen.io
 div iframe {margin-bottom: 1em;}
+
 hr{
   display: inline-block;
   border-width:0;
@@ -147,20 +310,19 @@ ul{
     list-style-type: circle;
   }
 }
-.video-youtube{
-  width: 100%;
-  height: 450px;
-  @include media-query ($on-laptop){ //800px
-    height: 380px;
-  }
-  @include media-query ($on-palm){ //600px
-    height: 300px;
-  }
-  @include media-query ($on-smartphone){ //600px
-    height: 200px;
-  }
 }
 
+//stacks Luis Rene Mas Mas
+.stacks{
+  .stack-lista{
+    @extend %flexbox-space-between;
+    list-style-type: none;
+    padding: 0;
+    li{
+      display: inline-block;
+      width: 33%;
+    }
+  }
 }
 
 //página archive
@@ -217,11 +379,22 @@ ul{
     display: inline;
   }
   &::before{
+    display: inline-block;
     position: absolute;
     left: 0;
-    color: #00356A;
-    content: "\f10c";
-    font-family: "FontAwesome";
+    color: $text-color;
+    content: "\f401";
+    font-family: "Ionicons";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-top: .4em;
     margin-right: .5em;
   }
 }

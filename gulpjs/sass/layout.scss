@@ -1,5 +1,5 @@
 /*Estilo para los iconos*/
-.fa-folder-open{
+.ion-folder{
   color: #0D7ADF;
 }
 /*cookies*/
@@ -8,14 +8,12 @@
   border-top: thin solid #606060;
   position: fixed;
   bottom:0;
-  font-size: 14px;
-  font-family: $base-font-family;
   text-align: center;
   padding: .5em 1em;
-  width: 100%;
+  width: 30%;
   z-index: 999999;
-  @include media-query($on-smartphone){
-    display: none !important;
+  @include media-query($on-laptop){
+    width: 100%;
   }
   p{
     color: #FEFF27;
@@ -30,17 +28,25 @@
   }
 }
 .btn-cookie{
+  background: $text-white;
   display: inline-block;
-  border: 1px solid transparent;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
+  border: 2px solid #1D1B1B;
+  border-radius: 50%;
   cursor: pointer;
-  color: #333333;
   font-size: 1em;
-  font-family: 'Oswald', sans-serif;
-  padding: 3px 15px;
-  text-decoration: none;
+  height: 30px;
+  width: 30px;
+  padding: 5px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  @include media-query($on-laptop){
+    right: 5px;
+  }
+  i{
+    display: block;
+    color: #333333;
+  }
 }
 //botón up
 .boton-subir{
@@ -81,52 +87,6 @@
       padding: 20px 10px 10px 23px;
     }
   }
-}
-
-.post-footer {
-    position: relative;
-    margin: 6rem 0 2em 0;
-    padding: 4rem 0 0 0;
-    border-top: #454545 1px solid;
-    text-align: center;
-}
-.author-image {
-    background: #F4F4F4;
-    border:thin solid #282828;
-    display: block;
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    margin-left: -40px;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-    padding: 6px;
-    z-index: 2;
-    box-shadow: #E7EEF2 0 0 2px 2px;
-}
-.author-image .img {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center center;
-    border-radius: 50%;
-}
-
-.author-meta {
-    padding: 0;
-    margin: 1em 0;
-    list-style: none;
-    font-size: 1em;
-    line-height: 1;
-    font-style: italic;
-    color: #3C3D34;
-    a{
-      color: #3C3D34;
-    }
 }
 /*estilos para la página política de cookies*/
 .box-politica-cookies{
@@ -209,18 +169,16 @@
   vertical-align: top;
   height: 100%;
   width: 49.5%;
-  &:first-child{
-    border-right: thin solid $color-green;
+  &:nth-child(2){
+    border-left: thin solid $color-green;
   }
   @include media-query($on-palm){
     width: 100%;
     border-bottom: thin solid $color-green;
     padding: 5px;
-    &:last-child{
-      border-bottom: none;
-    }
-    &:first-child{
-      border-right: none;
+    &:nth-child(2){
+      border-left: 0;
+      border-bottom: 0;
     }
   }
 }
@@ -268,12 +226,14 @@ p.text-foo{
 .browser-antiguo{
   background-color:#363636;
   position: fixed;
+  top:0;
   text-align: center;
   height: 100%;
-  width: 90%;
+  width: 100%;
   padding: 0 5%;
   z-index: 999999;
   .browserupgrade{
+    font-family: $base-font-family;
     font-size: 2.5em;
     color: #A7A7A7;
     vertical-align: middle;
@@ -374,10 +334,14 @@ p.text-foo{
 }
 
 //Publicidad
-.pub-top-01luisrene{
-  margin-top: 1em;
+.pub-top{
+  margin-top: .5em;
 }
-.pub-all-01luisrene{
+.pub-all{
   margin-top: 1em;
   margin-bottom: 1em;
+}
+.pub-home{
+  margin-top: 1em;
+  margin-bottom: -.5em;
 }

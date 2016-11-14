@@ -6,47 +6,53 @@
         <ul class="contact-list">
           <li><span class="footer-name-app">{{@blog.title}}</span></li>
           <div class="separador"></div>
-          <li>
-          {{#if facebook}}<a href="{{facebook_url}}"><span></span> Facebook</a>{{/if}}
         </ul>
         <img src="{{asset "images/logo.png"}}" alt="01luisrene.com" title="Logo" style="display: block; margin: 0 auto;" width="100">
       </div>
 
       <div class="footer-col footer-col-2">
-        <span class="title-footer">Redes Sociales</span>
+        <span class="footer-title">Redes Sociales</span>
         <ul class="social-media-list">
+          {{#if @blog.twitter}}
           <li>
-            <i class="ion-social-twitter-outline"></i> <a href="">Twitter</a>
+            <i class="fa fa-twitter" aria-hidden="true"></i> <a href="{{twitter_url @blog.twitter}}" target="_blank">Twitter</a>
+          </li>
+          {{/if}}
+          {{#if @blog.facebook}}
+          <li>
+          <i class="fa fa-facebook" aria-hidden="true"></i> <a href="{{facebook_url @blog.facebook}}" target="_blank">Facebook</a>
+          </li>
+          {{/if}}
+          <li>
+          <i class="fa fa-github" aria-hidden="true"></i> <a href="https://www.github.com/01luisrene" target="_blank">GitHub</a>
           </li>
           <li>
-          <i  class="ion-social-googleplus-outline"></i> <a href="">Google Plus</a>
-          </li>
-          <li>
-          <i class="ion-social-facebook-outline"></i> <a href="">Facebook</a>
+          <i  class="fa fa-google-plus" aria-hidden="true"></i> <a href="https://plus.google.com/u/0/+01LuisRene" target="_blank">Google Plus</a>
           </li>
         </ul>
       </div>
       <div class="footer-col footer-col-3">
-        <span class="title-footer">Descripción</span>
-        <p>{{@blog.description}}</p>
+        <span class="footer-title">Suscribete a {{@blog.title}}</span>
+        {{subscribe_form}}
+        <span class="gh-subscribe-rss">O suscríbase <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">vía RSS</a> con Feedly!</span>
       </div>
     </div>
       <!-- div para copy -->
       <div class="footer-col copy">
-        <p class="copy-parrafo">&copy; 2015 - {{date format="YYYY"}} ( Todos los Derechos Reservados ) - Webmaster: <b>Luis Rene Mas Mas</b></a>
+        <p class="copy-parrafo"><a href="{{@blog.url}}"><b>{{@blog.title}}</b></a> &copy; {{date format="YYYY"}}</a>
         </p>
       </div>
   </div>
 </footer>
 <!-- Política de cookies  -->
 <div class="barra-aceptacion-cookie" id="js_barra_aceptacion_cookie" style="display: none;">
-  <p> Solicitamos su permiso para obtener datos estadísticos de su navegación en esta web, en cumplimiento del Real Decreto-ley 13/2012. Si continúa navegando consideramos que acepta el uso de cookies. 
+  <p> Utilizamos cookies para mejorar su navegación. Al continuar utilizando nuestra web entendemos que acepta nuestra política.
   <a href="/politica-cookies/"  class="info-cookie" target="_blank">Más información</a>
-  <button id="js_btn_cookie" class="btn-cookie btn-link">Ok</button>
+  <a href="javascript:void(0)" id="js_btn_cookie" class="btn-cookie"><i class="fa fa-times" aria-hidden="true"></i></a>
   </p>
 </div>
 
 <!-- Botón up -->
 <a href="#" id="js_up" class="boton-subir">
-  <i class="ion-jet" aria-hidden="true"></i>
+  <i class="fa fa-rocket" aria-hidden="true"></i>
 </a>
