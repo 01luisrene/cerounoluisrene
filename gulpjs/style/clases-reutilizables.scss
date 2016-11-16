@@ -1,9 +1,9 @@
 .no-cover{
-  background: #222;
+  background: #D0DCDF;
 }
  // Wrapper
-.wrapper {
-  max-width: 1200px;
+.contenedor, .contenedor___post {
+  max-width: 1100px;
   margin-right: auto;
   margin-left: auto;
   padding-right: $spacing-unit;
@@ -18,17 +18,33 @@
     padding-left: $spacing-unit / 2;
   }
 }
-//estilos para el curpo del post y page
-.inner-post{
-  @extend %flexbox-space-between;
- width: 100%;
- .post{
-  width: 68%;
+.contenedor___post{
   @include media-query($content-block){
-   width: 100%;
-   max-width: 100%;
+    width: 880px;
   }
- }
+  @include media-query($content-block){
+    width: 90%;
+  }
+  @include media-query($on-laptop){
+    width: 100%;
+  }
+}
+.content{
+  position:relative;
+  z-index: 2;
+}
+
+.margen-superior{
+  margin-top: 1em;
+}
+.margen-inferior{
+  margin-bottom: 1em;
+}
+.relleno-superior{
+  padding-top: 1em;
+}
+.relleno-inferior{
+  padding-bottom: 1em;
 }
 
 

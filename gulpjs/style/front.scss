@@ -1,0 +1,142 @@
+//home
+.front{
+  background-color: rgba(0, 178, 89, 0.01);
+  border-bottom: thin solid #ACACAC;
+}
+.author-name{
+  color: $color-name;
+  text-align: center;
+  font-size: 10vh;
+  font-family:$lato-font-family;
+  text-transform: capitalize;
+  text-shadow: 0.3vh 0.2vh 0.1vh $bg-menu;
+  margin-bottom: 1vh;
+  @include media-query($content-block) {
+    font-size: 5vw;  
+    text-shadow: 0.1vw 0.5vw 0.1vw $bg-menu;
+  }
+  @include media-query($on-palm) {
+    font-size: 7vw;  
+    text-shadow: 0.1vw 0.5vw 0.1vw $bg-menu;
+  }
+}
+.redes-list{
+  @extend %flexbox-center;
+  text-align: center;
+  margin-bottom: 0.5em;
+  .item{
+    margin: 0 0.25em;
+    height: $redes-height;
+    width: $redes-width;
+    @include media-query($content-block) {
+      height: $redes-height - 0.5em;
+      width: $redes-width - 0.5em;
+    }
+    @include media-query($on-palm) {
+      height: $redes-height - 1em;
+      width: $redes-width - 1em;
+    }
+    .link{
+      @extend %display-block;
+      color: #2E2B2B;
+      font-size: $redes-font-size;
+      text-decoration: none;
+      margin-top: 0.25em;
+      transition: .1s;
+      @include media-query($content-block) {
+        font-size: $redes-font-size;
+        margin-top: 0.125em;
+      }
+      @include media-query($on-palm) {
+        font-size: $redes-font-size - 0.5em;
+        margin-top: 0.25em;
+      }
+      &:hover{
+        font-size: $redes-font-size + 1em;
+        margin-top: 0;
+        @include media-query($content-block) {
+          font-size: $redes-font-size + 0.5em;
+          margin-top: 0;
+        }
+        @include media-query($on-palm) {
+          font-size: $redes-font-size;
+          margin-top: 0;
+        }
+      }
+      &.facebook:hover{
+        color: $facebook;
+      }
+      &.twitter:hover{
+        color: $twitter;
+      }
+      &.youtube:hover{
+        color: $youtube;
+      }
+      &.github:hover{
+        color: $github;
+      }
+      &.google-plus:hover{
+        color: $google-plus;
+      }
+    }
+  }
+}
+.author-img{
+  @extend %display-block;
+  border-radius: 50%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right:auto;
+  height: 80px;
+  width: 80px;
+ @include media-query($on-palm) {
+  height: 50px;
+  width: 50px;
+ }
+}
+
+.blog-description{
+  background-color: rgba(255,255,255, 1);
+  border: thin solid rgba(0,0,0, 1);
+  padding: 10px;
+  text-align: center;
+  font-size: 1.25em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  max-width: 75%;
+  @include media-query($content-block) {
+    font-size: 1em;
+  }
+  @include media-query($on-palm) {
+    font-size: 3vw;
+    max-width: 90%;
+  }
+  @include media-query($on-smartphone){
+    max-width: 100%;
+  }
+}
+
+.code{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin:0;
+  li{
+    display: inline-block;
+    &:first-child{
+      margin-left: 0;
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+    margin-left: .5em;
+    margin-right:  .5em;
+    a{
+      display: block;
+    }
+  }
+}

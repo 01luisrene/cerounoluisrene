@@ -4,22 +4,7 @@ var agente = navigator.userAgent.toLowerCase(),
 
 var cerounoluisrene = (function ($) {
 
-var
-  headroom = function(){
-    $('#header').headroom({
-      'tolerance': {
-        'down' : 10,
-        'up' : 20
-      },
-      'offset' : 205,
-      'classes': {
-        'initial': 'animated',
-        'pinned': '',
-        'unpinned': ''
-      }
-    });
-  },
-  displayMenu = function(){
+var  displayMenu = function(){
   	$('#js_icon_menu').on('click', function(e) {
       e.preventDefault();
       menu_mobile.css({
@@ -33,7 +18,7 @@ var
       event.preventDefault();
       menu_mobile.removeAttr('style');
       menu_mobile.addClass('fadeOutRight').removeClass('bounceInRight');
-      setTimeout(function(){ menu_mobile.css('display', 'none'); }, 400);
+      setTimeout(function(){ menu_mobile.css('display', 'none'); }, 500);
     });
   },
   //search artículos
@@ -145,7 +130,6 @@ var
   },
  // 01luisrene javascripts initialization
   init = function () {
-    headroom();
     displayMenu();
     closeMenu();
     ghostHunter();

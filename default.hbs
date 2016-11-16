@@ -9,15 +9,13 @@
         <p class="browserupgrade">Está utilizando un navegador <strong>antiguo</strong>. Por favor <a href="http://browsehappy.com/">actualice su navegador</a> para mejorar su experiencia.</p>
     </div>
      <![endif]-->  
-    <div class="site-wrapper">
+     
+    {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+    {{{body}}}
 
-        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-        {{{body}}}
+    {{!-- The tiny footer at the very bottom --}}
+    {{> "footer"}}
 
-        {{!-- The tiny footer at the very bottom --}}
-        {{> "footer"}}
-
-    </div>
     {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     {{!-- Ghost outputs important scripts and data with this tag --}}

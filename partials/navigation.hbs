@@ -1,48 +1,60 @@
-<div id="header" class="site-header headroom">
-  <div class="content__nav wrapper">
+<div class="caja___menu">
+  <div class="contenedor__nav contenedor">
     {{#if @blog.logo}}
-    <figure class="figure-logo" id="js_img_logo">
-      <a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
-    </figure>
+      <figure class="figure-logo" id="js_img_logo">
+        <a href="{{@blog.url}}" title="{{@blog.title}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
+      </figure>
     {{/if}}
-    <nav class="nav">
-      <ul class="nav-list">
-        {{#foreach navigation}}
-            <li class="lista-item nav-{{slug}}" role="presentation">
+    <nav class="main_nav">
+      <ul class="nav">
+          {{#foreach navigation}}
+            <li class="nav-item nav-{{slug}}" role="presentation">
             {{#if current}}
-                <span class="active link" title="{{label}}">{{label}}</span>
+                <span class="nav-link-active" title="{{label}}">{{label}}</span>
             {{else}}
-              <a class="link" href="{{url absolute="true"}}" title="{{label}}">
+              <a class="nav-link" href="{{url absolute="true"}}" title="{{label}}">
                {{label}}
               </a>
             {{/if}}
             </li>
-        {{/foreach}}
+          {{/foreach}}
       </ul>
+      <div class="caja_iconos">
+        <ul class="nav-iconos">          
+          <li class="nav-item">
+            <a class="nav-link" href="/contacto/" title="Contacto"><img src="{{asset "images/nav/ic_contact_mail_white_24dp_1x.png"}}" alt="Contacto" height="24" width="24"/></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/sobre-mi/" title="Sobre mí"><img src="{{asset "images/nav/ic_face_white_24dp_1x.png"}}" alt="Sobre mí" height="24" width="24"/></a>
+          </li>
+          <li class="nav-item">
+            <a href="/lista-articulos" class="nav-link icon-buscador" title="Buscador" id="js_icon_buscador" aria-hidden="true"><i class="fa fa-search"></i></a>
+          </li>
+        </ul>
+        <a href="javascript:void(0)" class="icon-menu" id="js_icon_menu">
+          <span class="ico"></span>
+        </a>
+      </div>
     </nav>
-    <div class="icons-box">
-      <a href="/lista-articulos" class="icon-buscador fa fa-search" title="Buscador" id="js_icon_buscador" aria-hidden="true"></a>
-      <a href="javascript:void(0)" class="icon-menu" id="js_icon_menu">
-        <span class="ico"></span>
-      </a>
-    </div>
   </div>
 </div>
 <!-- Menú web mobile -->
-  <nav class="menu-mobile animated" id="js_menu_mobile" style="display: none;">
-      <i class="fa fa-times icon-cerrar" id="js_icon_cerrar"  aria-hidden="true" title="Cerrar"></i>
-      <a href="{{@blog.url}}"><img class="logo-menu-mobile" src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
-     <ul class="menu-mobile-list">
-        {{#foreach navigation}}
-            <li class="item nav-{{slug}}" role="presentation">
-            {{#if current}}
-                <span class="active link">{{label}}</span>
-            {{else}}
-              <a class="link" href="{{url absolute="true"}}">
-               {{label}}
-              </a>
-            {{/if}}
-            </li>
-        {{/foreach}}
-     </ul>
-  </nav>
+<nav class="menu___mobile animated" id="js_menu_mobile" style="display:none;">
+    <i class="fa fa-times icon-cerrar" id="js_icon_cerrar"  aria-hidden="true" title="Cerrar"></i>
+    {{#if @blog.logo}}
+    <a href="{{@blog.url}}"><img class="logo-menu-mobile" src="{{@blog.logo}}" alt="{{@blog.title}}"/></a>
+    {{/if}}
+   <ul class="nav__mobile">
+      {{#foreach navigation}}
+          <li class="nav-item nav-{{slug}}" role="presentation">
+          {{#if current}}
+              <span class="nav-link active-mobile">{{label}}</span>
+          {{else}}
+            <a class="nav-link" href="{{url absolute="true"}}">
+             {{label}}
+            </a>
+          {{/if}}
+          </li>
+      {{/foreach}}
+   </ul>
+</nav>

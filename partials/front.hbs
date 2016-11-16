@@ -1,5 +1,5 @@
-<section class="front">
-  <div class="wrapper">
+<section class="front relleno-superior relleno-inferior">
+  <div class="contenedor">
     <h1 class="author-name">Luis Rene Mas Mas</h1>
     <ul class="redes-list">
       {{#if @blog.facebook}}
@@ -22,12 +22,33 @@
         <a class="link fa fa-google-plus google-plus" href="https://plus.google.com/u/0/+01LuisRene" target="_blank"><span class="hidden">Google Plus</span></a>
       </li>
     </ul>
-    <img class="author-img" src="{{asset "images/author_front.jpg"}}" title="Autor del blog 01luisrene.com"/>
+      <img class="author-img" src="{{asset "images/autor_del_blog.jpg"}}" alt="Autor del blog 01luisrene.com" title="Autor"/>
     <p class="blog-description">
       {{@blog.description}}
     </p>
-    <a class="link-lc" href="/sobre-mi#stacks">
-      <img class="languages-code" src="/assets/images/code_languages.png" alt="Languages de programación">
-    </a>
+    
+    <ul class="code">
+      <li>
+        <img src="{{asset "images/code_lang/corchete_left.png"}}" alt="Corchete Left">
+      </li>
+      <li>
+        <a href="/tag/html/" title="HTML5"><img src="{{asset "images/code_lang/html.png"}}" alt="HTML"></a>
+      </li>
+      <li>
+        <a href="/tag/css/" title="CSS3"><img src="{{asset "images/code_lang/css.png"}}" alt="CSS"></a>
+      </li>
+      <li>
+        <a href="/tag/python/" title="PYTHON"><img src="{{asset "images/code_lang/python.png"}}" alt="PYTHON"></a>
+      </li>
+      <li>
+        <a href="/tag/javascript/" title="JavaScript"><img src="{{asset "images/code_lang/javascript.png"}}" alt="JavaScript"></a>
+      </li>
+      <li>
+        <a href="/tag/responsive-design/" title="Responsive Design"><img src="{{asset "images/code_lang/responsive_design.png"}}" alt="Responsive Design"></a>
+      </li>
+      <li>
+        <img src="{{asset "images/code_lang/corchete_right.png"}}" alt="Corchete Right">
+      </li>
+    </ul>
   </div>
 </section>

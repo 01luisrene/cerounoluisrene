@@ -8,23 +8,10 @@
   z-index: 2;
 }
 
-.footer-heading {
-    font-size: 18px;
-    margin-bottom: $spacing-unit / 2;
-}
-.contact-list,
-.social-media-list {
-    list-style: none;
-    margin-left: 0;
-    .fa{
-      width: 20px;
-    }
-}
 .footer-col-wrapper {
   @extend %flexbox-flex-end;
   font-size: 15px;
   color: $grey-color;
-  width: 100%;
 }
 
 .footer-col {
@@ -56,26 +43,39 @@
 }
 
 .footer-col-3 {
-    width: 45%;
-    p{
-      margin-bottom: 0;
+  text-align: center;
+  width: 45%;
+  //Form Suscribete
+  .form-subscribe{
+    .subscribe-email{
+      width: 80%;
+      @include media-query($on-smartphone){
+        width: 100%;
+      }
     }
+    button{
+      margin: .5em auto;
+    }
+    .gh-subscribe-rss{
+      
+    }
+  }
 }
 
 @include media-query($on-laptop) {
-    .footer-col-1{
-      width: 50%;
-    }
-    .footer-col-2{
-      padding-left: 2%;
-      width: 48%;
-    }
-    .footer-col-3 {
-      border-top: thin dotted $color-name;
-      margin-top: 1em;
-      padding-top: 1em;
-      width:100%;
-    }
+  .footer-col-1{
+    width: 50%;
+  }
+  .footer-col-2{
+    padding-left: 2%;
+    width: 48%;
+  }
+  .footer-col-3 {
+    border-top: thin dotted $color-name;
+    margin-top: 1em;
+    padding-top: 1em;
+    width:100%;
+  }
 }
 @include media-query($on-smartphone){
   .footer-col-2{
@@ -87,6 +87,14 @@
   .footer-col-1,.footer-col-2,.footer-col-3{
     width:100%;
   }
+}
+.contact-list,
+.social-media-list {
+    list-style: none;
+    margin-left: 0;
+    .fa{
+      width: 20px;
+    }
 }
 // name app
 .footer-name-app {
@@ -111,15 +119,16 @@
   font-family: $monaco-font-family;
   text-shadow: none;
 }
-
 //copy
-.copy{
+.footer-copy{
+  padding: .5em 0;
+  width: 100%;
   .copy-parrafo{
     @extend %display-block;
     color: $text-white;
     text-align: center;
+    font-size: 19px;
     margin-bottom: 0;
-    padding: 1em 0;
   }
   a{
       color: $text-white;

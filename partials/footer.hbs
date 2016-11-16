@@ -1,7 +1,6 @@
 <!-- Footer -->
 <footer class="site-footer">
-  <div class="wrapper">
-    <div class="footer-col-wrapper">
+  <div class="contenedor footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li><span class="footer-name-app">{{@blog.title}}</span></li>
@@ -36,9 +35,8 @@
         {{subscribe_form}}
         <span class="gh-subscribe-rss">O suscríbase <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">vía RSS</a> con Feedly!</span>
       </div>
-    </div>
       <!-- div para copy -->
-      <div class="footer-col copy">
+      <div class="footer-col footer-copy">
         <p class="copy-parrafo"><a href="{{@blog.url}}"><b>{{@blog.title}}</b></a> &copy; {{date format="YYYY"}}</a>
         </p>
       </div>

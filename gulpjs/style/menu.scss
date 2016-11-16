@@ -1,108 +1,141 @@
-// Site header
-.site-header{
-  @extend %display-block;
-  background-color:$bg-menu;
-  box-shadow:  0px 3px 5px 0px rgba(226, 225, 217, 0.75);
-  z-index: 9999999999;
-  height: 47px;
-  width: 100%;
-  //ESTILOS PARA SMARTPHONE MENORES O IGUAL 480PX
-  @include media-query($on-smartphone){
-    height: auto;
-    max-height: 147px;
-  }
+//HOME HEADER
+.home-header{
+  background-attachment: fixed;
 }
-//clases headroom
-.headroom {
-  will-change: transform;
-  transition: transform 200ms linear;
-  position: fixed;
-  z-index: 10;
-  right: 0;
-  left: 0;
-  top: 0;
+.caja___menu{
+  background:$bg-menu;
 }
-.headroom--pinned {
-  transform: translateY(0%);
-}
-.headroom--unpinned {
-  transform: translateY(-100%);
-}
-
-.content__nav{
+.contenedor__nav{
  @extend %flexbox-space-between;
+ padding-top: 6.5px;
+ padding-bottom: 6.5px;
 }
 
 //icono logo
 .figure-logo{
   display: inline-block;
-  margin-top: 6px;
-  margin-bottom: 4px;
-  width: 7%;
-  @include media-query($content-width){
-     width: 50%;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  width: 80px;
+  @include media-query($on-laptop){
+    width: 70px;
   }
   a{
     display: block;
-    height: 37px;
-    width: 55px;
+    height: 100%;
+    width: 100%;
     img{
-      max-width: 55px;
-      @include media-query($on-smartphone){
-        max-width: 100%;
-      }
+      max-height: 100%;
+      max-width: 100%;
     }
   }
 }
 //estilos para el menú web desktop
-.nav{
-  background:$bg-menu;
-  display: block;
-  height: 47px;
-  width: 77%;
-  @include media-query($content-width){
-    display: none;
-  }
+.main_nav{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
 }
-.nav-list{
-    display: block;
-    margin-top: 10px;
+.nav, .nav-iconos{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
     margin-bottom: 0;
-  .lista-item{
+  .nav-item{
     display: inline-block;
-    .link{
-      border: thin solid transparent;
-      color: $text-white;
-      padding: .5em .5em;
-      font-size: 14px;
-      font-weight: normal;
+    &:not(:last-child){
+      margin-right: 15px;
+    }
+    .nav-link{
+      display: inline-block;
       &:hover{
-        background: $text-white;
-        border: thin solid transparent;
-        color: #2A2A2A;
+        
       }
     }
   }
 }
-//estilos para el menú
-.icons-box{
-  @extend %flexbox-flex-end;
-  background: transparent;
-  margin-top: 5px;
-  width: 15%;
-  @include media-query($content-width){
-    width: 50%;
+//Estilos para el Menu main
+.nav{
+  margin-top: -4px;
+  @include media-query($on-laptop){
+    display: none;
   }
-  .icon-buscador{
-    display: inline-block;
-    color: white;
-    font-size: 1.8em;
-    text-decoration: none;
-    margin-top: -3px;
-    transition: 0s;
-    @include media-query($content-width){
-      margin-right: 15px;
+  .nav-item{
+    .nav-link{
+      border-top: 6px solid transparent;
+      font-family: $lato-font-family;
+      font-size: 18px;
+      font-weight: 300;
+      padding: .5em 0;
+      text-transform: uppercase;
+      &:hover{
+        border-top: 6px solid $color-name;
+        text-decoration: none;
+      }
     }
+  }
+}
+.nav-link-active{
+  @extend %display-block;
+  border-top: 6px solid transparent;
+  color: $text-white;
+  font-family: $lato-font-family;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding: .5em 0;
+  position: relative;
+  &::before{
+    background: $color-name;
+    content: "";
+    position: absolute;
+    top:-6px;
+    height: 6px;
+    width: 100%;
+  }
+}
+//Estilos para nav-iconos
+.nav-iconos{
+  .nav-item{
+    &:not(:last-child){
+      display: none;
+      @include media-query($on-laptop){
+      display: block;
+      }
+    }
+    &:last-child{
+      margin-left: 15px;
+      @include media-query($on-laptop){
+        margin-left: 0;
+        margin-right: 15px;
+      }
+    }
+    .nav-link{
+      text-align: center;
+      vertical-align: middle;
+      padding: 2px 5px 5px 5px;
+      height: 34px;
+      width: 34px;
+    }
+  }
+}
+//estilos para el menú
+.caja_iconos{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  align-items: center;
+  background: transparent;
+.icon-buscador{
+    color: white;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: 0s;
   }
 }
 //icono menú
@@ -116,7 +149,7 @@
   height: 37px;
   padding: 10px;
   cursor: pointer;
-  @include media-query($content-width){
+  @include media-query($on-laptop){
     display: block;
   }
 }
@@ -145,23 +178,12 @@
   bottom: -7px
 }
 //fin icono menú
-//menú
-.active{
-  background: rgba(42,42,42, .2) !important;
-  border-radius: 3px;
-  box-shadow: -1px -1px 6px .5px rgba(255, 255, 255, 0.75);
-  border: thin solid #BFBFBF;
-  color: #fff !important;
-  font-weight: 700 !important;
-  text-decoration: none;
-}
 
 //============= estilos menú móvil
-.menu-mobile{
-  @extend %display-block;
+.menu___mobile{
   background:$bg-menu;
   transition: .500s;
-  padding-top: 15px;
+  padding-top: 25px;
   padding-right: 15px;
   padding-bottom: 15px;
   padding-left: 15px;
@@ -171,6 +193,9 @@
   height: 100%;
   width: 350px;
   z-index: 999999999;
+  @media screen and (min-width: $on-laptop){
+    display: none !important;
+  }
   @include media-query($on-palm){
     background: rgba(35,34,45,.95);
     width: 75%;
@@ -198,13 +223,13 @@
   }
 }
 //Menu mobile
-.menu-mobile-list{
+.nav__mobile{
 	 margin-top:10px;
-  .item{
+  .nav-item{
     display: inline-block;
     margin-bottom: 10px;
     width: 100%;
-    .link{
+    .nav-link{
       @extend %display-block;
       color: #fff;
       padding: 1em 1em;
@@ -217,4 +242,14 @@
       }
     }
   }
+}
+
+//Active menú móvil
+.active-mobile{
+  background: rgba(42,42,42, .2) !important;
+  border-radius: 3px;
+  box-shadow: -1px -1px 6px .5px rgba(255, 255, 255, 0.75);
+  border: thin solid #BFBFBF;
+  color: $text-white !important;
+  text-decoration: none;
 }

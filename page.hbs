@@ -5,18 +5,16 @@
 
 {{!-- Everything inside the #post tags pulls data from the page --}}
 {{#post}}
-<main class="content" role="main">
-<div class="wrapper inner-post">
+<header class="main-header {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+    {{navigation}}
+</header>
+<main class="relleno-superior relleno-inferior" role="main">
+<div class="contenedor___post contenedor">
     <article class="{{post_class}}">
         <header class="page-header">
             <h1 class="post-title">{{title}}</h1>
-            {{#if image}}
-                <img src="{{image}}" alt="imagen - {{title}}">
-            {{/if}}
         </header>
-
         <section class="post-content">
-            <hr/>
             {{content}}
         </section>
     </article>

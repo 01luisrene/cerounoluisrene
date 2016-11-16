@@ -1,0 +1,27 @@
+//Paginación
+.pagination{
+  @extend %flexbox-center;
+  -webkit-align-items: center;
+  align-items: center;
+  margin: 1em auto;
+}
+.page-number{
+  font-size: 14px;
+}
+.newer-posts, .older-posts{
+  margin: 0 .5em;
+  padding: .5em .7em;
+  font-size: 14px;
+}
+.btn-pagination-active{
+  background: #DBDBDB;
+  border: 1px solid #161F21;
+  color: #161F21;
+  &:hover{
+    color: #202C2F;
+  }
+}
+.btn-pagination-disabled{
+  border: 1px solid #C2C1C1;
+  cursor: default;
+}

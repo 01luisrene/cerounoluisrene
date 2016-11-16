@@ -1,25 +1,29 @@
 {{!< default}}
+<header>
+    {{navigation}}
+</header>
+<section class="relleno-superior relleno-inferior">
+    <div class="contenedor">
+        {{#if success}}
+            <header>
+                <h1>Success!</h1>
+                <p>Gracias por suscribirte al blog.<br> Ahora podras mantenerte informado de las nuevas publicaciones del blog 01luisrene.</p>
+            </header>
+            <section>
+                <img src="{{asset "images/code_languages.png"}}" alt="">
+            </section>
+        {{else if error}}
+            <header>
+                <h1>Error!</h1>
+            </header>
 
-<section class="wrapper">
-    {{#if success}}
-        <header>
-            <h1>Success!</h1>
-            <p>Gracias por suscribirte al blog.<br> Ahora podras mantenerte informado de las nuevas publicaciones del blog 01luisrene.</p>
-        </header>
-        <section>
-            <img src="{{asset "images/code_languages.png"}}" alt="">
-        </section>
-    {{else if error}}
-        <header>
-            <h1>Error!</h1>
-        </header>
+            {{subscribe_form autofocus="true"}}
+        {{else}}
+            <header>
+                <h1>Subscribe...</h1>
+            </header>
+            {{subscribe_form autofocus="true"}}
 
-        {{subscribe_form autofocus="true"}}
-    {{else}}
-        <header>
-            <h1>Subscribe...</h1>
-        </header>
-        {{subscribe_form autofocus="true"}}
-
-    {{/if}}
+        {{/if}}
+    </div>
 </section>

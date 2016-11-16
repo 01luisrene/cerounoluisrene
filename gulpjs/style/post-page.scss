@@ -1,28 +1,38 @@
+  .main-header{
+    background-position: center center;
+    background-size: cover;
+    min-height: 350px;
+  }
+  .contenedor___post{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+  .post{
+      width: 66%;
+      @include media-query($content-block){
+        width: 100%;
+      }
+  }
   .widget-content{
     -webkit-align-self: baseline;
     align-self: baseline;
     border: thin solid #CECBCB;
-    margin-left: 2%;
     padding-left: 5px;
     padding-top: 5px;
     padding-right:5px;
-    width: 30%;
+    width: 32%;
     @include media-query($content-block){
-      margin-left: 0;
-      width: 100%;
+      display: none;
     }
     .widget{
+      margin-left: auto;
+      margin-right: auto;
       margin-bottom: 1em;
     }
   }
 
-// post & page
-.page-content, .content{
-  padding-top: 1em;
-  padding-bottom: 1em;
-  position:relative;
-  z-index: 2;
-}
 .page-cover{
   margin-bottom: 15px;
 }
@@ -48,12 +58,9 @@
   }
 }
 .post-title {
-    font: 3em $base-font-family;
     font-weight: 700;
     font-size: 42px;
-    letter-spacing: -1px;
     line-height: 1;
-
     @include media-query($on-laptop) {
       font-size: 36px;
       line-height: 38px;
@@ -123,8 +130,14 @@
 //Formulario de suscripción
 .form-subscribe{
   .form-group input{
+    border: thin solid $color-name;
+    font-family: $lato-font-family;
+    font-size: 16px;
     padding: .5em;
     width: 40%;
+    &:focus{
+      outline: none;
+    }
     @include media-query($on-laptop){
       width: 80%;
     }
@@ -133,6 +146,8 @@
     }
   }
   button{
+    background-color: rgba(22,154,104,.8);
+    color: $text-white;
     border: thin solid #464444;
     margin: .5em auto;
   }
@@ -144,23 +159,24 @@
   -webkit-justify-content: space-between;
   justify-content: space-between;
   margin: 1em 0;
-  position: relative;
   @include media-query(700px){
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
 }
+.next, .prev{
+  position: relative;
+}
 .next::before{
-    background: #3D3C3C;
+  background: #3D3C3C;
   border-right: 4px solid rgba(0,151,75, .7);
   border-bottom: 4px solid rgba(0,151,75, .7);
   color: $text-white;
   content: "« Siguiente";
   padding: .1em .3em;
   position: absolute;
-  top: 4px;
-  left: 4px;
-
+  top: 0;
+  left: 0;
 }
 .prev::after{
   background: #3D3C3C;
@@ -170,8 +186,8 @@
   content: "Anterior »";
   padding: .1em .3em;
   position: absolute;
-  top: 4px;
-  right: 4px;
+  top: 0;
+  right: 0;
 
 }
 .read-next-story{
@@ -278,9 +294,9 @@ hr{
   }
 }
 //link
-.link{
+a{
   text-decoration: underline;
-  font-weight: 600;
+  font-weight: 700;
   &:hover{
     text-decoration: underline;
   }

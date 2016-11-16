@@ -1,28 +1,28 @@
 {{!< default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 	<!-- Header principal -->
- 	<header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+ 	<header class="home-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
     {{!-- Links de Navegación del Blog --}}
     {{navigation}}
     {{!-- Sección frontal del Blog --}}
     {{> "front"}}
   </header>
- <!-- publicidad-front -->
-<div align="center" class="wrapper pub-home">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-3311622925293570"
-     data-ad-slot="3768997246"
-     data-ad-format="auto"></ins>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-{{!-- The main content area on the homepage --}}
-<main class="page-content loop__content print-hidden" role="main">
+  <!-- publicidad-front -->
+  <div align="center" class="wrapper pub-home">
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-3311622925293570"
+       data-ad-slot="3768997246"
+       data-ad-format="auto"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  </div>
+  {{!-- The main content area on the homepage --}}
+  <main class="page-content loop__content print-hidden" role="main">
 
-  {{!-- The tag below includes the post loop - partials/loop.hbs --}}
-  {{> "loop"}}
+    {{!-- The tag below includes the post loop - partials/loop.hbs --}}
+    {{> "loop"}}
 
-</main>
+  </main>

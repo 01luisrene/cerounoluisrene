@@ -29,7 +29,6 @@ p, div, header, main, article, section, aside, footer, figure, hgroup, nav{
   font-style: normal;
 }
 body {
-  background-color: #688B95;
   font: $base-font-weight $base-font-size $base-font-family;
   color: $text-color;
   -webkit-text-size-adjust: 100%;
@@ -38,8 +37,7 @@ body {
   -o-font-feature-settings: "kern" 1;
   font-feature-settings: "kern" 1;
   font-kerning: normal;
-  position: relative;
-  padding-top: 47px;
+  font-size: 18px;
 }
 figure a > img{
     width: 100%;
@@ -63,24 +61,23 @@ li {
          margin-bottom: 0;
     }
 }
-h2, h3, h4, h5, h6 {
-    font-weight: $base-font-weight;
+h1, h2, h3, h4, h5, h6 {
+  font-family: $lato-font-family;
+  font-weight: $base-font-weight;
+  letter-spacing: -1px;
 }
 h1{
     font-size: 3em;
-    font-family: $lato-font-family;
     font-weight: 700;
     line-height: normal;
 }
 h2 {
   font-size: 2em;
-  font-family: $lato-font-family;
   font-weight: 700;
   text-transform: uppercase;
 }
 h3 {
   font-size: 1.3em;
-  font-family: $lato-font-family;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -113,6 +110,7 @@ blockquote {
   border-right: thin solid $grey-color-light;
   border-bottom: thin solid $grey-color-light;
   padding: $spacing-unit / 2;
+  margin-left: 15px;
   font-size: 18px;
   letter-spacing: -1px;
   font-style: normal;

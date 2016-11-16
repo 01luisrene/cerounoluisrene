@@ -3,23 +3,19 @@
 <head>
     {{> "head"}}
 </head>
-<body class="{{body_class}} nav-closed">
-{{!-- The blog navigation links --}}
-{{navigation}}
-<div class="site-wrapper">
+<body class="{{body_class}}">
 {{#post}}
-<main class="content" role="main">
-<div class="wrapper inner-post">
+{{!-- The blog navigation links --}}
+<header class="main-header {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+    {{navigation}}
+</header>
+<main class="relleno-superior relleno-inferior" role="main">
+<div class="contenedor___post contenedor">
     <article class="{{post_class}}">
         <header class="page-header">
             <h1 class="post-title">{{title}}</h1>
-            {{#if image}}
-                <img src="{{image}}" alt="imagen - {{title}}">
-            {{/if}}
         </header>
-
         <section class="post-content">
-            <hr/>
             {{content}}
         </section>
     </article>
@@ -29,8 +25,14 @@
 {{/post}}
 {{!-- The tiny footer at the very bottom --}}
 {{> "footer"}}
-</div>
-{{> "scripts"}}
+{{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+{{!-- Ghost outputs important scripts and data with this tag --}}
+{{ghost_foot}}
+{{!-- The main JavaScript file for 01luisrene --}}
+<script type="text/javascript" src="{{asset "js/app.min.js"}}"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57004124cf559f51"></script> 
+
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyAIokqr9g-NE7L0CZFH3sx9DHX4VgDkuqw"></script>
 <!-- Llamo a mi script map-->
 <script type="text/javascript" src="{{asset "js/geo.html5.min.js"}}"></script>

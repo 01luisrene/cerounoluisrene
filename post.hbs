@@ -6,33 +6,19 @@
 <div id="header" class="site-header headroom">
     {{navigation}}
 </div>
-<section class="meta-header wrapper">
-<h1 class="post-title">{{title}}</h1>
-<p class="post-meta">
-    <i class="ion-calendar"></i> <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">
-    {{date format="DD MMMM YYYY"}}</time> &nbsp; 
-    {{#if tags}}<i class="ion-pricetags"></i> <span class="post-tag">{{tags separator=" " limit="4"}}</span>{{/if}}
-</p>
-</section>
 </header>
-
-{{!-- Everything inside the #post tags pulls data from the post --}}
-<div align="center" class="wrapper pub-top">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <!--Publish-001 -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-3311622925293570"
-       data-ad-slot="4058532046"
-       data-ad-format="auto"></ins>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-<main class="content wrapper inner-post" role="main">
+<main class="relleno-superior relleno-inferior" role="main">
+<div class="contenedor___post contenedor">
     <article class="{{post_class}}">
+        <header>
+            <h1 class="post-title">{{title}}</h1>
+            <p class="post-meta">
+                <i class="fa fa-calendar-o"></i> <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">
+                {{date format="DD MMMM YYYY"}}</time> &nbsp;{{#if tags}} <i class="fa fa-tags" aria-hidden="true"></i> <span class="post-tag">{{tags separator=" " limit="4"}}</span>{{/if}}
+            </p>
+            <div class="addthis_sharing_toolbox"></div>
+        </header>
         <section class="post-content">
-            <div class="addthis_sharing_toolbox" style="text-align: center;"></div>
             {{content}}
         </section>
         <div align="center" class="pub-all">
@@ -117,7 +103,7 @@
                 <p class="parrafo-read-next">{{excerpt words="19"}}&hellip;</p>
             </a>
             {{else}}
-            <span class="read-next-story next" style="background-image: url({{asset "images/template/desierto.jpg"}})">
+            <span class="read-next-story next" style="background-image: url({{asset "images/404.jpg"}})">
                 <button class="btn btn-read-next">Previous</button>
                 <p class="parrafo-next">No hay más posts</p>
             </span>
@@ -129,7 +115,7 @@
                 <p class="parrafo-read-next">{{excerpt words="19"}}&hellip;</p>
             </a>
             {{else}}
-            <span class="read-next-story prev" style="background-image: url({{asset "images/template/desierto.jpg"}})">
+            <span class="read-next-story prev" style="background-image: url({{asset "images/404.jpg"}})">
                 <button class="btn btn-read-next">Next</button>
                 <p class="parrafo-prev">No hay más posts</p>
             </span>
@@ -141,5 +127,6 @@
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
     </article>
     {{> "aside"}}
+</div>
 </main>
 {{/post}}
