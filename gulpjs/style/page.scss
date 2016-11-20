@@ -81,83 +81,107 @@ p.text-foo{
   margin-left: -1.2em;
 }
 //======================================TAGS - AUTOR===================================//
-.main-header-content.tag, .autor-perfil{
+.main-header-content.tag{
   text-align: center;
   padding-top: $spacing-unit;
   padding-bottom: $spacing-unit;
-  .tag-titulo, .tag-descripcion, .autor-perfil-titulo, .autor-perfil-bio{
-    color: darken($color-article, 60%);
-    text-shadow: 2px 0px 0px rgba(255, 255, 255, 1);
-  }
-  .tag-titulo, .autor-perfil-titulo{
-    text-indent: 0;
-    text-transform: uppercase;
-    margin-top: $spacing-unit / 2;
-  }
-  .tag-descripcion{
-    margin-bottom: 0;
-  }
-  .tag-descripcion, .autor-perfil-bio{
-    background: rgba(255,255,255, .7);
-    font-weight: 300;
-    padding: .5em;
-  }
+}
+.tag-titulo, .tag-descripcion, .autor-titulo, .autor-bio{
+  color: darken($color-article, 60%);
+  text-shadow: 2px 0px 0px rgba(255, 255, 255, 1);
+}
+.tag-titulo{
+  text-indent: 0;
+  text-transform: uppercase;
+  margin-top: $spacing-unit / 2;
+}
+.tag-descripcion{
+  margin-bottom: 0;
+}
+.tag-descripcion{
+  background: rgba(255,255,255, .7);
+  font-weight: 300;
+  padding: .5em;
 }
 
 //AUTOR
 .main-header.autor-head{
-  position: relative;
+  height: 40vh;
+  min-height: 180px;
 }
 .autor-perfil{
-  padding-bottom: $spacing-unit + 15;
+  border-bottom: 1px solid $grey-color-light;
+  text-align: center;
+  padding: 0 15px 2em 15px;
+  position: relative;
+  margin-bottom: 2.5em;
   @include media-query($on-small-laptop){
-  //800px
-    padding-bottom: $spacing-unit * 2;
-  }
-}
-.autor-perfil-bio{
-  margin-bottom: $spacing-unit / 2; //15px
-}
-.autor-meta{
-  i{
-    color: $color-theme;
-  }
-  span, a{
-    font-size: $small-font-size;
-    color: darken($color-article, 40%);
-    font-style: italic;
-    &:not(:last-child){
-      margin-right: 15px;
-    }
-  }
-}
-.autor-perfil-imagen{
-    margin-left: -40px;
-    position: absolute;
-    left: 50%;
-    bottom: -45px;
-    height: 80px;
-    width: 80px;
-    @include media-query($on-small-laptop){
     //800px
-      margin-left: -30px;
-      bottom: -15px;
-      height: 60px;
-      width: 60px;
+    margin-bottom: 2em;
+  }
+  &::after{
+    display: block;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: #E7EEF2 1px solid;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    background: #FFF;
+    border-radius: 100%;
+    box-shadow: #FFF 0 0 0 5px;
+  }
+  .autor-titulo{
+    text-indent: 0;
+    margin-top: $spacing-unit / 2;
+  }
+  .autor-bio{
+    font-size: $base-font-size;
+    line-height: 1.5em;
+    font-weight: 400;
+    color: #50585D;
+    letter-spacing: 0;
+    text-indent: 0;
+    margin-bottom: $spacing-unit / 2; //15px
+  }
+  .autor-meta{
+    span, a{
+      font-size: $small-font-size;
+      color: darken($color-article, 40%);
+      font-style: italic;
     }
-    @include media-query($on-small-tablet){
-    //600px
-    bottom: -10px;
+    span{
+      &:not(:last-child){
+        margin-right: 15px;
+      }
+      @include media-query($on-laptop){
+      //900px
+        display: block;
+        margin: 15px auto;
+      }
     }
-  .img{
-    background-size: 100%;
-    border: thin solid darken($color-article, 40%);
-    border-radius: 50%;
-    height: 100%;
-    width: 100%;
+  }
+  .autor-imagen{
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 120px;
+    height: 120px;
+    padding: 3px;
+    margin: -100px auto 0 auto;
+    box-shadow: none;
+    @include media-query($on-small-laptop){
+      //800px
+      margin: -70px auto 0 auto;
+    }
+    @include media-query($on-small-laptop){
+      //480px
+     
+    }
   }
 }
-
 
 //================================CONTACTO=================================//
 .box-contacto{

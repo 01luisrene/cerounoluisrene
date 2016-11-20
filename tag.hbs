@@ -3,7 +3,7 @@
 <header class="main-header tag-head {{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}{{#if @blog.cover}}cover" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}{{/if}}">
     {{navigation}}
       {{#tag}}
-	    	<section class="main-header-content tag contenedor">
+	    	<section class="main-header-content tag inner">
 	        <h1 class="tag-titulo">{{name}}</h1>
 	        <h2 class="tag-descripcion">
 	            {{#if description}}
