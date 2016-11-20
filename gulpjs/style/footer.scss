@@ -1,65 +1,48 @@
-//Site footer
+//==========================================FOOTER===================================//
 .site-footer {
   background-image: url('/assets/images/fondo_footer.png');
   position:relative;
-  background-color: #383838;
   border-top: 1px solid $grey-color-light;
-  padding: $spacing-unit 0 0 0;
+  padding: ($spacing-unit/2) 0;
   z-index: 2;
 }
+.footer-titulo.inspiracion{
+  color: $color-theme;
+  margin-top: 1em;
+  position: relative;
+  @include media-query($on-laptop) {
 
+  }
+  @include media-query($on-smartphone){
+    margin-top: 0;
+  }
+  &::before{
+    display: block;
+    background: $text-white;
+    content: "";
+    height: 4px;
+    position: absolute;
+    bottom: -8px;
+    width: 70%;
+  }
+}
 .footer-col-wrapper {
   @extend %flexbox-flex-end;
+  color: #EFEDED;
   font-size: 15px;
-  color: $grey-color;
 }
-
-.footer-col {
- // padding-left: $spacing-unit / 2;
-  .footer-title{
-    @extend %display-block;
-    color: #fff;
-    font-family: $lato-font-family;
-    font-size: 1.3em;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: $spacing-unit / 2;
-    width: 100%;
-  }
-  a{
-    color: $brand-color;
-  }
-  a:visited{
-    text-decoration: underline;
-  }
-}
-
 .footer-col-1 {
-    width: 35%;
+  width: 45%;
 }
 
 .footer-col-2 {
-    width: 20%;
+  padding-left: 2%;
+  width: 35%;
 }
 
 .footer-col-3 {
   text-align: center;
-  width: 45%;
-  //Form Suscribete
-  .form-subscribe{
-    .subscribe-email{
-      width: 80%;
-      @include media-query($on-smartphone){
-        width: 100%;
-      }
-    }
-    button{
-      margin: .5em auto;
-    }
-    .gh-subscribe-rss{
-      
-    }
-  }
+  width: 20%;
 }
 
 @include media-query($on-laptop) {
@@ -67,11 +50,10 @@
     width: 50%;
   }
   .footer-col-2{
-    padding-left: 2%;
-    width: 48%;
+    width: 50%;
   }
   .footer-col-3 {
-    border-top: thin dotted $color-name;
+    border-top: thin dotted $color-theme;
     margin-top: 1em;
     padding-top: 1em;
     width:100%;
@@ -79,7 +61,7 @@
 }
 @include media-query($on-smartphone){
   .footer-col-2{
-    border-top: thin dotted $color-name;
+    border-top: thin dotted $color-theme;
     margin-top: 1em;
     padding-top: 1em;
     padding-left: 0;
@@ -88,50 +70,123 @@
     width:100%;
   }
 }
-.contact-list,
-.social-media-list {
+.footer-nav-redes{
     list-style: none;
     margin-left: 0;
     .fa{
       width: 20px;
     }
 }
-// name app
-.footer-name-app {
-  @extend %display-block;
-  color: $color-name-app;
-  font-family:$monaco-font-family;
-  font-size: 1.3em;
-  margin-bottom: $spacing-unit / 2;
-  @include media-query($on-smartphone) {
-      font-size: 1.5em;
+.copyright{
+  font-size: 1em;
+}
+//====================================COOKIES=====================================//
+.barra-aceptacion-cookie{
+  background: rgba(42,42,42, .9);
+  border-top: thin solid #606060;
+  position: fixed;
+  bottom:0;
+  text-align: center;
+  padding: .5em 1em;
+  width: 30%;
+  z-index: 999999;
+  @include media-query($on-laptop){
+    width: 100%;
   }
-}
-.footer-name-app:before {
-  color: #fff;
-  content: '{';
-  font-family: $monaco-font-family;
-  text-shadow: none;
-}
-.footer-name-app:after {
-  color: #fff;
-  content: '}';
-  font-family: $monaco-font-family;
-  text-shadow: none;
-}
-//copy
-.footer-copy{
-  padding: .5em 0;
-  width: 100%;
-  .copy-parrafo{
-    @extend %display-block;
-    color: $text-white;
-    text-align: center;
-    font-size: 19px;
+  p{
+    color: #FEFF27;
+    font-size: .8em;
+    line-height: 20px;
     margin-bottom: 0;
+    font-weight: 400;
+    letter-spacing: normal;
   }
-  a{
-      color: $text-white;
+  a, a:hover{
+    color: #fff;
   }
-   
+}
+.btn-cookie{
+  background: $text-white;
+  display: inline-block;
+  border: 2px solid #1D1B1B;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1em;
+  height: 30px;
+  width: 30px;
+  padding: 5px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  @include media-query($on-laptop){
+    right: 5px;
+  }
+  i{
+    display: block;
+    color: #333333;
+  }
+}
+//=====================================BOTÓN SUBUR=========================//
+.boton-subir{
+  display: none;
+  background: $color-theme;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  right: 15px;
+  bottom:25%;
+  z-index: 999999999;
+  @include media-query($on-small-tablet){
+    background: rgba(0,151,75, .8);
+    border: 2px solid rgba(255,255,255, .2);
+    height: 80px;
+    width: 80px;
+    right: 50%;
+    bottom: -40px;
+    margin-right: -40px;
+  }
+  &:focus{
+    outline: none;
+  }
+  &:hover{
+    border: 2px solid #4F4B4B;
+  }
+  i{
+    color: #fff;
+    font-size: 1.5em;
+    padding: 13px 10px 10px 9px;
+    -ms-transform: rotate(-45deg); // IE 9 
+    -webkit-transform: rotate(-45deg); // Chrome, Safari, Opera
+    transform: rotate(-45deg);
+    @include media-query($on-small-tablet){
+      padding: 20px 10px 10px 23px;
+    }
+  }
+}
+//==================================IE VIEJOS==============================//
+.browser-antiguo{
+  background-color:#363636;
+  position: fixed;
+  top:0;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 5%;
+  z-index: 999999;
+  .browserupgrade{
+    font-family: $base-font-family;
+    font-size: 2.5em;
+    color: #A7A7A7;
+    vertical-align: middle;
+    position:relative;
+    top: 30%;
+    a{
+      color: #1A5FBB;
+      &:hover{
+        color: darken(#1A5FBB, 10%);
+      }
+    }
+  }
 }

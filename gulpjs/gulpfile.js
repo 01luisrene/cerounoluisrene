@@ -9,23 +9,7 @@ var gcmq = require('gulp-group-css-media-queries');
 var uglify = require('gulp-uglify');
 var notify = require('gulp-notify');
 
-gulp.task('sass', function(){
-	var processors = [
-		autoprefixer({browsers: ['last 2 versions'] })
-	];
-	return gulp.src('./sass/main.scss')
-	.pipe(sass().on('error', sass.logError))
-	.pipe(sourceMaps.init())
-	.pipe(postCss(processors))
-	.pipe(gcmq())
-	.pipe(cleanCss())
-	.pipe(concat('styles.css'))
-	.pipe(sourceMaps.write('.'))
-	.pipe(gulp.dest('../assets/css/'))
-	.pipe(notify("Ha terminado la tarea sass"));
-});
-
-gulp.task("css", function(){
+gulp.task("vendor-css", function(){
 	return gulp.src('./css/**/*.css')
 	.pipe(cleanCss())
   .pipe(concat('vendor.css'))
@@ -38,7 +22,7 @@ gulp.task('style', function(){
 	autoprefixer({browsers: ['last 2 versions'] })
 	];
 
-	return gulp.src('./style/estilo.scss')
+	return gulp.src('./style/screen.scss')
 	.pipe(sass().on('error', sass.logError))
 	.pipe(postCss(processors))
 	.pipe(gcmq())
@@ -57,11 +41,10 @@ gulp.task('js', function () {
 });
 
 gulp.task('watch', function(){
-	gulp.watch('./sass/**/*', ['sass']);
 	gulp.watch('./style/**/*', ['style']);
-	gulp.watch('./css/**/*', ['css']);
+	gulp.watch('./css/**/*', ['vendor-css']);
 	gulp.watch('./js/**/*', ['js']);
 });
 
 
-gulp.task('default', ['watch', 'sass', 'css', 'style', 'js']);
+gulp.task('default', ['watch', 'vendor-css', 'style', 'js']);

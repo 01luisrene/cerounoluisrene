@@ -1,29 +1,59 @@
 {{!< default}}
-<header>
+<header class="suscribete-header">
     {{navigation}}
 </header>
-<section class="relleno-superior relleno-inferior">
-    <div class="contenedor">
-        {{#if success}}
-            <header>
-                <h1>Success!</h1>
-                <p>Gracias por suscribirte al blog.<br> Ahora podras mantenerte informado de las nuevas publicaciones del blog 01luisrene.</p>
-            </header>
-            <section>
-                <img src="{{asset "images/code_languages.png"}}" alt="">
-            </section>
-        {{else if error}}
-            <header>
-                <h1>Error!</h1>
-            </header>
-
-            {{subscribe_form autofocus="true"}}
-        {{else}}
-            <header>
-                <h1>Subscribe...</h1>
-            </header>
-            {{subscribe_form autofocus="true"}}
-
-        {{/if}}
-    </div>
-</section>
+<main class="main">
+  {{#if success}}
+    <article class="contenedor small">
+      <header>
+          <h1 class="post-titulo">Suscripción Exitosa!</h1>
+          <div class="addthis_sharing_toolbox compartir-redes-sociales"></div>
+          <p>Gracias por suscribirte al blog.<br> Ahora podrás mantenerte informado de las nuevas publicaciones del blog 01luisrene.</p>
+      </header>
+      <section>
+          <ul class="code">
+            <li>
+              <img src="{{asset "images/code_lang/corchete_left.png"}}" alt="Corchete Left">
+            </li>
+            <li>
+              <a href="/tag/html/" title="HTML5"><img src="{{asset "images/code_lang/html.png"}}" alt="HTML"></a>
+            </li>
+            <li>
+              <a href="/tag/css/" title="CSS3"><img src="{{asset "images/code_lang/css.png"}}" alt="CSS"></a>
+            </li>
+            <li>
+              <a href="/tag/python/" title="PYTHON"><img src="{{asset "images/code_lang/python.png"}}" alt="PYTHON"></a>
+            </li>
+            <li>
+              <a href="/tag/javascript/" title="JavaScript"><img src="{{asset "images/code_lang/javascript.png"}}" alt="JavaScript"></a>
+            </li>
+            <li>
+              <a href="/tag/responsive-design/" title="Responsive Design"><img src="{{asset "images/code_lang/responsive_design.png"}}" alt="Responsive Design"></a>
+            </li>
+            <li>
+              <img src="{{asset "images/code_lang/corchete_right.png"}}" alt="Corchete Right">
+            </li>
+          </ul>
+      </section>
+    </article>
+  {{else if error}}
+    <article class="contenedor small suscribete">
+      <header>
+          <h1 class="post-titulo">Error!</h1>
+      </header>
+      <section>
+        {{subscribe_form autofocus="true"}}
+      </section>
+    </article>
+  {{else}}
+    <article class="contenedor small suscribete">
+      <header>
+          <h1 class="post-titulo">Suscribete a Nuestro Newsletter </h1>
+      </header>
+      <div class="addthis_sharing_toolbox compartir-redes-sociales"></div>
+      <section>
+        {{subscribe_form autofocus="true"}}
+      </section>
+    </article>
+  {{/if}}
+</main>

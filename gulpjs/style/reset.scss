@@ -1,16 +1,95 @@
-body, h1, h2, h3, h4, h5, h6,p, blockquote, pre, hr,dl, dd, ol, ul, figure {margin: 0;padding: 0;}
+/* ==========================================================================
+   0. normalize.css v3.0.3 | MIT License | git.io/normalize | (minified)
+   ========================================================================== */
 
-p, div, header, main, article, section, aside, footer, figure, hgroup, nav{
-  display:block;
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+body { margin: 0; }
+article, aside, details,
+figcaption, figure,
+footer, header,
+main, menu, nav,
+section, summary { display:block; }
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+audio:not([controls]) { display: none; height: 0; }
+[hidden], template { display: none; }
+a { background-color: transparent;}
+a:active, a:hover { outline: 0; }
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+dfn { font-style: italic; }
+h1 { font-size: 2em; margin: 0.67em 0; }
+mark { background: #ff0; color: #000; }
+small { font-size: 80%; }
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+img { border: 0; }
+svg:not(:root) { overflow: hidden; }
+figure { margin: 1em 40px; }
+hr { box-sizing: content-box; height: 0; }
+pre { overflow: auto; }
+code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em; }
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+button { overflow: visible; }
+button, select { text-transform: none; }
+button, html input[type="button"],
+input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+button[disabled], html input[disabled] { cursor: default; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+input { line-height: normal; }
+input[type="checkbox"],
+input[type="radio"] { box-sizing: border-box; padding: 0; }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button { height: auto; }
+input[type="search"] { -webkit-appearance: textfield; }
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+legend { border: 0; padding: 0; }
+textarea { overflow: auto; }
+optgroup { font-weight: bold; }
+table{ border-collapse: collapse; border-spacing: 0; }
+td, th{ padding: 0; }
+
+/* ==========================================================================
+   Estilos de 01luisrene.com
+   ========================================================================== */
+blockquote, pre, hr, ol, ul, figure {margin: 0;padding: 0;}
+
+blockquote, pre{
+  @extend %margen-inferior;
 }
 ::-moz-selection { 
     color: #171717;
-    background: #00A653;
+    background: lighten($color-theme, 10%);
 }
 
 ::selection {
     color: #171717; 
-    background: #00A653;
+    background: lighten($color-theme, 10%);
 }
 
 *, *::before, *::after{
@@ -29,21 +108,19 @@ p, div, header, main, article, section, aside, footer, figure, hgroup, nav{
   font-style: normal;
 }
 body {
-  font: $base-font-weight $base-font-size $base-font-family;
   color: $text-color;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  font-size: $base-font-size;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
   -o-font-feature-settings: "kern" 1;
   font-feature-settings: "kern" 1;
   font-kerning: normal;
-  font-size: 18px;
 }
 figure a > img{
-    width: 100%;
-}
-h1, h2, h3, h4, h5, h6,p, blockquote, pre,ul, ol, dl, figure,%vertical-rhythm {
-margin-bottom: $spacing-unit / 2;
+  width: 100%;
 }
 
 img {border:none;max-width: 100%;vertical-align: middle;}
@@ -61,51 +138,145 @@ li {
          margin-bottom: 0;
     }
 }
+//Títulos
 h1, h2, h3, h4, h5, h6 {
   font-family: $lato-font-family;
-  font-weight: $base-font-weight;
   letter-spacing: -1px;
+  line-height: $base-line-height;
+  text-rendering: geometricPrecision;
+      margin: 0 0 0.4em 0;
 }
+
 h1{
-    font-size: 3em;
-    font-weight: 700;
-    line-height: normal;
+    font-size: 2.77em; //50px
+    text-indent: -3px;
+    @include media-query($content-pc){
+      //1000px
+      font-size: 2.55em; //46px
+    }
+    @include media-query($on-laptop){
+      //900px
+      font-size: 2.33em; //42px
+    }
+    @include media-query($on-small-laptop){
+      //800px
+      font-size: 2.11em; //38px
+    }
+    @include media-query($on-smartphone){
+      //480px
+      font-size: 1.77em; //32px
+    }
 }
 h2 {
-  font-size: 2em;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-size: 2em; //36px
+    @include media-query($content-pc){
+      //1000px
+      font-size: 1.88em; //34px
+    }
+    @include media-query($on-laptop){
+      //900px
+      font-size: 1.77em; //32px
+    }
+    @include media-query($on-small-laptop){
+      //800px
+      font-size: 1.66em; //30px
+    }
+    @include media-query($on-smartphone){
+      //480px
+      font-size: 1.55em; //28px
+    }
 }
 h3 {
-  font-size: 1.3em;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-size: 1.666em; //30px
+  @include media-query($content-pc){
+    //1000px
+    font-size: 1.55em; //28px
+  }
+  @include media-query($on-laptop){
+    //900px
+    font-size: 1.44em; //26px
+  }
+  @include media-query($on-small-laptop){
+    //800px
+    font-size: 1.33em; //24px
+  }
+  @include media-query($on-smartphone){
+    //480px
+    font-size: 1.22em; //22px
+  }
 }
+h4 {
+  font-size: 1.388em; //25px
+  @include media-query($content-pc){
+    //1000px
+    font-size: 1.277em; //23px
+  }
+  @include media-query($on-laptop){
+    //900px
+    font-size: 1.166em; //21px
+  }
+  @include media-query($on-small-laptop){
+    //800px
+    font-size: 1.055em; //19px
+  }
+  @include media-query($on-smartphone){
+    //480px
+    font-size: 0.944em; //17px
+  }
+}
+h5, h6{
+   font-size: 1.111em; //20px
+    @include media-query($on-laptop){
+      //900px
+      font-size: 1em; //18px
+    }
+    @include media-query($on-smartphone){
+      //480px
+      font-size: 0.88em; //16px
+    }
+}
+
 address {
   display: inline;
   font-style: inherit;
 }
 
+p{
+  line-height: 30px;
+  margin: 0 0 0.833em 0;
+  @include media-query($on-tablet){
+  //700px
+  font-size: 0.88em; //16px
+  line-height: 28px;
+  }
+  @include media-query($on-smartphone){
+    //480px
+    font-size: 0.77em; //14px
+    line-height: 26px;
+    text-align: justify;
+  }
+}
+
 a {
-  color: #00b058;
+  color: $color-theme;
   cursor: pointer;
   -webkit-transition: 1s;
   text-decoration: none;
-  transition: .500s;
+  transition: .200s;
   &:visited{
-    color: #00b058;
-    text-decoration: underline;
+    color: lighten($color-theme, 5%);
+    text-decoration: none;
   }
   &:hover {
-    color: darken(#00b058, 3%);
-    text-decoration: underline;
+    color: lighten($color-theme, 5%);
+    text-decoration: none;
   }
 }
 
 blockquote {
   color: darken($grey-color, 15%);
   border-radius: 0 5px 5px 0;
-  border-left: 4px solid $color-name;
+  border-left: 4px solid $color-theme;
   border-top: thin solid $grey-color-light;
   border-right: thin solid $grey-color-light;
   border-bottom: thin solid $grey-color-light;
@@ -149,32 +320,4 @@ pre {
         padding-right: 0;
         padding-left: 0;
     }
-}
-//Display bloque
-%display-block{
-  display: block;
-}
-//flexbox
-%flexbox-center{
-display: -webkit-flex;
-display: flex;
--webkit-justify-content: center;
-justify-content: center;
-}
-
-%flexbox-flex-end{
-display: -webkit-flex;
-display: flex;
--webkit-justify-content: flex-end;
-justify-content: flex-end;
--webkit-flex-wrap: wrap;
-flex-wrap: wrap; 
-}
-%flexbox-space-between{
-display: -webkit-flex;
-display: flex;
--webkit-justify-content: space-between;
-justify-content: space-between;
--webkit-flex-wrap: wrap;
-flex-wrap: wrap; 
 }

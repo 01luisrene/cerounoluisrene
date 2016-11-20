@@ -1,15 +1,16 @@
 {{!< default}}
 {{#post}}
-<header class="main-header {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+<header class="main-header page-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
     {{navigation}}
  </header>
-<main class="relleno-superior relleno-inferior" role="main">
+<main class="main" role="main">
 <div class="contenedor___post contenedor">
     <article class="{{post_class}}">
         <header class="page-header">
-            <h1 class="post-title">{{title}}</h1>
+            <h1 class="post-titulo">{{title}}</h1>
         </header>
-        <section class="post-content">
+        <section class="post_contenido">
+            <div class="addthis_sharing_toolbox compartir-redes-sociales"></div>
             {{content}}
         </section>
     </article>

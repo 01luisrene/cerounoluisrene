@@ -1,13 +1,13 @@
 <nav class="pagination" role="navigation">
   {{#if prev}}
-    <a class="newer-posts btn-pagination-active" href="{{page_url prev}}"><i class="ion-ios-arrow-back"></i> Entradas Recientes</a>
+    <a class="newer-posts active" href="{{page_url prev}}"><i class="ion-ios-arrow-back"></i> Entradas Recientes</a>
   {{else}}
-  	<span class="newer-posts btn-pagination-disabled"><i class="ion-ios-arrow-back"></i> Entradas Recientes</span>
+  	<span class="newer-posts disabled"><i class="ion-ios-arrow-back"></i> Entradas Recientes</span>
   {{/if}}
   <span class="page-number">Página {{page}} de {{pages}}</span>
   {{#if next}}
-    <a class="older-posts btn-pagination-active" href="{{page_url next}}">Entradas Antiguas <i class="ion-ios-arrow-forward"></i></a>
+    <a class="older-posts active" href="{{page_url next}}">Entradas Antiguas <i class="ion-ios-arrow-forward"></i></a>
   {{else}}
-  	<span class="older-posts btn-pagination-disabled">Entradas Antiguas <i class="ion-ios-arrow-forward"></i></span>
+  	<span class="older-posts disabled">Entradas Antiguas <i class="ion-ios-arrow-forward"></i></span>
   {{/if}}
 </nav>

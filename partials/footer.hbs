@@ -1,17 +1,12 @@
 <!-- Footer -->
 <footer class="site-footer">
   <div class="contenedor footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li><span class="footer-name-app">{{@blog.title}}</span></li>
-          <div class="separador"></div>
-        </ul>
-        <img src="{{asset "images/logo.png"}}" alt="01luisrene.com" title="Logo" style="display: block; margin: 0 auto;" width="100">
-      </div>
+      <section class="footer-col footer-col-1">
+          <h3 class="footer-titulo inspiracion">Toda mi inspiración y conocimiento esta aquí!</h3>
+      </section>
 
-      <div class="footer-col footer-col-2">
-        <span class="footer-title">Redes Sociales</span>
-        <ul class="social-media-list">
+      <section class="footer-col footer-col-2">
+        <ul class="footer-nav-redes">
           {{#if @blog.twitter}}
           <li>
             <i class="fa fa-twitter" aria-hidden="true"></i> <a href="{{twitter_url @blog.twitter}}" target="_blank">Twitter</a>
@@ -29,17 +24,12 @@
           <i  class="fa fa-google-plus" aria-hidden="true"></i> <a href="https://plus.google.com/u/0/+01LuisRene" target="_blank">Google Plus</a>
           </li>
         </ul>
-      </div>
-      <div class="footer-col footer-col-3">
-        <span class="footer-title">Suscribete a {{@blog.title}}</span>
-        {{subscribe_form}}
-        <span class="gh-subscribe-rss">O suscríbase <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">vía RSS</a> con Feedly!</span>
-      </div>
-      <!-- div para copy -->
-      <div class="footer-col footer-copy">
-        <p class="copy-parrafo"><a href="{{@blog.url}}"><b>{{@blog.title}}</b></a> &copy; {{date format="YYYY"}}</a>
+      </section>
+      <section class="footer-col footer-col-3">
+        <p class="copyright"><a href="{{@blog.url}}"><b>{{@blog.title}}</b></a> &copy; {{date format="YYYY"}}</a>
         </p>
-      </div>
+        <img src="{{asset "images/logo.png"}}" alt="01luisrene.com" title="Logo" style="display: block; margin: 0 auto;" width="60">
+      </section>
   </div>
 </footer>
 <!-- Política de cookies  -->

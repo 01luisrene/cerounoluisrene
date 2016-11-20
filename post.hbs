@@ -1,83 +1,84 @@
 {{!< default}}
 {{#post}}
 <!-- Header principal -->
-<header class="main-header {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-{{!-- Links de Navegación del Blog --}}
-<div id="header" class="site-header headroom">
+<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+    {{!-- Links de Navegación del Blog --}}
     {{navigation}}
-</div>
 </header>
-<main class="relleno-superior relleno-inferior" role="main">
+<main class="main" role="main">
 <div class="contenedor___post contenedor">
     <article class="{{post_class}}">
         <header>
-            <h1 class="post-title">{{title}}</h1>
-            <p class="post-meta">
-                <i class="fa fa-calendar-o"></i> <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">
-                {{date format="DD MMMM YYYY"}}</time> &nbsp;{{#if tags}} <i class="fa fa-tags" aria-hidden="true"></i> <span class="post-tag">{{tags separator=" " limit="4"}}</span>{{/if}}
-            </p>
-            <div class="addthis_sharing_toolbox"></div>
+            <h1 class="post-titulo">{{title}}</h1>
+            <section class="post-meta">
+                <i class="fa fa-calendar-o"></i>
+                <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time> 
+                {{#if tags}}
+                <ul class="post-lista-tags">
+                {{#foreach tags limit="5"}}
+                  <li>
+                    <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
+                  </li>  
+                {{/foreach}}
+                </ul>
+                {{/if}}
+            </section>
         </header>
-        <section class="post-content">
+        <section class="post_contenido">
+            <div class="addthis_sharing_toolbox compartir-redes-sociales"></div>
             {{content}}
+            <!--Publicidad-->
+            <div align="center">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-3311622925293570"
+                     data-ad-slot="2571465647"
+                     data-ad-format="auto"></ins>
+            <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            </div>
+            <h3 class="titulo-compartir">Te gusto este artículo, ayudame compartiéndolo&nbsp;:)</h3>
+            <div class="addthis_sharing_toolbox"></div>
         </section>
-        <div align="center" class="pub-all">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- publisher-footer-web -->
-        <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-3311622925293570"
-                 data-ad-slot="2571465647"
-                 data-ad-format="auto"></ins>
-        <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        </div>
-        <h3>Te gusto este artículo, ayudame compartiéndolo :)</h3>
-        <div class="addthis_sharing_toolbox"></div>
-
         <footer class="post-footer">
-
         {{!-- Everything inside the #author tags pulls data from the author --}}
         {{#author}}
 
             {{#if image}}
-            <figure class="author-image">
+            <figure class="autor-imagen">
                 <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
             </figure>
             {{/if}}
 
-            <section class="author">
-                <h4><a href="{{url}}">{{name}}</a></h4>
+            <section class="autor">
+                <h4 class="autor-nombre"><a href="{{url}}">{{name}}</a></h4>
 
                 {{#if bio}}
-                    <p>{{bio}}</p>
+                    <p class="autor-bio">{{bio}}</p>
                 {{else}}
-                    <p>Leer <a href="{{url}}">más posts</a> de este autor.</p>
+                    <p class="autor-mas-post">Leer <a href="{{url}}">más posts</a> de este autor.</p>
                 {{/if}}
-                <ul class="author-links">
+                <ul class="autor-lista-info">
                     {{#if location}}
                       <li>
-                        <i class="ion-ios-location"></i>
-                        <span>{{location}}</span>
+                        <span><i class="fa fa-map-marker" aria-hidden="true"></i> {{location}}</span>
                       </li>
                     {{/if}}
                     {{#if website}}
                       <li>
-                        <i class="ion-android-globe"></i>
-                        <a href="{{website}}" target="_blank">{{website}}</a>
+                        <a href="{{website}}" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i> {{website}}</a>
                       </li>
                     {{/if}}
                     {{#if twitter}}
                       <li>
-                        <i class="ion-social-twitter"></i>
-                        <a href="{{twitter_url}}" target="_blank">{{twitter}}</a>
+                        <a href="{{twitter_url}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> {{twitter}}</a>
                       </li>
                     {{/if}}
                     {{#if facebook}}
                       <li>
-                        <i class="ion-social-facebook"></i>
-                        <a href="{{facebook_url}}" target="_blank">{{@blog.facebook}}</a>
+                        <a href="{{facebook_url}}" target="_blank"> <i class="fa fa-facebook" aria-hidden="true"></i> {{@blog.facebook}}</a>
                       </li>
                     {{/if}}
                 </ul>
@@ -88,8 +89,8 @@
         {{!-- Email subscribe form at the bottom of the page --}}
         {{#if @labs.subscribers}}
         <section class="gh-subscribe">
-            <h3 class="gh-subscribe-title">Suscribirse a {{@blog.title}}</h3>
-            <p>Obtén los últimos mensajes publicados directamente en tu bandeja de entrada.</p>
+            <h3 class="gh-subscribe-title">Únete a mí Blog</h3>
+            <p>Obtén los últimos artículos publicados directamente en tu bandeja de entrada.</p>
             {{subscribe_form placeholder="Your email address"}}
             <span class="gh-subscribe-rss">O suscríbase <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">vía RSS</a> con Feedly!</span>
         </section>
@@ -99,32 +100,34 @@
         <aside class="read-next">
             {{#next_post}}
             <a class="read-next-story next {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-                <h4 class="title-read-next">{{title}}</h4>
-                <p class="parrafo-read-next">{{excerpt words="19"}}&hellip;</p>
+                <h4 class="read-next-title">{{title}}</h4>
+                <p class="read-next-parrafo">{{excerpt words="12"}}&hellip;</p>
             </a>
             {{else}}
-            <span class="read-next-story next" style="background-image: url({{asset "images/404.jpg"}})">
-                <button class="btn btn-read-next">Previous</button>
-                <p class="parrafo-next">No hay más posts</p>
+            <span class="read-next-story disabled">
+                <button class="btn btn-read-next">« Siguiente</button>
+                <p class="read-next-parrafo">No hay más posts</p>
             </span>
             {{/next_post}}
 
             {{#prev_post}}
             <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-                <h4 class="title-read-next">{{title}}</h4>
-                <p class="parrafo-read-next">{{excerpt words="19"}}&hellip;</p>
+                <h4 class="read-next-title">{{title}}</h4>
+                <p class="read-next-parrafo">{{excerpt words="12"}}&hellip;</p>
             </a>
             {{else}}
-            <span class="read-next-story prev" style="background-image: url({{asset "images/404.jpg"}})">
-                <button class="btn btn-read-next">Next</button>
-                <p class="parrafo-prev">No hay más posts</p>
+            <span class="read-next-story disabled">
+                <button class="btn btn-read-next">Anterior »</button>
+                <p class="read-next-parrafo">No hay más posts</p>
             </span>
             {{/prev_post}}
         </aside>
-
-        <h2>Comparte tu opinión</h2>
-        <div id="disqus_thread"></div>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        <!--Formulario de Comentarios-->
+        <section>
+            <h2>Comparte tu Opinión</h2>
+            <div id="disqus_thread"></div>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        </section>
     </article>
     {{> "aside"}}
 </div>

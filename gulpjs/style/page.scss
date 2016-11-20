@@ -1,0 +1,275 @@
+//==========================================STACKS======================================//
+.stack-lista{
+  @extend %flexbox-space-between-wrap;
+  list-style-type: none;
+  padding-left: 0 !important;
+  li{
+    display: inline-block;
+    width: 33%;
+  }
+}
+//=====================MI FAMILIA=======================================//
+img.familia-mas{
+    display: block;
+    margin: 0 auto;
+}
+p.text-foo{
+    text-align: center;
+    margin-top: 15px;
+}
+//================================BUSCADOR==============================//
+.buscador-caja{
+  position: relative;
+  font-size: 18px;
+  label {
+    position: absolute;
+    left: 13px;
+    top: 7px;
+  }
+  .campo-buscador{
+    border: thin solid $color-theme;
+    border-radius: 20px;
+    padding: 0.3em 1.5em 0.3em 2em;
+    height: 40px;
+    width: 70%;
+    margin-bottom: 10px;
+    @include media-query($on-smartphone){
+      width: 100%;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+  .buscador-caja-resultados{
+    margin-top: 1.5em;
+    @include media-query($on-smartphone){
+      margin-top: 0;
+    }
+  }
+}
+.buscador-caja-resultados .buscador-lista-articulos{
+  position: relative;
+  padding-left: 1.2em;
+  list-style-type: none;
+}
+.buscador-lista-articulos {
+  .buscador-items{
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+.buscador-items{
+    &::before{
+      display: inline-block;
+      position: absolute;
+      left: 3px;
+      color: $text-color;
+      content: "\f10c";
+      font-family: "FontAwesome";
+      speak: none;
+      text-rendering: auto;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin-top: 3px;
+    }
+  }
+.buscador-mensaje-resultados{
+  font-size: 12px;
+  margin-left: -1.2em;
+}
+//======================================TAGS - AUTOR===================================//
+.main-header-content.tag, .autor-perfil{
+  text-align: center;
+  padding-top: $spacing-unit;
+  padding-bottom: $spacing-unit;
+  .tag-titulo, .tag-descripcion, .autor-perfil-titulo, .autor-perfil-bio{
+    color: darken($color-article, 60%);
+    text-shadow: 2px 0px 0px rgba(255, 255, 255, 1);
+  }
+  .tag-titulo, .autor-perfil-titulo{
+    text-indent: 0;
+    text-transform: uppercase;
+    margin-top: $spacing-unit / 2;
+  }
+  .tag-descripcion{
+    margin-bottom: 0;
+  }
+  .tag-descripcion, .autor-perfil-bio{
+    background: rgba(255,255,255, .7);
+    font-weight: 300;
+    padding: .5em;
+  }
+}
+
+//AUTOR
+.main-header.autor-head{
+  position: relative;
+}
+.autor-perfil{
+  padding-bottom: $spacing-unit + 15;
+  @include media-query($on-small-laptop){
+  //800px
+    padding-bottom: $spacing-unit * 2;
+  }
+}
+.autor-perfil-bio{
+  margin-bottom: $spacing-unit / 2; //15px
+}
+.autor-meta{
+  i{
+    color: $color-theme;
+  }
+  span, a{
+    font-size: $small-font-size;
+    color: darken($color-article, 40%);
+    font-style: italic;
+    &:not(:last-child){
+      margin-right: 15px;
+    }
+  }
+}
+.autor-perfil-imagen{
+    margin-left: -40px;
+    position: absolute;
+    left: 50%;
+    bottom: -45px;
+    height: 80px;
+    width: 80px;
+    @include media-query($on-small-laptop){
+    //800px
+      margin-left: -30px;
+      bottom: -15px;
+      height: 60px;
+      width: 60px;
+    }
+    @include media-query($on-small-tablet){
+    //600px
+    bottom: -10px;
+    }
+  .img{
+    background-size: 100%;
+    border: thin solid darken($color-article, 40%);
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+
+//================================CONTACTO=================================//
+.box-contacto{
+  margin-top: 1em;
+  width: 100%;
+}
+.formulario-contacto, .container-geo{
+  display: inline-block;
+  padding: 5px;
+  vertical-align: top;
+  width: 49%;
+  @include media-query($on-laptop){
+    width: 100%;
+  }
+}
+.formulario-contacto{
+  .form-imput{
+    input[type='text'], input[type='email'], textarea{
+    border: thin solid $color-theme;
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-bottom: 15px;
+    padding: 5px;
+    transition: 1s;
+      &:focus{
+        outline: none;
+        border-top:thin solid transparent;
+        border-right:thin solid transparent;
+        border-left:thin solid transparent;
+        border-bottom:thin solid $color-theme;
+        }
+    }
+    input{
+      width: 100%;
+    }
+    input[type='submit']{
+      padding: 10px;
+    }
+    textarea{
+      height: 100px;
+      resize: vertical;
+      width: 100%;
+      &:focus{
+        border:thin solid $color-theme;
+      }
+    }
+  }
+}
+
+.contacto-titulo{
+  text-transform: inherit;
+}
+.box-item-contacto{
+  border: thin solid $color-theme;
+  padding: 5px;
+  margin-top: .5em;
+  width: 100%;
+  @include media-query($on-small-tablet){
+    padding: 0;
+  }
+}
+.item-contacto{
+  display: inline-block;
+  margin:0;
+  padding-left: 10px;
+  vertical-align: top;
+  height: 100%;
+  width: 49.5%;
+  &:nth-child(2){
+    border-left: thin solid $color-theme;
+  }
+  @include media-query($on-small-tablet){
+    width: 100%;
+    border-bottom: thin solid $color-theme;
+    padding: 5px;
+    &:nth-child(2){
+      border-left: 0;
+      border-bottom: 0;
+    }
+  }
+  a{
+    font-weight: 400;
+    text-decoration: none;
+  }
+}
+.ico-email{
+  color: #F1C43A;
+}
+.ico-phone{
+  color: $bg-menu;
+  font-size: 25px !important;
+}
+.title-geo{
+  display: block;
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 1em;
+}
+#map_canvas{
+  background: transparent !important;
+  border: thin solid $color-theme;
+  height: 270px;
+  width: 100%;
+  -webkit-box-shadow: 5px 3px 15px 2px #fbebff;
+  box-shadow: 5px 3px 31px 2px #fbebff;
+  overflow: hidden;
+}
+//====================================AGRADECIMIENTO====================================//
+.mensaje-bien{
+  display: block;
+  color: $color-theme;
+  font-size: 5em;
+  line-height: .1em;
+  margin-bottom: 15px;
+}

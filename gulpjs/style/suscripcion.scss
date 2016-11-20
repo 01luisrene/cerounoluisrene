@@ -1,0 +1,45 @@
+//Formulario de suscripción
+.contenedor.small{
+  display: flex;
+  flex-direction: column; 
+  max-width: 700px;
+  width: 100%;
+}
+.contenedor.suscribete{
+  text-align: center;
+}
+.contenedor.small .formulario__suscripcion {
+  background: lighten($color-theme, 65%);
+  border: lighten($color-theme, 55%) 1px solid;
+  margin: 30px auto;
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 5px;
+  text-align: left;
+  .form-group input{
+    margin-bottom: $spacing-unit / 2;
+  }
+  button{
+    padding: 10px;
+    width: 100%;
+  }
+}
+.subscribe-email{
+  border: thin solid lighten($color-theme, 10%);
+  font-family: $lato-font-family;
+  font-size: $small-font-size;
+  transition: all ease 0.1s;
+  margin: 0;
+  padding: 7px;
+  width: 100%;
+  &:focus{
+    border: thin solid $color-theme;
+    outline: none;
+  }
+}
+//Error del Formulario de Suscripción
+.main-error{
+  color: #F45959;
+  text-align: center;
+}

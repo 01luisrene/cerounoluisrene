@@ -1,50 +1,53 @@
 {{!-- Previous/next page links - only displayed on page 2+ --}}
-<section class="loop__articles">
+<section class="___articulos___">
 {{#foreach posts}}
 {{!-- Primer Articulo --}}
-  <article class="item-article {{post_class}} {{#if @first}} primer-articulo" style="background-image: url({{image}}){{else}}no-first{{/if}}">
+  <article class="articulo__item {{post_class}} {{#if @first}} first-post" style="background-image: url({{image}}){{/if}}">
   {{#if @first}}
-    <header>
-    <h2 class="item-article-title" >
-        <a class="item-article-link" href="{{ url}}">{{ title }}</a>
+    <header data-lang="{{#if tags}}{{#foreach tags limit="1"}}{{name}}{{/foreach}}{{/if}}">
+    <h2 class="articulo-item-titulo" >
+        <a class="articulo-item-vinculo" href="{{url}}">{{title}}</a>
     </h2>
     </header>
-    <section class="item-article-description">
-      {{excerpt words="35"}}...
+    <section class="articulo-item-extracto">
+      {{excerpt words="60"}}...
     </section>
     <footer>
-      <span class="item-article-meta"> 
+      <span class="articulo-item-meta"> 
       {{#author}}
         {{#if image}}
         <img src="{{image}}" alt="{{name}}'s Picture" />
         {{/if}}
-        <small>{{name}}</small>
+        <small><a href="{{url}}">{{name}}</a></small>
       {{/author}} 
-      | <time class="post-date fa fa-calendar-o" datetime="{{date format="YYYY-MM-DD"}}"> <small>{{date format="DD MMMM YYYY"}}</small></time></span>
+      | <time datetime="{{date format="YYYY-MM-DD"}}"> <i class="fa fa-calendar-o"></i> <small>{{date format="DD MMMM YYYY"}}</small></time></span>
     </footer>
   {{!--Fin Primer Articulo --}}
   {{else}}
-    <header class="item-article-header">
+    <header class="articulo-item-header">
     {{#if image}}
-      <img class="item-article-image" src="{{image}}" alt="imagen - {{ title }}">
+    <figure class="articulo-item-imagen">
+      <img src="{{image}}" alt="imagen - {{ title }}">
+    </figure>
     {{/if}}
-      <h2 class="item-article-title" >
-        <a class="item-article-link" href="{{ url}}">{{ title }}</a>
+      <h2 class="articulo-item-titulo" >
+        <a class="articulo-item-vinculo" href="{{ url}}">{{ title }}</a>
       </h2>
-      <span class="item-article-meta">
+      <span class="articulo-item-meta">
       {{#author}}
         {{#if image}}
         <img src="{{image}}" alt="{{name}}'s Picture" />
         {{/if}}
-        <small>{{name}}</small>
+        <small><a href="{{url}}">{{name}}</a></small>
       {{/author}} 
-      | <time class="post-date fa fa-calendar-o" datetime="{{date format="YYYY-MM-DD"}}"> <small>{{date format="DD MMMM YYYY"}}</small></time></span>
+      | <time datetime="{{date format="YYYY-MM-DD"}}"> <i class="fa fa-calendar-o"></i> <small>{{date format="DD MMMM YYYY"}}</small></time></span>
+      <a class="articulo-item-comentarios" href="{{url}}#disqus_thread"></a>
     </header>
-    <section class="item-article-description">
-      {{excerpt words="30"}}...
+    <section class="articulo-item-extracto">
+      {{excerpt words="50"}}...
     </section>
-    <footer class="item-article-footer">
-      <a class="btn btn-home" href="{{url}}">Seguir leyendo <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+    <footer class="articulo-item-footer">
+      <a class="btn btn-home" href="{{url}}">Seguir Leyendo <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
     </footer>
   {{/if}}
   </article>
