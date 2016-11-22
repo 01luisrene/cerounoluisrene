@@ -8,6 +8,8 @@ var sourceMaps = require('gulp-sourcemaps');
 var gcmq = require('gulp-group-css-media-queries');
 var uglify = require('gulp-uglify');
 var notify = require('gulp-notify');
+var imagemin = require('gulp-imagemin');
+var pngcrush = require('imagemin-pngcrush');
 
 gulp.task("vendor-css", function(){
 	return gulp.src('./css/**/*.css')
@@ -24,9 +26,11 @@ gulp.task('style', function(){
 
 	return gulp.src('./style/screen.scss')
 	.pipe(sass().on('error', sass.logError))
+	.pipe(sourceMaps.init())
 	.pipe(postCss(processors))
 	.pipe(gcmq())
-	//.pipe(cleanCss())
+	.pipe(cleanCss())
+	.pipe(sourceMaps.write('.'))
   .pipe(gulp.dest('../assets/css/'))
 	.pipe(notify("Ha finalizado la tarea style"));
 });
@@ -40,11 +44,24 @@ gulp.task('js', function () {
     .pipe(notify("Ha finalizado la tarea js"));
 });
 
+//Comprimir imagenes
+gulp.task('images', function() {
+  gulp.src('./images/**/*.{png,jpg,jpeg,gif,svg}')
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],
+      use: [pngcrush()]
+    }))
+    .pipe(gulp.dest('./images-compress'))
+    .pipe(notify("Ha finalizado la compresión de imágenes!"));;
+});
+
 gulp.task('watch', function(){
 	gulp.watch('./style/**/*', ['style']);
 	gulp.watch('./css/**/*', ['vendor-css']);
 	gulp.watch('./js/**/*', ['js']);
+	gulp.watch('./images/**/*', ['images']);
+
 });
 
-
-gulp.task('default', ['watch', 'vendor-css', 'style', 'js']);
+gulp.task('default', ['watch', 'vendor-css', 'style', 'js', 'images']);

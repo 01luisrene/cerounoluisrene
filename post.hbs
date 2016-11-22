@@ -60,28 +60,28 @@
                 {{else}}
                     <p class="autor-mas-post">Leer <a href="{{url}}">más posts</a> de este autor.</p>
                 {{/if}}
-                <ul class="autor-lista-info">
+                <div class="autor-meta">
                     {{#if location}}
-                      <li>
-                        <span><i class="fa fa-map-marker" aria-hidden="true"></i> {{location}}</span>
-                      </li>
+                      <span class="autor-ubicacion fa fa-map-marker">
+                        {{location}}
+                      </span>
                     {{/if}}
                     {{#if website}}
-                      <li>
-                        <a href="{{website}}" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i> {{website}}</a>
-                      </li>
+                      <span class="autor-web fa fa-globe">
+                        <a href="{{website}}" target="_blank"> {{website}}</a>
+                      </span>
                     {{/if}}
                     {{#if twitter}}
-                      <li>
-                        <a href="{{twitter_url}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> {{twitter}}</a>
-                      </li>
+                      <span class="autor-twitter fa fa-twitter">
+                        <a href="{{twitter_url}}" target="_blank"> {{twitter}}</a>
+                      </span>
                     {{/if}}
                     {{#if facebook}}
-                      <li>
-                        <a href="{{facebook_url}}" target="_blank"> <i class="fa fa-facebook" aria-hidden="true"></i> {{@blog.facebook}}</a>
-                      </li>
+                      <span class="autor-facebook fa fa-facebook">
+                        <a href="{{facebook_url}}" target="_blank"> {{@blog.facebook}}</a>
+                      </span>
                     {{/if}}
-                </ul>
+                </div>
             </section>
 
         {{/author}}

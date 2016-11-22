@@ -2,9 +2,9 @@
 <section class="___articulos___">
 {{#foreach posts}}
 {{!-- Primer Articulo --}}
-  <article class="articulo__item {{post_class}} {{#if @first}} first-post" style="background-image: url({{image}}){{/if}}">
+  <article class="articulo__item {{post_class}} {{#if @first}} first-post inner" style="background-image: url({{image}}){{/if}}" data-lang="{{#if tags}}{{#foreach tags limit="1"}}{{name}}{{/foreach}}{{/if}}">
   {{#if @first}}
-    <header data-lang="{{#if tags}}{{#foreach tags limit="1"}}{{name}}{{/foreach}}{{/if}}">
+    <header>
     <h2 class="articulo-item-titulo" >
         <a class="articulo-item-vinculo" href="{{url}}">{{title}}</a>
     </h2>
@@ -20,7 +20,7 @@
         {{/if}}
         <small><a href="{{url}}">{{name}}</a></small>
       {{/author}} 
-      | <time datetime="{{date format="YYYY-MM-DD"}}"> <i class="fa fa-calendar-o"></i> <small>{{date format="DD MMMM YYYY"}}</small></time></span>
+      <time datetime="{{date format="YYYY-MM-DD"}}"> <i class="fa fa-calendar-o"></i> <small>{{date format="DD MMMM YYYY"}}</small></time></span>
     </footer>
   {{!--Fin Primer Articulo --}}
   {{else}}
@@ -34,14 +34,15 @@
         <a class="articulo-item-vinculo" href="{{ url}}">{{ title }}</a>
       </h2>
       <span class="articulo-item-meta">
-      {{#author}}
-        {{#if image}}
-        <img src="{{image}}" alt="{{name}}'s Picture" />
-        {{/if}}
-        <small><a href="{{url}}">{{name}}</a></small>
-      {{/author}} 
-      | <time datetime="{{date format="YYYY-MM-DD"}}"> <i class="fa fa-calendar-o"></i> <small>{{date format="DD MMMM YYYY"}}</small></time></span>
-      <a class="articulo-item-comentarios" href="{{url}}#disqus_thread"></a>
+        {{#author}}
+          {{#if image}}
+          <img src="{{image}}" alt="{{name}}'s Picture" />
+          {{/if}}
+          <small><a href="{{url}}">{{name}}</a></small>
+        {{/author}} 
+      <time datetime="{{date format="YYYY-MM-DD"}}"> <i class="fa fa-calendar-o"></i> <small>{{date format="DD MMMM YYYY"}}</small></time>
+      <a class="cantidad-comentarios" href="{{url}}#disqus_thread"></a>
+      </span>
     </header>
     <section class="articulo-item-extracto">
       {{excerpt words="50"}}...

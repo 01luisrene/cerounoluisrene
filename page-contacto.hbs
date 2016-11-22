@@ -5,8 +5,8 @@
 </head>
 <body class="{{body_class}}">
 {{#post}}
-{{!-- The blog navigation links --}}
-<header class="main-header page-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+    {{!-- The blog navigation links --}}
     {{navigation}}
 </header>
 <main class="main" role="main">
@@ -33,10 +33,8 @@
 {{!-- The main JavaScript file for 01luisrene --}}
 <script type="text/javascript" src="{{asset "js/app.min.js"}}"></script>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57004124cf559f51"></script> 
-
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyAIokqr9g-NE7L0CZFH3sx9DHX4VgDkuqw"></script>
 <!-- Llamo a mi script map-->
-<script type="text/javascript" src="{{asset "js/geo.html5.min.js"}}"></script>
-
+<script type="text/javascript" src="{{asset "js/geo.min.js"}}"></script>
 </body>
 </html>

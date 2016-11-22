@@ -30,7 +30,7 @@ var marker=new google.maps.Marker({
 marker.setMap(map);
 
 var infowindow = new google.maps.InfoWindow({
-  content:"Mi ubicación!"
+  content:"Ubicación!"
   });
 
 infowindow.open(map,marker);

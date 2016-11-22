@@ -16,7 +16,8 @@
   margin: 0 .5em;
   padding: .7em .7em;
   font-size: 0.8em;
-  font-weight: 300;
+  font-family: $lato-font-family;
+  font-weight: 400;
   text-transform: uppercase;
   @include media-query($on-smartphone){
     //480px
@@ -29,7 +30,6 @@
   background: $color-paginacion-bg;
   border: 2px solid darken($color-paginacion-bg, 5%);
   color: $text-white;
-  font-family: $lato-font-family;
   &:hover{
     border: 2px solid $text-color;
     color: $text-color;

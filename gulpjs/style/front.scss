@@ -1,7 +1,7 @@
 //==========================================FRONT====================================//
 .front{
   background-color: rgba(0, 178, 89, 0.01);
-  border-bottom: thin solid #ACACAC;
+  margin-top: 64px;
   padding-top: $spacing-unit / 2;
   padding-bottom: $spacing-unit / 2;
 }
@@ -22,7 +22,7 @@
     text-shadow: 0.1vw 0.5vw 0.1vw $bg-menu;
   }
 }
-.redes-list{
+.redes-lista{
   @extend %flexbox-center;
   text-align: center;
   margin-bottom: 0.5em;
@@ -40,7 +40,7 @@
     }
     .link{
       @extend %display-block;
-      color: #2E2B2B;
+      color: $bg-article;
       font-size: $redes-font-size;
       text-decoration: none;
       margin-top: 0.25em;
@@ -100,21 +100,17 @@
 }
 
 .btn-suscribete{
-  background-color: #FF5F11;
+  background-color: lighten(#FF5F11, 5%);
   border: thin solid darken(#FF5F11, 3%);
-  border-radius: 3px;
-  color: $text-white;
-  display: block;
-  font-family: $lato-font-family;
-  font-size: $small-font-size;
-  font-weight: 400;
-  text-align: center;
-  text-transform: uppercase;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;
   padding: 7px;
-  width: 145px;
+  &:hover{
+    background-color: #FF5F11;
+    color: $text-white;
+    text-decoration: none;
+  }
   &:visited{
     color: $text-white;
   }
@@ -123,7 +119,7 @@
 .blog-description{
   background-color: rgba(255,255,255, .5);
   border: thin solid $color-theme;
-  color: darken($color-article, 60%);
+  color: darken($bg-article, 60%);
   padding: 10px;
   text-align: center;
   font-size: 1.25em;
@@ -131,7 +127,6 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;
-  max-width: 75%;
   @include media-query($content-block) { //1100px
     font-size: 1em;
   }
@@ -165,4 +160,11 @@
       display: block;
     }
   }
+}
+
+//=======================================PUBLICIDAD HOME =========================================//
+
+.home___publicidad{
+  margin-top: -.5em;
+  margin-bottom: 1.5em;
 }

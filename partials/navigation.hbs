@@ -1,11 +1,11 @@
-<div class="caja___menu">
-  <div class="contenedor__nav contenedor">
+<nav class="caja___menu overlay">
+  <div class="caja__menu__inner contenedor">
     {{#if @blog.logo}}
       <figure class="figure-logo" id="js_img_logo">
         <a href="{{@blog.url}}" title="{{@blog.title}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
       </figure>
     {{/if}}
-    <nav class="main_nav">
+    <div class="main_nav">
       <ul class="nav">
           {{#foreach navigation}}
             <li class="nav-item nav-{{slug}}" role="presentation">
@@ -35,11 +35,11 @@
           <span class="ico"></span>
         </a>
       </div>
-    </nav>
+    </div>
   </div>
-</div>
-<!-- Menú web mobile -->
-<nav class="menu___mobile animated" id="js_menu_mobile" style="display:none;">
+</nav>
+{{!--Menú Mobile--}}
+<div class="menu___mobile animated" id="js_menu_mobile" style="display:none;">
     <i class="fa fa-times icon-cerrar" id="js_icon_cerrar"  aria-hidden="true" title="Cerrar"></i>
     {{#if @blog.logo}}
     <a href="{{@blog.url}}"><img class="logo-menu-mobile" src="{{@blog.logo}}" alt="{{@blog.title}}"/></a>
@@ -57,4 +57,4 @@
           </li>
       {{/foreach}}
    </ul>
-</nav>
+</div>

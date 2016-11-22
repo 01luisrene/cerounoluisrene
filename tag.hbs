@@ -1,9 +1,10 @@
 {{!< default}}
 
 <header class="main-header tag-head {{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}{{#if @blog.cover}}cover" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}{{/if}}">
-    {{navigation}}
+   {{navigation}}
+  	<div class="vertical">
       {{#tag}}
-	    	<section class="main-header-content tag inner">
+	    	<section class="main-header-content inner">
 	        <h1 class="tag-titulo">{{name}}</h1>
 	        <h2 class="tag-descripcion">
 	            {{#if description}}
@@ -14,6 +15,7 @@
 	        </h2>
 	    	</section>
       {{/tag}}
+  	</div>
 </header>
 <main role="main">
 	{{> "loop"}}

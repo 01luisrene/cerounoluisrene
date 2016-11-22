@@ -1,10 +1,10 @@
 {{!< default}}
-<header class="suscribete-header">
+<header class="main-header suscribete-head">
     {{navigation}}
 </header>
 <main class="main">
   {{#if success}}
-    <article class="contenedor small">
+    <article class="contenedor-suscribete inner">
       <header>
           <h1 class="post-titulo">Suscripción Exitosa!</h1>
           <div class="addthis_sharing_toolbox compartir-redes-sociales"></div>
@@ -37,7 +37,7 @@
       </section>
     </article>
   {{else if error}}
-    <article class="contenedor small suscribete">
+    <article class="contenedor-suscribete inner">
       <header>
           <h1 class="post-titulo">Error!</h1>
       </header>
@@ -46,7 +46,7 @@
       </section>
     </article>
   {{else}}
-    <article class="contenedor small suscribete">
+    <article class="contenedor-suscribete inner">
       <header>
           <h1 class="post-titulo">Suscribete a Nuestro Newsletter </h1>
       </header>

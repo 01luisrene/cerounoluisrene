@@ -1,4 +1,7 @@
 @charset "utf-8";
+/* ==============================================================================
+		TEMA GHOST DESARROLLADO PARA EL SITIO WEB 01luisrene.com (Luis Rene Mas Mas)
+   ==============================================================================*/
 
 // Mis variables
 $base-font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
@@ -18,15 +21,14 @@ $text-white: 				#fff; //usado
 $grey-color:       	#828282;
 $grey-color-light: 	lighten($grey-color, 40%);
 $grey-color-dark:  	darken($grey-color, 25%);
-$color-calendario: 	#C2C1C1; //usado
+$color-calendario: 	$grey-color-dark; //usado
 $color-no-cover: 		#D0DCDF; //usado
 
 //FRONT
 
 //LOOP
-$color-article: #D7E0E3;
+$bg-article: #D7E0E3; //usado
 $color-article-item: #151C20;
-$margin-article-item: $spacing-unit / 2;
 
 //PAGINACIÓN
 $color-paginacion-bg: #44A8E1;

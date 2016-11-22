@@ -61,6 +61,12 @@
 .post_contenido{
 margin-bottom: $spacing-unit / 2;
 word-wrap: break-word;
+p{
+  @include media-query($on-smartphone){
+    //480px
+    text-align: justify;
+  }
+}
 //estilo iframe de codepen.io
 div iframe {margin-bottom: 1em;}
 
@@ -89,11 +95,6 @@ div iframe {margin-bottom: 1em;}
       height: 36px;
       width: 56px;
     }
-  }
-  //link
-  a{
-    text-decoration: underline;
-    font-weight: 700;
   }
   //estilo para listas
   ol, ul{
@@ -137,27 +138,25 @@ div iframe {margin-bottom: 1em;}
     border-top: 1px solid $grey-color-light;
 }
 .autor-imagen {
-    background: $text-white;
+  background: $text-white;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  margin-left: -40px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  padding: 6px;
+  z-index: 2;
+  box-shadow: #E7EEF2 0 0 0 1px;
+  .img {
+    position: relative;
     display: block;
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    margin-left: -40px;
-    width: 80px;
-    height: 80px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
     border-radius: 50%;
-    overflow: hidden;
-    padding: 6px;
-    z-index: 2;
-    box-shadow: #E7EEF2 0 0 0 1px;
-    .img {
-      position: relative;
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center center;
-      border-radius: 50%;
   }
 }
 .autor{
@@ -167,33 +166,37 @@ div iframe {margin-bottom: 1em;}
 .autor-nombre{
   display: inline-block;
 }
+
 .autor-bio, .autor-mas-post{
-  font-size: $base-font-size - 3px;
-  line-height: normal;
-  margin-bottom: 0;
+  font-size: $base-font-size;
+  line-height: 1.5em;
+  font-weight: 400;
+  color: #50585D;
+  letter-spacing: 0;
+  text-indent: 0;
+  margin-bottom: $spacing-unit / 2; //15px
 }
-.autor-lista-info {
-    @extend %display-block;
-    padding: 0;
-    list-style: none;
-    font-size: 1em;
-    line-height: 1;
+.autor-meta{
+  span, span > a{
+    font-size: $small-font-size;
+    color: darken($bg-article, 40%);
     font-style: italic;
-    color: #3C3D34;
-    li{
-      display: inline-block;
-      margin-top: 10px;
-      &:not(:last-child){
-        margin-right: 10px;
-      }
-      a, span{
-        color: lighten($grey-color, 20%) ;
-        font-size: $small-font-size - 2px;
-      }
-      a:hover{
-        color: lighten($grey-color, 2%) ;
+  }
+  span{
+    &:not(:last-child){
+      margin-right: 15px;
+    }
+    @include media-query($on-laptop){
+    //900px
+      display: block;
+      margin: 15px auto;
+    }
+    a{
+      &:hover{
+        color: $text-color;
       }
     }
+  }
 }
 //==========================FORMULARIO DE SUSCRIPCIÓN============================//
 .gh-subscribe{
@@ -238,6 +241,7 @@ div iframe {margin-bottom: 1em;}
   button{
     border-radius: 0 4px 4px 0;
     margin-left: -1px;
+    padding: 8px;
     @include media-query($on-smartphone){
     //480px
       padding: 6px;
@@ -281,7 +285,7 @@ div iframe {margin-bottom: 1em;}
     }
   }
   &:hover .read-next-title{
-    color: lighten($color-article, 10%);
+    color: lighten($bg-article, 10%);
   }
 }
 .read-next-title, .btn-read-next, .read-next-parrafo{
@@ -289,7 +293,7 @@ div iframe {margin-bottom: 1em;}
   z-index: 1;
 }
 .read-next-title{
-  color: darken($color-article, 50%);
+  color: darken($bg-article, 50%);
   margin-top: 40px;
   font-weight: 900;
   padding: 0 .5em;

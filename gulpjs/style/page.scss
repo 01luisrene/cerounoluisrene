@@ -1,5 +1,5 @@
-//==========================================STACKS======================================//
-.stack-lista{
+//==========================================SOBRE MI - STACKS======================================//
+.lista-stack{
   @extend %flexbox-space-between-wrap;
   list-style-type: none;
   padding-left: 0 !important;
@@ -8,16 +8,17 @@
     width: 33%;
   }
 }
-//=====================MI FAMILIA=======================================//
+//=====================SOBRE MI - MI FAMILIA=======================================//
 img.familia-mas{
     display: block;
     margin: 0 auto;
 }
-p.text-foo{
+p.familia-texto-descripcion{
     text-align: center;
     margin-top: 15px;
 }
-//================================BUSCADOR==============================//
+
+//================================LISTA ARTICULOS - BUSCADOR==============================//
 .buscador-caja{
   position: relative;
   font-size: 18px;
@@ -26,7 +27,7 @@ p.text-foo{
     left: 13px;
     top: 7px;
   }
-  .campo-buscador{
+  .buscador-campo{
     border: thin solid $color-theme;
     border-radius: 20px;
     padding: 0.3em 1.5em 0.3em 2em;
@@ -81,38 +82,37 @@ p.text-foo{
   margin-left: -1.2em;
 }
 //======================================TAGS - AUTOR===================================//
-.main-header-content.tag{
-  text-align: center;
-  padding-top: $spacing-unit;
-  padding-bottom: $spacing-unit;
+.vertical{
+  display: table-cell;
+  vertical-align: middle;
 }
-.tag-titulo, .tag-descripcion, .autor-titulo, .autor-bio{
-  color: darken($color-article, 60%);
-  text-shadow: 2px 0px 0px rgba(255, 255, 255, 1);
+.main-header-content{
+  margin-top: 64px;
+  padding-top: $spacing-unit / 2;
+  padding-bottom: $spacing-unit / 2;
+}
+.tag-titulo, .autor-titulo{
+  color: darken($bg-article, 60%);
 }
 .tag-titulo{
   text-indent: 0;
-  text-transform: uppercase;
-  margin-top: $spacing-unit / 2;
-}
-.tag-descripcion{
-  margin-bottom: 0;
+  text-shadow: 1px -1px 0px rgba(255, 255, 255, 1);
 }
 .tag-descripcion{
   background: rgba(255,255,255, .7);
-  font-weight: 300;
-  padding: .5em;
+  color: #50585D;
+  display: inline-block;
+  font-size: 1.11em;
+  margin-bottom: 0;
+  padding: .3em;
 }
 
 //AUTOR
-.main-header.autor-head{
-  height: 40vh;
-  min-height: 180px;
-}
 .autor-perfil{
   border-bottom: 1px solid $grey-color-light;
   text-align: center;
-  padding: 0 15px 2em 15px;
+  padding-top: 0;
+  padding-bottom: 2em;
   position: relative;
   margin-bottom: 2.5em;
   @include media-query($on-small-laptop){
@@ -137,32 +137,11 @@ p.text-foo{
     text-indent: 0;
     margin-top: $spacing-unit / 2;
   }
-  .autor-bio{
-    font-size: $base-font-size;
-    line-height: 1.5em;
-    font-weight: 400;
-    color: #50585D;
-    letter-spacing: 0;
-    text-indent: 0;
-    margin-bottom: $spacing-unit / 2; //15px
-  }
-  .autor-meta{
-    span, a{
-      font-size: $small-font-size;
-      color: darken($color-article, 40%);
-      font-style: italic;
-    }
-    span{
-      &:not(:last-child){
-        margin-right: 15px;
-      }
-      @include media-query($on-laptop){
-      //900px
-        display: block;
-        margin: 15px auto;
-      }
-    }
-  }
+  //============.autor-bio: style compartido de post.scss=====================//
+
+  //============.autor-meta: style compartido de post.scss====================//
+
+
   .autor-imagen{
     position: relative;
     left: auto;
@@ -175,10 +154,6 @@ p.text-foo{
     @include media-query($on-small-laptop){
       //800px
       margin: -70px auto 0 auto;
-    }
-    @include media-query($on-small-laptop){
-      //480px
-     
     }
   }
 }
@@ -216,9 +191,6 @@ p.text-foo{
     }
     input{
       width: 100%;
-    }
-    input[type='submit']{
-      padding: 10px;
     }
     textarea{
       height: 100px;
@@ -294,6 +266,6 @@ p.text-foo{
   display: block;
   color: $color-theme;
   font-size: 5em;
-  line-height: .1em;
+  line-height: 0;
   margin-bottom: 15px;
 }
