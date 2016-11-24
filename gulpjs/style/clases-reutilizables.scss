@@ -92,23 +92,7 @@
 }
 
 //=================================BOTONES================================//
-button{
-  background: lighten(#359AFF, 5%);
-  &:hover{
-    background: #359AFF;
-  }
-  a{
-    display: block;
-    color: inherit;
-    &:hover{
-      text-decoration: none;
-    }
-    &:visited{
-      color: $text-white;
-    }
-  }
-}
-.btn, button{
+.btn{
   border-radius: 3px;
   border: thin solid transparent;
   display: inline-block;
@@ -126,10 +110,13 @@ button{
     outline: none;
   }
 }
-.btn-green{
+
+.btn.btn-green{
   background: lighten($color-theme, 8%);
+  border: thin solid $color-theme;
   &:hover{
     background: lighten($color-theme, 7%);
+    border-bottom:thin solid darken($color-theme, 3%);
   }
 }
 

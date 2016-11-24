@@ -28,7 +28,9 @@
       <section class="footer-col footer-col-3">
         <p class="copyright"><a href="{{@blog.url}}"><b>{{@blog.title}}</b></a> &copy; {{date format="YYYY"}}</a>
         </p>
-        <img src="{{asset "images/logo.png"}}" alt="01luisrene.com" title="Logo" style="display: block; margin: 0 auto;" width="60">
+        {{#if @blog.logo}}
+          <img src="{{@blog.logo}}" alt="01luisrene.com" title="Logo" style="display: block; margin: 0 auto;" width="60">
+        {{/if}}
       </section>
   </div>
 </footer>

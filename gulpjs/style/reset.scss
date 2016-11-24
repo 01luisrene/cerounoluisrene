@@ -73,14 +73,10 @@ optgroup { font-weight: bold; }
 table{ border-collapse: collapse; border-spacing: 0; }
 td, th{ padding: 0; }
 
-/* ==========================================================================
-   Estilos de 01luisrene.com
-   ========================================================================== */
-blockquote, pre, hr, ol, ul, figure {margin: 0;padding: 0;}
+//==========================================================================
+//   Mis estilos
+//==========================================================================
 
-blockquote, pre{
-  @extend %margen-inferior;
-}
 ::-moz-selection { 
     color: #171717;
     background: lighten($color-theme, 10%);
@@ -118,11 +114,31 @@ body {
   font-feature-settings: "kern" 1;
   font-kerning: normal;
 }
+blockquote, pre, hr, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+//=================MARGENES BUTTON===========
+//.fluid-width-video-wrapper: Contenedor de los videos YouTube y más.
+//.cp_embed_wrapper: Contenedor del código de Codepen
+
+ul, ol, table, form, pre, .fluid-width-video-wrapper, .cp_embed_wrapper{
+  margin-bottom: 1.5em;
+}
+form fieldset{
+  margin-bottom: 1em;
+}
+
 figure a > img{
   width: 100%;
 }
 
-img {border:none;max-width: 100%;vertical-align: middle;}
+img, input[type="image"] {
+  border:none;
+  max-width: 100%;
+  vertical-align: middle;
+}
 
 figure > img {display: block;}
 figcaption {
@@ -242,7 +258,7 @@ address {
 
 p{
   line-height: 30px;
-  margin: 0 0 0.833em 0;
+  margin: 0 0 1.5em 0;
   @include media-query($on-tablet){
   //700px
   font-size: 0.88em; //16px
@@ -274,18 +290,23 @@ a {
 blockquote {
   color: darken($grey-color, 15%);
   border-radius: 0 5px 5px 0;
-  border-left: 4px solid $color-theme;
+  border-left:0.4em solid $color-theme;
   border-top: thin solid $grey-color-light;
   border-right: thin solid $grey-color-light;
   border-bottom: thin solid $grey-color-light;
-  padding: $spacing-unit / 2;
-  margin-left: 15px;
-  font-size: 18px;
+  margin: 1.75em 0 1.75em -2.2em;
+  padding: 0 0 0 1.75em;
   letter-spacing: -1px;
-  font-style: normal;
-
-  > :last-child {
-      margin-bottom: 0;
+  @include media-query($on-tablet){//600px
+    margin-left: 0;
+    padding-left: 0;
+  }
+  p{
+    font-style: italic;
+    margin: 0.8em 0;
+    @include media-query($on-tablet){//600px
+      margin: 0.8em;
+    }
   }
 }
  
@@ -301,7 +322,6 @@ pre,
 code {
     font-family: $monaco-font-family;
     font-size: 15px;
-    border: 1px solid $grey-color-light;
     border-radius: 3px;
     background-color: #eef;
 }
@@ -310,10 +330,95 @@ code {
 }
 pre {
     overflow-x: auto;
-    > code {
-        background-color: transparent;
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
+    > code.hljs{
+        padding: 1em;
     }
+}
+//=================================FORM: INPUTS - TEXTAREA=======================================//
+input, fieldset, textarea{
+ border: thin solid lighten($bg-boton, 5%);
+ &:focus{
+  outline: none;
+ }
+}
+textarea{
+  resize: vertical;
+  width: 100%;
+}
+button, input[type="submit"], input[type="button"], input[type="image"], input[type="reset"]{
+  border-radius: 3px;
+  display: inline-block;
+  cursor:pointer;
+  color: $text-white;
+  font-family: $lato-font-family;
+  font-weight: 400;
+  font-size: 0.8em;
+  line-height: normal;
+  padding:9px 13px;
+  width: auto;
+  &:focus{
+    outline: none;
+  }
+}
+
+button, input[type="submit"], input[type="button"]{
+  background: lighten($bg-boton, 5%);
+  border: thin solid lighten($bg-boton, 5%);
+  &:hover{
+    background: $bg-boton;
+  }
+}
+input[type="image"]{
+  background: $bg-article;
+  border: thin solid $grey-color-light;
+  padding:7px;
+  height: auto;
+}
+
+input[type="reset"]{
+  background: #F9F8F8;
+  border: thin solid $grey-color;
+  color: $text-color;
+}
+
+input[type="color"]{
+  height: 45px;
+  width: 150px;
+}
+
+//==============================FORMULARIO=========================================//
+form fieldset{
+  input,  textarea{
+    display: block;
+    margin-bottom: 1em;
+  }
+}
+
+//=====================================TABLA=========================================//
+table{
+  border-collapse: collapse;
+  empty-cells: hide;
+  th, td{
+    border-bottom: 1px solid $grey-color-light;
+    padding: 10px;
+    text-align: left;
+  }
+  th {
+    background-color: lighten($color-theme, 5%);
+    color: $text-white;
+  }
+  tr{
+    &:hover{
+      background-color: $grey-color-light;
+    }
+    &:nth-child(odd) {
+      background-color: lighten($grey-color-light, 3%);
+    }
+  }
+  tr:nth-child(even) {
+    background-color: transparent;
+  }
+  td{
+    vertical-align: middle;
+  }
 }

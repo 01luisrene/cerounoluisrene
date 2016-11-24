@@ -12,7 +12,7 @@
             <h1 class="post-titulo">{{title}}</h1>
             <section class="post-meta">
                 <i class="fa fa-calendar-o"></i>
-                <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time> 
+                <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}"><small>{{date format="DD MMMM YYYY"}}</small></time> 
                 {{#if tags}}
                 <ul class="post-lista-tags">
                 {{#foreach tags limit="5"}}
@@ -28,7 +28,7 @@
             <div class="addthis_sharing_toolbox compartir-redes-sociales"></div>
             {{content}}
             <!--Publicidad-->
-            <div align="center">
+            <div class="post___publicidad" align="center">
             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <ins class="adsbygoogle"
                      style="display:block"
@@ -39,7 +39,7 @@
                     (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
             </div>
-            <h3 class="titulo-compartir">Te gusto este artículo, ayudame compartiéndolo&nbsp;:)</h3>
+            <h4 class="titulo-compartir">Compártelo en tus redes sociales, para que tus amigos lo lean&nbsp;:)</h4>
             <div class="addthis_sharing_toolbox"></div>
         </section>
         <footer class="post-footer">
@@ -89,7 +89,7 @@
         {{!-- Email subscribe form at the bottom of the page --}}
         {{#if @labs.subscribers}}
         <section class="gh-subscribe">
-            <h3 class="gh-subscribe-title">Únete a mí Blog</h3>
+            <h3 class="gh-subscribe-title">Únete al Blog</h3>
             <p>Obtén los últimos artículos publicados directamente en tu bandeja de entrada.</p>
             {{subscribe_form placeholder="Your email address"}}
             <span class="gh-subscribe-rss">O suscríbase <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">vía RSS</a> con Feedly!</span>
@@ -105,7 +105,7 @@
             </a>
             {{else}}
             <span class="read-next-story disabled">
-                <button class="btn btn-read-next">« Siguiente</button>
+                <button class="btn-read-next">« Siguiente</button>
                 <p class="read-next-parrafo">No hay más posts</p>
             </span>
             {{/next_post}}
@@ -117,7 +117,7 @@
             </a>
             {{else}}
             <span class="read-next-story disabled">
-                <button class="btn btn-read-next">Anterior »</button>
+                <button class="btn-read-next">Anterior »</button>
                 <p class="read-next-parrafo">No hay más posts</p>
             </span>
             {{/prev_post}}

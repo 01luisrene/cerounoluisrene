@@ -7,9 +7,7 @@
 }
 .author-name{
   color: $color-theme;
-  text-align: center;
   font-size: 10vh;
-  font-family:$lato-font-family;
   text-transform: capitalize;
   text-shadow: 0.3vh 0.2vh 0.1vh $bg-menu;
   margin-bottom: 1vh;
@@ -44,7 +42,7 @@
       font-size: $redes-font-size;
       text-decoration: none;
       margin-top: 0.25em;
-      transition: .1s;
+      transition: .3s;
       @include media-query($content-block) {
         font-size: $redes-font-size;
         margin-top: 0.125em;
@@ -85,7 +83,7 @@
 }
 .author-img{
   @extend %display-block;
-  border-radius: 50%;
+  border-radius: 100%;
   background-size: 100%;
   background-repeat: no-repeat;
   margin-bottom: 0.5em;
@@ -102,8 +100,6 @@
 .btn-suscribete{
   background-color: lighten(#FF5F11, 5%);
   border: thin solid darken(#FF5F11, 3%);
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 1em;
   padding: 7px;
   &:hover{
@@ -121,11 +117,8 @@
   border: thin solid $color-theme;
   color: darken($bg-article, 60%);
   padding: 10px;
-  text-align: center;
   font-size: 1.25em;
   line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 1em;
   @include media-query($content-block) { //1100px
     font-size: 1em;

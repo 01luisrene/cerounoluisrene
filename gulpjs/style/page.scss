@@ -1,8 +1,8 @@
 //==========================================SOBRE MI - STACKS======================================//
-.lista-stack{
+ul.lista-stack{
   @extend %flexbox-space-between-wrap;
   list-style-type: none;
-  padding-left: 0 !important;
+  padding-left: 0;
   li{
     display: inline-block;
     width: 33%;
@@ -26,6 +26,9 @@ p.familia-texto-descripcion{
     position: absolute;
     left: 13px;
     top: 7px;
+  }
+  form{
+    margin-bottom: 0;
   }
   .buscador-campo{
     border: thin solid $color-theme;
@@ -164,15 +167,14 @@ p.familia-texto-descripcion{
   width: 100%;
 }
 .formulario-contacto, .container-geo{
-  display: inline-block;
+  display: block;
   padding: 5px;
-  vertical-align: top;
-  width: 49%;
   @include media-query($on-laptop){
     width: 100%;
   }
 }
 .formulario-contacto{
+  width:80%;
   .form-imput{
     input[type='text'], input[type='email'], textarea{
     border: thin solid $color-theme;
@@ -183,9 +185,6 @@ p.familia-texto-descripcion{
     transition: 1s;
       &:focus{
         outline: none;
-        border-top:thin solid transparent;
-        border-right:thin solid transparent;
-        border-left:thin solid transparent;
         border-bottom:thin solid $color-theme;
         }
     }
@@ -193,19 +192,26 @@ p.familia-texto-descripcion{
       width: 100%;
     }
     textarea{
-      height: 100px;
+      height: 200px;
       resize: vertical;
       width: 100%;
-      &:focus{
-        border:thin solid $color-theme;
-      }
     }
   }
 }
 
-.contacto-titulo{
-  text-transform: inherit;
+.map{
+  background: transparent;
+  border: thin solid $color-theme;
+  height: 450px;
+  width: 100%;
 }
+.title-geo{
+  display: block;
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 1em;
+}
+
 .box-item-contacto{
   border: thin solid $color-theme;
   padding: 5px;
@@ -245,21 +251,6 @@ p.familia-texto-descripcion{
 .ico-phone{
   color: $bg-menu;
   font-size: 25px !important;
-}
-.title-geo{
-  display: block;
-  font-size: 18px;
-  font-weight: normal;
-  margin-top: 1em;
-}
-#map_canvas{
-  background: transparent !important;
-  border: thin solid $color-theme;
-  height: 270px;
-  width: 100%;
-  -webkit-box-shadow: 5px 3px 15px 2px #fbebff;
-  box-shadow: 5px 3px 31px 2px #fbebff;
-  overflow: hidden;
 }
 //====================================AGRADECIMIENTO====================================//
 .mensaje-bien{

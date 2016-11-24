@@ -6,6 +6,11 @@
   padding: ($spacing-unit/2) 0;
   z-index: 2;
 }
+.footer-col{
+  a{
+    text-decoration: none;
+  }
+}
 .footer-titulo.inspiracion{
   color: $color-theme;
   margin-top: 1em;
@@ -130,7 +135,7 @@
 .boton-subir{
   display: none;
   background: $color-theme;
-  border: 2px solid #fff;
+  border: 2px solid $text-white;
   border-radius: 50%;
   height: 50px;
   width: 50px;

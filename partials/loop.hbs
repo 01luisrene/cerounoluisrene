@@ -2,7 +2,7 @@
 <section class="___articulos___">
 {{#foreach posts}}
 {{!-- Primer Articulo --}}
-  <article class="articulo__item {{post_class}} {{#if @first}} first-post inner" style="background-image: url({{image}}){{/if}}" data-lang="{{#if tags}}{{#foreach tags limit="1"}}{{name}}{{/foreach}}{{/if}}">
+  <article class="articulo__item {{post_class}} {{#if @first}} first-post inner" style="background-image: url({{image}}){{/if}}" data-tag="{{#if tags}}{{#foreach tags limit="1"}}{{name}}{{/foreach}}{{/if}}">
   {{#if @first}}
     <header>
     <h2 class="articulo-item-titulo" >

@@ -56,34 +56,33 @@ var  displayMenu = function(){
       $('#js_barra_aceptacion_cookie').css({
         display: 'block'
       });
+      setTimeout(function(){crearCookie();}, 50000);
      }
     
     function crearCookie(){
       user = '01luisrene';
       if (user != "" && user != null) {
-        
-          setCookie("_01lr", user, 30);
-          $('#js_barra_aceptacion_cookie').addClass("animated zoomOutDown");
-          setTimeout(function(){
-            $('#js_barra_aceptacion_cookie').css({
-              display: 'none'
-            });
-          }, 300);
-          console.log("cookie ❤ " + user + " creada.");
-       }
+        setCookie("_01lr", user, 30);
+        $('#js_barra_aceptacion_cookie').addClass("animated zoomOutDown");
+        setTimeout(function(){
+          $('#js_barra_aceptacion_cookie').css({
+            display: 'none'
+          });
+        }, 300);
+        console.log("cookie ❤ " + user + " creada.");
+      }
     }
-      $('#js_btn_cookie').on('click', function(e) {
-        e.preventDefault();
-        crearCookie();
-      });
-      setTimeout(function(){crearCookie();}, 15000);
+    $('#js_btn_cookie').on('click', function(e) {
+      e.preventDefault();
+      crearCookie();
+    });
   },
   botonUp = function(){
     $(window).scroll(function(){
       if($(this).scrollTop() > 300){
-        $("#js_up").show(); //fadeIn
+        $("#js_up").slideDown(300);
       }else{
-        $("#js_up").fadeOut(); //fadeOut
+        $("#js_up").slideUp(300);
       }
     });
     $("#js_up i").on('click', function (e) {
