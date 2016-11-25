@@ -125,8 +125,20 @@
         <!--Formulario de Comentarios-->
         <section>
             <h2>Comparte tu Opinión</h2>
-            <div id="disqus_thread"></div>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            <div id="disqus_thread"></div>  
+            <script>  
+            var disqus_config = function () {  
+            this.page.url = '{{url absolute="true"}}';
+            this.page.identifier = 'ghost-{{id}}';
+            };
+            (function() {
+            var d = document, s = d.createElement('script');
+            s.src = '//01luisrenemas.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());  
+            (d.head || d.body).appendChild(s);
+            })();
+            </script>  
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
         </section>
     </article>
     {{> "aside"}}

@@ -100,33 +100,6 @@ var  displayMenu = function(){
 			return false;
 		});
   },
-  disqus = function (newIdentifier, newUrl, newTitle) {
-    if ($('#disqus_thread').length) {
-    if (typeof DISQUS === 'undefined') {
-      /* * * CONFIGURATION VARIABLES * * */
-      var disqus_shortname = '01luisrenemas'; // required: replace example with your forum shortname
-      var disqus_identifier = newIdentifier;
-      var disqus_url = newUrl;
-      var disqus_title = newTitle;
-
-      /* * * DON'T EDIT BELOW THIS LINE * * */
-      (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    } else {
-        DISQUS.reset({
-          reload: true,
-          config: function () {
-            this.page.identifier = newIdentifier;
-            this.page.url = newUrl;
-            this.page.title = newTitle;
-          }
-        });
-      }
-    }
-  },
  // 01luisrene javascripts initialization
   init = function () {
     displayMenu();
@@ -135,7 +108,6 @@ var  displayMenu = function(){
     politicaCookies();
     botonUp();
     imprimirCurriculum();
-    disqus(window.location.href, window.location.href, $('.post-title').text());
   };
 
   return {
