@@ -204,6 +204,18 @@ p.familia-texto-descripcion{
   border: thin solid $color-theme;
   height: 450px;
   width: 100%;
+  @include media-query($on-tablet){
+  //700px
+    height: 400px;
+  }
+  @include media-query($on-small-tablet){
+  //600px
+    height: 350px;
+  }
+  @include media-query($on-smartphone){
+  //480px
+    height: 300px;
+  }
 }
 .title-geo{
   display: block;
