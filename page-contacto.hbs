@@ -36,20 +36,10 @@
 {{!-- Ghost outputs important scripts and data with this tag --}}
 {{ghost_foot}}
 {{!-- The main JavaScript file for 01luisrene --}}
+<script src="{{asset "js/app.min.js"}}" type="text/javascript"></script>
 <script type="text/javascript">
 var map;
 var mi_Latlng; 
-function descargarJSOnload() {
-  var element = document.createElement("script");
-  element.src = "//01luisrene/assets/js/app.min.js";
-  document.body.appendChild(element);
-}
-if (window.addEventListener)
-  window.addEventListener("load", descargarJSOnload, false);
-else if (window.attachEvent)
-  window.attachEvent("onload", descargarJSOnload);
-else window.onload = descargarJSAonload;
-
 function initMap(){
   mi_Latlng = new google.maps.LatLng(-8.049154699999999,-79.0586348);
   map = new google.maps.Map(document.getElementById('map'), {

@@ -21,18 +21,7 @@
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
     {{!-- The main JavaScript file for 01luisrene --}}
-    <script type="text/javascript">
-        function descargarJSOnload() {
-            var element = document.createElement("script");
-            element.src = "//01luisrene.com/assets/js/app.min.js";
-            document.body.appendChild(element);
-        }
-        if (window.addEventListener)
-            window.addEventListener("load", descargarJSOnload, false);
-        else if (window.attachEvent)
-            window.attachEvent("onload", descargarJSOnload);
-        else window.onload = descargarJSAonload;
-    </script>
+    <script src="{{asset "js/app.min.js"}}" type="text/javascript"></script>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57004124cf559f51"></script>
     <script id="dsq-count-scr" src="//blog-ghost.disqus.com/count.js" async></script>
     {{#is "post"}}
