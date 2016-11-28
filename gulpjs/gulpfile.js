@@ -37,7 +37,7 @@ gulp.task('style', function(){
 
 //Comprimir archivos js
 gulp.task('js', function () {
-   return gulp.src(['./js/jquery.ghostHunter.min.js', './js/app.js'])
+   return gulp.src(['./js/jquery.fitvids.js', './js/jquery.ghostHunter.min.js', './js/app.js'])
     .pipe(concat('app.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('../assets/js/'))

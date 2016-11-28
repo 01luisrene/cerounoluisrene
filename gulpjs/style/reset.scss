@@ -78,13 +78,13 @@ td, th{ padding: 0; }
 //==========================================================================
 
 ::-moz-selection { 
-    color: #171717;
-    background: lighten($color-theme, 10%);
+    color: $text-white;
+    background: lighten($color-theme, 7%);
 }
 
 ::selection {
-    color: #171717; 
-    background: lighten($color-theme, 10%);
+    color: $text-white; 
+    background: lighten($color-theme, 7%);
 }
 
 *, *::before, *::after{
@@ -128,10 +128,6 @@ ul, ol, table, form, pre, .fluid-width-video-wrapper, .cp_embed_wrapper{
 }
 form fieldset{
   margin-bottom: 1em;
-}
-
-figure a > img{
-  width: 100%;
 }
 
 img, input[type="image"] {

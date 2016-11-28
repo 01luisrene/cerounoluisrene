@@ -69,7 +69,7 @@ var  displayMenu = function(){
             display: 'none'
           });
         }, 300);
-        console.log("cookie ❤ " + user + " creada.");
+        console.log("Haz aceptado el uso de cookies de nuestra web 01luisrene.com ❤");
       }
     }
     $('#js_btn_cookie').on('click', function(e) {
@@ -93,13 +93,10 @@ var  displayMenu = function(){
       return false;
     });
   },
-  imprimirCurriculum = function(){
-		$('#js_imprimir_curriculum').on('click', function(e) {
-			e.preventDefault();
-			window.print();
-			return false;
-		});
+  fitVids = function(){
+    $('.post_contenido').fitVids();
   },
+
  // 01luisrene javascripts initialization
   init = function () {
     displayMenu();
@@ -107,7 +104,7 @@ var  displayMenu = function(){
     ghostHunter();
     politicaCookies();
     botonUp();
-    imprimirCurriculum();
+    fitVids();
   };
 
   return {

@@ -33,16 +33,23 @@
 {{> "footer"}}
 {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
 {{!-- Ghost outputs important scripts and data with this tag --}}
 {{ghost_foot}}
 {{!-- The main JavaScript file for 01luisrene --}}
-<script type="text/javascript" src="{{asset "js/app.min.js"}}"></script>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57004124cf559f51"></script> 
-{{!-- Llamo a mi script map--}}
 <script type="text/javascript">
 var map;
 var mi_Latlng; 
+function descargarJSOnload() {
+  var element = document.createElement("script");
+  element.src = "//01luisrene/assets/js/app.min.js";
+  document.body.appendChild(element);
+}
+if (window.addEventListener)
+  window.addEventListener("load", descargarJSOnload, false);
+else if (window.attachEvent)
+  window.attachEvent("onload", descargarJSOnload);
+else window.onload = descargarJSAonload;
+
 function initMap(){
   mi_Latlng = new google.maps.LatLng(-8.049154699999999,-79.0586348);
   map = new google.maps.Map(document.getElementById('map'), {
@@ -72,5 +79,6 @@ function initMap(){
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAIokqr9g-NE7L0CZFH3sx9DHX4VgDkuqw&signed_in=true&callback=initMap">
     </script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57004124cf559f51"></script> 
 </body>
 </html>

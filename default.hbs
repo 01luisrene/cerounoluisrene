@@ -20,17 +20,21 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
-    {{!-- Fitvids makes video embeds responsive and awesome --}}
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    <script type="text/javascript">
-    $(document).ready(function(){
-        $('.post_contenido').fitVids();
-    });
-    </script>
     {{!-- The main JavaScript file for 01luisrene --}}
-    <script type="text/javascript" src="{{asset "js/app.min.js"}}"></script>
+    <script type="text/javascript">
+        function descargarJSOnload() {
+            var element = document.createElement("script");
+            element.src = "//01luisrene.com/assets/js/app.min.js";
+            document.body.appendChild(element);
+        }
+        if (window.addEventListener)
+            window.addEventListener("load", descargarJSOnload, false);
+        else if (window.attachEvent)
+            window.attachEvent("onload", descargarJSOnload);
+        else window.onload = descargarJSAonload;
+    </script>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57004124cf559f51"></script>
-    <script id="dsq-count-scr" src="//01luisrenemas.disqus.com/count.js" async></script>
+    <script id="dsq-count-scr" src="//blog-ghost.disqus.com/count.js" async></script>
     {{#is "post"}}
         {{> "scripstPost"}}
     {{/is}}
