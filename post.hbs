@@ -1,10 +1,22 @@
 {{!< default}}
 {{#post}}
 <!-- Header principal -->
-<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+<header class="main-header post-head"{{#if image}} style="background-image: url({{image}}"){{else}} style="background-image: url({{asset "images/cover_default.jpg"}})"{{/if}}>
     {{!-- Links de Navegación del Blog --}}
     {{navigation}}
 </header>
+{{!-- Publicidad Principal Post --}}
+<div class="post___publicidad" align="center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3311622925293570"
+     data-ad-slot="9028298448"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
 <main class="main" role="main">
 <div class="contenedor___post">
     <article class="{{post_class}}">
@@ -27,7 +39,7 @@
         <section class="post_contenido">
             <div class="addthis_sharing_toolbox compartir-redes-sociales"></div>
             {{content}}
-            <!--Publicidad-->
+            {{!-- Publicidad Footer Post --}}
             <div class="post___publicidad" align="center">
             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <ins class="adsbygoogle"
@@ -99,31 +111,31 @@
         {{!-- Links to Previous/Next posts --}}
         <aside class="read-next">
             {{#next_post}}
-            <a class="read-next-story next {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+            <a class="read-next-story next" {{#if image}}style="background-image: url({{image}})"{{else}}style="background-image: url({{asset "images/cover_default.jpg"}})"{{/if}} href="{{url}}">
                 <h4 class="read-next-title">{{title}}</h4>
                 <p class="read-next-parrafo">{{excerpt words="12"}}&hellip;</p>
             </a>
             {{else}}
-            <span class="read-next-story disabled">
+            <span class="read-next-story disabled" style="background-image: url({{asset "images/cover_default.jpg"}})">
                 <button class="btn-read-next">« Siguiente</button>
                 <p class="read-next-parrafo">No hay más posts</p>
             </span>
             {{/next_post}}
 
             {{#prev_post}}
-            <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+            <a class="read-next-story prev"{{#if image}}style="background-image: url({{image}})"{{else}}style="background-image: url({{asset "images/cover_default.jpg"}})"{{/if}} href="{{url}}">
                 <h4 class="read-next-title">{{title}}</h4>
                 <p class="read-next-parrafo">{{excerpt words="12"}}&hellip;</p>
             </a>
             {{else}}
-            <span class="read-next-story disabled">
+            <span class="read-next-story disabled" style="background-image: url({{asset "images/cover_default.jpg"}})">
                 <button class="btn-read-next">Anterior »</button>
                 <p class="read-next-parrafo">No hay más posts</p>
             </span>
             {{/prev_post}}
         </aside>
         <!--Formulario de Comentarios-->
-        <section>
+        <section class="post__disqus">
             <h2>Comparte tu Opinión</h2>
             <div id="disqus_thread"></div>  
             <script>  

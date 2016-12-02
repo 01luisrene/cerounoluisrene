@@ -2,7 +2,7 @@
 <section class="___articulos___">
 {{#foreach posts}}
 {{!-- Primer Articulo --}}
-  <article class="articulo__item {{post_class}} {{#if @first}} first-post inner" style="background-image: url({{image}}){{/if}}" data-tag="{{#if tags}}{{#foreach tags limit="1"}}{{name}}{{/foreach}}{{/if}}">
+  <article class="articulo__item {{post_class}} {{#if @first}} first-post inner" style="background-image: url({{image}}){{/if}}" {{#if tags}}data-tag="{{#foreach tags limit="1"}}{{name}}{{/foreach}}"{{/if}}>
   {{#if @first}}
     <header>
     <h2 class="articulo-item-titulo" >
@@ -25,11 +25,13 @@
   {{!--Fin Primer Articulo --}}
   {{else}}
     <header class="articulo-item-header">
-    {{#if image}}
     <figure class="articulo-item-imagen">
-      <img src="{{image}}" alt="imagen - {{ title }}">
+      {{#if image}}
+        <img src="{{image}}" alt="imagen - {{ title }}">
+      {{else}}
+        <img src="{{asset "images/cover_default.jpg"}}" alt="imagen - {{ title }}">
+      {{/if}}
     </figure>
-    {{/if}}
       <h2 class="articulo-item-titulo" >
         <a class="articulo-item-vinculo" href="{{ url}}">{{ title }}</a>
       </h2>

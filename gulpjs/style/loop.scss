@@ -65,7 +65,7 @@
     bottom: 0;
     left: 0;
   }
-  &::after{
+  &[data-tag]::after{
     background: #fefefe;
     border: 2px solid $bg-boton;
     color: $text-color;

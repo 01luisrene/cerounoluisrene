@@ -33,7 +33,9 @@
     width: 100%;
     img{
       height: 100%;
-      max-width: 100%;
+      @include media-query($on-laptop){
+        height: 40px;
+      }
     }
   }
 }
@@ -220,9 +222,9 @@
   .logo-menu-mobile{
     @extend %display-block;
   	margin: 0 auto 20px auto;
-    height: 80px;
+    max-height: 80px;
     @include media-query($on-smartphone){
-      height: 45px;
+      max-height: 45px;
     }
   }
 }

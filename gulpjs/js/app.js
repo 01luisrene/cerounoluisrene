@@ -1,7 +1,5 @@
 'use strict';
-var agente = navigator.userAgent.toLowerCase(),
-    menu_mobile = $('#js_menu_mobile');
-
+var menu_mobile = $('#js_menu_mobile');
 var cerounoluisrene = (function ($) {
 
 var  displayMenu = function(){
@@ -96,7 +94,25 @@ var  displayMenu = function(){
   fitVids = function(){
     $('.post_contenido').fitVids();
   },
-
+  //Colocar Digital Ocean Fixed
+  digitalOcean = function(){
+    //Comprobamos si existe el contenedor con el ID js_digital_ocean
+    if($('#js_digital_ocean').length > 0){ 
+    setTimeout(function(){
+    var tweets = $(".ultimos-tweets").offset().top,
+        altura = $('.ultimos-tweets').height(),
+        fixed = tweets + altura;
+    
+    $(window).scroll(function () {
+      if ($(window).scrollTop() >= fixed) {
+        $('#js_digital_ocean').addClass('ditigal_ocean_fixed slideInDown');
+      }else{
+        $('#js_digital_ocean').removeClass('ditigal_ocean_fixed slideInDown');
+      }
+    });
+    }, 10000);
+    }
+  },
  // 01luisrene javascripts initialization
   init = function () {
     displayMenu();
@@ -105,6 +121,7 @@ var  displayMenu = function(){
     politicaCookies();
     botonUp();
     fitVids();
+    digitalOcean();
   };
 
   return {
