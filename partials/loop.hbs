@@ -2,7 +2,7 @@
 <section class="___articulos___">
 {{#foreach posts}}
 {{!-- Primer Articulo --}}
-  <article class="articulo__item {{post_class}} {{#if @first}} first-post inner" style="background-image: url({{image}}){{/if}}" {{#if tags}}data-tag="{{#foreach tags limit="1"}}{{name}}{{/foreach}}"{{/if}}>
+  <article class="articulo__item {{post_class}} {{#if @first}} first-post inner" {{#if image}}style="background-image: url('{{image}}')"{{/if}}{{/if}} {{#if tags}}data-tag="{{#foreach tags limit="1"}}{{name}}{{/foreach}}"{{/if}}>
   {{#if @first}}
     <header>
     <h2 class="articulo-item-titulo" >
@@ -22,7 +22,7 @@
       {{/author}} 
       <time datetime="{{date format="YYYY-MM-DD"}}"> <i class="fa fa-calendar-o"></i> <small>{{date format="DD MMMM YYYY"}}</small></time></span>
     </footer>
-  {{!--Fin Primer Articulo --}}
+
   {{else}}
     <header class="articulo-item-header">
     <figure class="articulo-item-imagen">
@@ -32,7 +32,7 @@
         <img src="{{asset "images/cover_default.jpg"}}" alt="imagen - {{ title }}">
       {{/if}}
     </figure>
-      <h2 class="articulo-item-titulo" >
+      <h2 class="articulo-item-titulo">
         <a class="articulo-item-vinculo" href="{{ url}}">{{ title }}</a>
       </h2>
       <span class="articulo-item-meta">
