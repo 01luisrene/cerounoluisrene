@@ -291,14 +291,13 @@ blockquote {
   border-right: thin solid $grey-color-light;
   border-bottom: thin solid $grey-color-light;
   margin: 1.75em 0 1.75em -2.2em;
-  padding: 0 0 0 1.75em;
+  padding: 0 0.8em 0 1.75em;
   letter-spacing: -1px;
   @include media-query($on-tablet){//600px
     margin-left: 0;
     padding-left: 0;
   }
   p{
-    font-style: italic;
     margin: 0.8em 0;
     @include media-query($on-tablet){//600px
       margin: 0.8em;
