@@ -1,39 +1,41 @@
-{{!-- Previous/next page links - only displayed on page 2+ --}}
+{{!-- Loop Posts --}}
 <section class="___articulos___">
 {{#foreach posts}}
 {{!-- Primer Articulo --}}
-  <article class="articulo__item {{post_class}} {{#if @first}} first-post inner" {{#if image}}style="background-image: url('{{image}}')"{{/if}}{{/if}} {{#if tags}}data-tag="{{#foreach tags limit="1"}}{{name}}{{/foreach}}"{{/if}}>
+  <article {{#if @first}}class="articulo__item first-post inner" {{#if image}}style="background-image: url({{image}})"{{/if}} {{#if tags}}data-tag="{{#foreach tags limit="1"}}{{name}}{{/foreach}}"{{/if}}{{else}}class="articulo__item {{post_class}}"{{/if}}>
   {{#if @first}}
     <header>
-    <h2 class="articulo-item-titulo" >
+      <h2 class="articulo-item-titulo">
         <a class="articulo-item-vinculo" href="{{url}}">{{title}}</a>
-    </h2>
+      </h2>
     </header>
     <section class="articulo-item-extracto">
       {{excerpt words="60"}}...
     </section>
     <footer>
       <span class="articulo-item-meta"> 
-      {{#author}}
-        {{#if image}}
-        <img src="{{image}}" alt="{{name}}'s Picture" />
-        {{/if}}
-        <small><a href="{{url}}">{{name}}</a></small>
-      {{/author}} 
-      <time datetime="{{date format="YYYY-MM-DD"}}"> <i class="fa fa-calendar-o"></i> <small>{{date format="DD MMMM YYYY"}}</small></time></span>
+        {{#author}}
+          {{#if image}}
+          <img src="{{image}}" alt="{{name}}'s Picture" />
+          {{/if}}
+          <small><a href="{{url}}">{{name}}</a></small>
+        {{/author}} 
+        <time datetime="{{date format="YYYY-MM-DD"}}"> <i class="fa fa-calendar-o"></i> <small>{{date format="DD MMMM YYYY"}}</small></time>
+      </span>
     </footer>
 
   {{else}}
+    {{!-- Segundo articulo a N --}}
     <header class="articulo-item-header">
     <figure class="articulo-item-imagen">
       {{#if image}}
-        <img src="{{image}}" alt="imagen - {{ title }}">
+        <img src="{{image}}" alt="imagen - {{title}}">
       {{else}}
         <img src="{{asset "images/cover_default.jpg"}}" alt="imagen por defecto">
       {{/if}}
     </figure>
       <h2 class="articulo-item-titulo">
-        <a class="articulo-item-vinculo" href="{{ url}}">{{ title }}</a>
+        <a class="articulo-item-vinculo" href="{{url}}">{{title}}</a>
       </h2>
       <span class="articulo-item-meta">
         {{#author}}
@@ -56,5 +58,5 @@
   </article>
 {{/foreach}}
 </section>
-
+{{!-- Paginación --}}
 {{pagination}}
