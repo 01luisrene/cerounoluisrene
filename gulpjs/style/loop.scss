@@ -19,10 +19,17 @@
     font-family: $lato-font-family;
     position: relative;
     display: inline-block;
+    overflow: hidden;
     margin: .5em;
     width: 47%;
     word-wrap: break-word;
     @include media-query($on-tablet) { //700px
+      margin:.5em .2em;
+      .articulo-item-titulo{
+        font-size: 20px;
+      }
+    }
+    @include media-query($on-smartphone) { //700px
       margin: 0 0 1.5em 0;
       width: 100%;
     }
@@ -37,23 +44,18 @@
   border: thin solid $color-theme;
   background: no-repeat center center;
   background-size: cover;
+  overflow: initial;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: .5em;
   width: 100%;
   @include media-query($on-tablet) { //700px
+    margin: 0 0 .5em 0;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     min-width: 104.5%;
-  }
-  @include media-query($on-small-tablet){
-  //600px
-    min-width: 107%;
-  }
-  @include media-query($on-smartphone) { //480px
-    min-width: 108%;
   }
   &::before{
     background: rgba(255, 255, 255, .3);
@@ -115,12 +117,24 @@
   .articulo-item-extracto{
     background: rgba(255,255,255,.7);
     color: $text-color;
-    font-size: 1.05em;
-    font-weight: 700;
-    letter-spacing: 1.5px;
     margin: 0 0 40px 0;
     padding-top: 10px;
     padding-bottom: 10px;
+    p{
+      font-size: 1.2em;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      line-height: 25px;
+      @include media-query($on-tablet) { //700px
+        font-size: 1.1em;
+        letter-spacing: 1px;
+        line-height: 1.5;
+      }
+      @include media-query($on-smartphone) { //480px
+        font-size: 1.05em;
+        line-height: 1.2;
+      }
+    }
     @include media-query($content-pc){
     //1000px
     }
@@ -133,8 +147,6 @@
       margin-bottom: 30px;
     }
     @include media-query($on-tablet) { //700px
-      font-size: 0.9em;
-      letter-spacing: 1px;
       margin: 0 0 25px 0;
     }
     @include media-query($on-small-tablet){
@@ -146,13 +158,14 @@
   }
 }
 
-//==========================================ARTICULOS ITEM===============================//
+//======================================ARTICULOS ITEM===============================//
 .articulo-item-header{
   @extend %margen-inferior; //15px
 }
 .articulo-item-imagen{
+  margin: 0 -1%;
   height: auto;
-  width: 100%;
+  width: 102%;
 }
 .articulo-item-titulo, .articulo-item-meta{
   @extend %margen-inferior; // 15px
@@ -235,6 +248,11 @@
   margin-bottom: ($spacing-unit / 2) * 3.333;
   @include media-query($on-smartphone) {
     padding: 7px 7px 10px 7px;
+  }
+  p{
+    font-size: 16px;
+    line-height: 21px;
+    margin-bottom: 0;
   }
 }
 .articulo-item-footer{

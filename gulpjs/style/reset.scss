@@ -286,11 +286,11 @@ a {
 blockquote {
   color: darken($grey-color, 15%);
   border-radius: 0 5px 5px 0;
-  border-left:0.4em solid $color-theme;
+  border-left: 0.4em solid $color-theme;
   border-top: thin solid $grey-color-light;
   border-right: thin solid $grey-color-light;
   border-bottom: thin solid $grey-color-light;
-  margin: 1.75em 0 1.75em -2.2em;
+  margin: 1.75em 0 1.75em -1.5em;
   padding: 0 0.8em 0 1.75em;
   letter-spacing: -1px;
   @include media-query($on-tablet){//600px

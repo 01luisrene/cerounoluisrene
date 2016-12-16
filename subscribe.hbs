@@ -1,4 +1,37 @@
-{{!< default}}
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Suscribete a nuestro newsletter</title>
+  <meta name="description" content="Suscribirse al blog de 01LuisRene para recibir las ultimas noticias sobre publicaciones de artículos web en tu bandeja de correo electrónico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
+  {{!-- Brand icon --}}
+  <link rel="shortcut icon" href="{{asset "images/favicon.ico"}}" />
+
+  {{!-- Styles'n'Scripts --}}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+  <link rel="stylesheet" type="text/css" href="{{asset "css/vendor.css"}}" />
+  <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/40d6f03eee.css" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Noto+Sans:400,700" />
+  <!--[if IE]>
+  <meta name="X-UA-Compatible" content="IE=edge">
+  <![endif]-->
+  <!-- Código CSS importante -->
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <style>body{padding-top: 0 !important; overflow: hidden;}</style>
+  <![endif]-->
+  {{!-- Ghost outputs important style and meta data with this tag --}}
+  {{ghost_head}}
+</head>
+<body>
+<!--[if lt IE 9]>
+<div class="browser-antiguo">
+    <p class="browserupgrade">Está utilizando un navegador <strong>antiguo</strong>. Por favor <a href="http://browsehappy.com/">actualice su navegador</a> para mejorar su experiencia.</p>
+</div>
+<![endif]--> 
 <header class="main-header suscribete-head">
     {{navigation}}
 </header>
@@ -57,3 +90,16 @@
     </article>
   {{/if}}
 </main>
+
+{{!-- Footer 01luisrene --}}
+{{> "footer"}}
+
+{{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+{{!-- Ghost outputs important scripts and data with this tag --}}
+{{ghost_foot}}
+{{!-- The main JavaScript file for 01luisrene --}}
+<script src="{{asset "js/app.min.js"}}" type="text/javascript"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57004124cf559f51"></script>
+</body>
+</html>

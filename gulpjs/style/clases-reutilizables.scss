@@ -7,9 +7,19 @@
   border-bottom: thin solid $grey-color-light;
   display: table;
   text-align: center;
+  margin-bottom: 2.5em;
   position: relative;
   height: 100vh;
   width: 100%;
+  //======================MARGENES CONTENEDORES PADRE==================//
+  @include media-query($on-small-laptop){
+    //800px
+    margin-bottom: 1.5em;
+  }
+  @include media-query($on-small-laptop){
+    //480px
+   
+  }
 }
 .main-header.home{
   @include media-query($content-block){
@@ -27,20 +37,10 @@
 .main-header.suscribete-head{
     height: auto;
 }
-//================================MARGENES CONTENEDORES PADRE=======================//
 .main-header{
-  margin-bottom: 2.5em;
-  @include media-query($on-small-laptop){
-    //800px
-    margin-bottom: 1.5em;
-  }
-  @include media-query($on-small-laptop){
-    //480px
-    margin-bottom: 1em;
-  }
+  
 }
 //================================RELLENOS CONTENEDORES ============================//
-
 //====CLASE PRINCIPAL -> BG=======//
 .main{
   padding: 0 0 1em 0;
