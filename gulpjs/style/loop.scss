@@ -29,7 +29,7 @@
         font-size: 20px;
       }
     }
-    @include media-query($on-smartphone) { //700px
+    @include media-query($on-small-tablet) { //600px
       margin: 0 0 1.5em 0;
       width: 100%;
     }
@@ -121,17 +121,17 @@
     padding-top: 10px;
     padding-bottom: 10px;
     p{
-      font-size: 1.2em;
+      font-size: 1.055em;
       font-weight: 700;
       letter-spacing: 1.5px;
       line-height: 25px;
       @include media-query($on-tablet) { //700px
-        font-size: 1.1em;
+        font-size: 1em;
         letter-spacing: 1px;
         line-height: 1.5;
       }
       @include media-query($on-smartphone) { //480px
-        font-size: 1.05em;
+        font-size: 0.94em;
         line-height: 1.2;
       }
     }
@@ -166,6 +166,17 @@
   margin: 0 -1%;
   height: auto;
   width: 102%;
+  .img{
+    background-size: cover;
+    background-position:center;
+    height: 304px;
+    @include media-query($on-small-laptop) { //800px
+      height: 200px;
+    }
+    @include media-query($on-small-tablet) { //600px
+      height: 304px;
+    }
+  }
 }
 .articulo-item-titulo, .articulo-item-meta{
   @extend %margen-inferior; // 15px
@@ -176,10 +187,11 @@
     padding-right: 7px;
   }
 }
-.articulo-item-comentarios, .articulo-item-extracto{
+.articulo-item-comentarios{
   font-size: 16px;
 }
 .articulo-item-titulo{
+  font-size: 1.66em;
   margin-top: $spacing-unit / 2; //15px
   position: relative;
   &::before{
@@ -189,19 +201,18 @@
     height: 8px;
     width: 15%;
     position: absolute;
-    bottom: -4px;
+    bottom: -7px;
     @include media-query($on-laptop){
     //900px
       height: 6px;
     }
     @include media-query($on-small-laptop){
     //800px
-      bottom: -2px;
+      bottom: -4px;
       height: 4px;
     }
     @include media-query($on-tablet){
     //700px
-      bottom: 0;
       height: 3px;
     }
   }

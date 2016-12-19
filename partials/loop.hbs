@@ -29,9 +29,9 @@
     <header class="articulo-item-header">
     <figure class="articulo-item-imagen">
       {{#if image}}
-        <img src="{{image}}" alt="imagen - {{title}}">
+      <div class="img" style="background-image: url({{image}})"></div>
       {{else}}
-        <img src="{{asset "images/cover_default.jpg"}}" alt="imagen por defecto">
+      <div class="img" style="background-image: url({{asset "images/cover_default.jpg"}})"></div>
       {{/if}}
     </figure>
       <h2 class="articulo-item-titulo">
