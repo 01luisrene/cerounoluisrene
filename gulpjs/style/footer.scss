@@ -23,12 +23,12 @@
   }
   &::before{
     display: block;
-    background: $text-white;
+    background: $color-no-cover;
     content: "";
     height: 4px;
     position: absolute;
     bottom: -8px;
-    width: 70%;
+    width: 25%;
   }
 }
 .footer-col-wrapper {
@@ -87,39 +87,47 @@
 }
 //====================================COOKIES=====================================//
 .barra-aceptacion-cookie{
-  background: rgba(42,42,42, .9);
+  background: rgba(42,42,42, .8);
   border-top: thin solid #606060;
+  border-right: thin solid #606060;
+  font-family: $lato-font-family;
   position: fixed;
   bottom:0;
   text-align: center;
   padding: .5em 1em;
-  width: 30%;
+  width: 35%;
   z-index: 999999;
   @include media-query($on-laptop){
+    border-right: 0;
     width: 100%;
   }
   p{
     color: #FEFF27;
-    font-size: .8em;
+    font-size: .7em;
     line-height: 20px;
     margin-bottom: 0;
     font-weight: 400;
     letter-spacing: normal;
   }
-  a, a:hover{
-    color: #fff;
+}
+.info-cookie{
+  border: thin dotted;
+  color: $text-white;
+  &:hover{
+    border: thin solid transparent;
+    color: $text-white;
   }
 }
 .btn-cookie{
   background: $text-white;
   display: inline-block;
-  border: 2px solid #1D1B1B;
+  border: 2px solid #2E2E2E;
   border-radius: 50%;
   cursor: pointer;
   font-size: 1em;
   height: 30px;
   width: 30px;
-  padding: 5px;
+  padding: 7px 5px 5px 5px;
   position: absolute;
   top: -10px;
   right: -10px;
@@ -130,12 +138,15 @@
     display: block;
     color: #333333;
   }
+  &:hover{
+    text-decoration: none;
+  }
 }
 //=====================================BOTÓN SUBUR=========================//
 .boton-subir{
   display: none;
-  background: $color-theme;
-  border: 2px solid $text-white;
+  background: lighten($color-theme, 5%);
+  border: 3px solid darken($color-theme, 3%);
   border-radius: 50%;
   height: 50px;
   width: 50px;
@@ -144,8 +155,7 @@
   bottom:262px;
   z-index: 999999999;
   @include media-query($on-small-tablet){
-    background: rgba(0,151,75, .8);
-    border: 2px solid rgba(255,255,255, .2);
+    background: rgba(0,151,75, .6);
     height: 80px;
     width: 80px;
     right: 50%;
@@ -156,17 +166,18 @@
     outline: none;
   }
   &:hover{
-    border: 2px solid #4F4B4B;
+    background: lighten($color-theme, 2%);
+    border: 3px solid lighten($color-theme, 5%);
   }
   i{
     color: #fff;
     font-size: 1.5em;
-    padding: 13px 10px 10px 9px;
+    padding: 10px 10px 10px 9px;
     -ms-transform: rotate(-45deg); // IE 9 
     -webkit-transform: rotate(-45deg); // Chrome, Safari, Opera
     transform: rotate(-45deg);
     @include media-query($on-small-tablet){
-      padding: 20px 10px 10px 23px;
+      padding: 15px 10px 10px 23px;
     }
   }
 }
