@@ -140,15 +140,6 @@ figure > img {display: block;}
 figcaption {
   font-size: $small-font-size;
 }
-ul{
-  list-style-type: none;
-}
-li {
-    > ul,
-    > ol {
-         margin-bottom: 0;
-    }
-}
 //Títulos
 h1, h2, h3, h4, h5, h6 {
   font-family: $lato-font-family;
@@ -250,6 +241,36 @@ h5, h6{
 address {
   display: inline;
   font-style: inherit;
+}
+
+ul, ol{
+  list-style-type: none;
+	li {
+		@include media-query($on-tablet){
+	  //700px
+	  font-size: 0.88em; //16px
+	  line-height: 28px;
+	  }
+	  @include media-query($on-smartphone){
+	    //480px
+	    font-size: 0.77em; //14px
+	    line-height: 26px;
+	  }
+	  > ul, > ol {
+	    li{
+	    	@include media-query($on-tablet){
+			  //700px
+			  font-size: 0.84em; //16px
+			  line-height: 24px;
+			  }
+			  @include media-query($on-smartphone){
+			    //480px
+			    font-size: 0.73em; //14px
+			    line-height: 22px;
+			  }
+	    }
+	  }
+	}
 }
 
 p{

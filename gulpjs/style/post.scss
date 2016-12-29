@@ -88,9 +88,45 @@
   margin-bottom: $spacing-unit / 2;
   word-wrap: break-word;
   p{
-    @include media-query($on-smartphone){
-      //480px
+    @include media-query($on-smartphone){ //480px
       text-align: justify;
+    }
+  }
+  //Estilos para las listas
+  ul, ol{
+  padding-left: 2.5em;
+  li {
+    margin-bottom: 15px;
+    @include media-query($on-tablet){
+    //700px
+    margin-bottom: 10px;
+    }
+    > ul, > ol {
+      margin-top: 15px;
+      margin-bottom: 0;
+      @include media-query($on-tablet){
+      //700px
+        margin-top: 10px;
+      }
+      li{
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+  ol{
+    list-style-type: decimal-leading-zero;
+    li > ol{
+      list-style-type: decimal-leading-zero;
+    }
+  }
+  ul{
+    list-style-type: disc;
+    li > ul{
+      
+      list-style-type: circle;
     }
   }
 
@@ -118,34 +154,6 @@
       top: -18px;
       height: 36px;
       width: 56px;
-    }
-  }
-  //estilo para listas
-  ol, ul{
-    padding-left: 2.5em;
-    li {
-      margin-bottom: 15px;
-      > ul, ol{
-        font-size: 14px;
-        line-height: 16px;
-        margin-top: 15px;
-        li:last-child{
-          margin-bottom: 0;
-        }
-      }
-    }
-  }
-  ol{
-    list-style-type: decimal-leading-zero;
-    li > ol{
-      list-style-type: decimal-leading-zero;
-    }
-  }
-  ul{
-    list-style-type: disc;
-    li > ul{
-      
-      list-style-type: circle;
     }
   }
 }
