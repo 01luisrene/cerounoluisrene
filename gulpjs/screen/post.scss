@@ -12,7 +12,7 @@
   -webkit-align-self: baseline;
   align-self: baseline;
   border: thin solid $grey-color-light;
-  padding-top: 3px;
+  padding-top: 5px;
   padding-left: 5px;
   padding-right:5px;
   padding-bottom:5px;
@@ -29,24 +29,47 @@
   &:not(:last-child){
     margin-bottom: 1.5em;
   }
+  h3{
+    position: relative;
+    &::before{
+      background: $text-color;
+      content: "";
+      height: 6px;
+      width: 15%;
+      position: absolute;
+      bottom: -4px;
+    }
+  }
 }
 //====DIGITAL OCEAN=====//
 .ditigal_ocean_fixed{
-  background: #FFFF80;
-  border: thin solid $grey-color-light;
-  padding: 5px;
-  margin-left: -6px;
-  margin-right: -6px;
   position: fixed;
   top: 0;
   width: 333px;
+  img {
+    height: 150px;
+    width: 110px;
+  }
 }
 .digital-ocean{
+  background-color: #F93E84;
+  background: radial-gradient(circle, #F970A3, #FA1168);
+  border: thin solid $grey-color-light;
+  margin-left: -8px;
+  margin-right: -8px;
+  padding: 5px 7px;
   p{
+    color: $text-white;
+    font-family: $lato-font-family;
+    font-weight: 300;
     margin-bottom: 0;
-  }
-  > a{
-    display: block;
+    > a{
+      color: #312F2F;
+      display: inline-block;
+      &:visited, &:hover{
+        color: #312F2F;
+      }
+    }
   }
   img {
     display: block;

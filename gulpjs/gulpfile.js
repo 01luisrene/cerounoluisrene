@@ -19,12 +19,12 @@ gulp.task("vendor-css", function(){
   .pipe(notify("Ha terminado la tarea css"));
 });
 
-gulp.task('style', function(){
+gulp.task('screen', function(){
 	var processors = [
 	autoprefixer({browsers: ['last 2 versions'] })
 	];
 
-	return gulp.src('./style/screen.scss')
+	return gulp.src('./screen/screen.scss')
 	.pipe(sass().on('error', sass.logError))
 	.pipe(sourceMaps.init())
 	.pipe(postCss(processors))
@@ -32,7 +32,7 @@ gulp.task('style', function(){
 	.pipe(cleanCss())
 	.pipe(sourceMaps.write('.'))
   .pipe(gulp.dest('../assets/css/'))
-	.pipe(notify("Ha finalizado la tarea style"));
+	.pipe(notify("Ha finalizado la tarea screen"));
 });
 
 //Comprimir archivos js
@@ -56,7 +56,24 @@ gulp.task('images', function() {
     .pipe(notify("Ha finalizado la compresión de imágenes!"));;
 });
 
+gulp.task('style', function(){
+	var processors = [
+	autoprefixer({browsers: ['last 2 versions'] })
+	];
+
+	return gulp.src('./style/style.scss')
+	.pipe(sass().on('error', sass.logError))
+	.pipe(sourceMaps.init())
+	.pipe(postCss(processors))
+	.pipe(gcmq())
+	.pipe(cleanCss())
+	.pipe(sourceMaps.write('.'))
+  .pipe(gulp.dest('../assets/css/'))
+	.pipe(notify("Ha finalizado la tarea style"));
+});
+
 gulp.task('watch', function(){
+	gulp.watch('./screen/**/*', ['screen']);
 	gulp.watch('./style/**/*', ['style']);
 	gulp.watch('./css/**/*', ['vendor-css']);
 	gulp.watch('./js/**/*', ['js']);
@@ -64,4 +81,4 @@ gulp.task('watch', function(){
 
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['watch', 'screen', 'style', 'vendor-css', 'js', 'images']);
