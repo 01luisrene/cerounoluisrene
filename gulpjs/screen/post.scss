@@ -1,27 +1,4 @@
-.contenedor___post{
-  @extend %flexbox-space-between;
-}
-.post{
-    width: 66%;
-    @include media-query($content-block){
-      width: 100%;
-    }
-}
 //==========================ASIDE============================//
-.widget-content{
-  -webkit-align-self: baseline;
-  align-self: baseline;
-  border: thin solid $grey-color-light;
-  padding-top: 5px;
-  padding-left: 5px;
-  padding-right:5px;
-  padding-bottom:5px;
-  position: relative;
-  width: 32%;
-  @include media-query($content-block){
-    display: none;
-  }
-}
 .widget{
   margin-left: auto;
   margin-right: auto;
@@ -113,6 +90,10 @@
   p{
     @include media-query($on-smartphone){ //480px
       text-align: justify;
+    }
+    a img, img{
+      display: block;
+      margin: 0 auto;
     }
   }
   //Estilos para las listas

@@ -24,8 +24,9 @@
       <h1 class="post-titulo">{{title}}</h1>
       <section class="post-meta">
         <i class="fa fa-calendar-o"></i>
-        <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}"><small>{{date format="DD MMMM YYYY"}}</small></time> 
+        <small><time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time></small>
         {{#if tags}}
+        <small> en </small>
         <ul class="post-lista-tags">
         {{#foreach tags limit="5"}}
           <li>
