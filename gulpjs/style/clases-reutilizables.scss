@@ -83,9 +83,9 @@
   @extend %flexbox-space-between;
 }
 .post{
-    width: 66%;
+    flex: 0 66%; //flex-grow flex-shrink flex-basis en este caso flex-grow flex-basis
     @include media-query($content-block){
-      width: 100%;
+      flex: 0 100%;
     }
 }
 //================================ASIDE=============================//
@@ -98,7 +98,7 @@
   padding-right:5px;
   padding-bottom:5px;
   position: relative;
-  width: 32%;
+  flex: 0 32%;
   @include media-query($content-block){
     display: none;
   }

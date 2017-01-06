@@ -21,7 +21,7 @@
     display: inline-block;
     overflow: hidden;
     margin: .5em;
-    width: 47%;
+    flex: 1 47%;
     word-wrap: break-word;
     @include media-query($on-tablet) { //700px
       margin:.5em .2em;
@@ -31,7 +31,7 @@
     }
     @include media-query($on-small-tablet) { //600px
       margin: 0 0 1.5em 0;
-      width: 100%;
+      flex: 1 100%;
     }
    }
 }
@@ -48,7 +48,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: .5em;
-  width: 100%;
+  flex: 1 100%; //flex-grow flex-shrink flex-basis
   @include media-query($on-tablet) { //700px
     margin: 0 0 .5em 0;
     left: 50%;
