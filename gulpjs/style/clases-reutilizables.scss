@@ -59,7 +59,8 @@
   }
 }
 .contenedor, .contenedor___post{
-  max-width: 1100px;  
+  max-width: 1100px;
+  width: 100%;  
 }
 .contenedor___post{
   @include media-query($content-block){
@@ -81,12 +82,13 @@
 //================================POST=============================//
 .contenedor___post{
   @extend %flexbox-space-between;
-}
-.post{
-    flex: 0 66%; //flex-grow flex-shrink flex-basis en este caso flex-grow flex-basis
+  flex-wrap: wrap;
+  & .post{
+    width: 66%;
     @include media-query($content-block){
-      flex: 0 100%;
+      width: 100%;
     }
+  }
 }
 //================================ASIDE=============================//
 .widget-content{
@@ -98,7 +100,7 @@
   padding-right:5px;
   padding-bottom:5px;
   position: relative;
-  flex: 0 32%;
+  width: 32%;
   @include media-query($content-block){
     display: none;
   }
