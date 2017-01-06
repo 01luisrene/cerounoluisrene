@@ -30,6 +30,9 @@
     border: thin solid transparent;
     color: $text-white;
   }
+  &:visited{
+    color: $text-white;
+  }
 }
 .btn-cookie{
   background: $text-white;

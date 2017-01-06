@@ -37,11 +37,11 @@ flex-wrap: wrap;
 	-webkit-justify-content: space-between;
 	justify-content: space-between;
 }
-%flexbox-space-between-wrap{
+%flexbox-space-around-wrap{
 display: -webkit-flex;
 display: flex;
--webkit-justify-content: space-between;
-justify-content: space-between;
+-webkit-justify-content: space-around;
+justify-content: space-around;
 -webkit-flex-wrap: wrap;
 flex-wrap: wrap; 
 }
