@@ -99,9 +99,9 @@ var  displayMenu = function(){
     //Comprobamos si existe el contenedor con el ID js_digital_ocean
     if($('#js_digital_ocean').length > 0){ 
     setTimeout(function(){
-    var tweets = $(".ultimos-tweets").offset().top,
-        altura = $('.ultimos-tweets').height(),
-        fixed = tweets + altura;
+    var post = $(".ultimos-post").offset().top,
+        altura = $('.ultimos-post').height(),
+        fixed = post + altura;
     
     $(window).scroll(function () {
       if ($(window).scrollTop() >= fixed) {

@@ -1,5 +1,4 @@
-<script src="{{ asset "js/jquery.magnific-popup.min.js"}}"></script>
-<script src="{{ asset "js/highlight.js"}}"></script>
+<script type="text/javascript" src="{{ asset "js/vendor.post.min.js"}}"></script>
 <script>
   $(document).ready(function() {
     $('pre code').each(function(i, block) {
@@ -20,6 +19,12 @@
 				duration: 300
 			}
   	});
+    $(".ultimos-post").rss("https://01luisrene.com/rss/",
+    {
+      entryTemplate:'<li><a href="{url}">{title}</a></li>',
+      limit: 15,
+      ssl: true
+    })
   });
 </script>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>

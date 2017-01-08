@@ -22,7 +22,6 @@
     {{ghost_foot}}
     {{!-- The main JavaScript file for 01luisrene --}}
     <script async src="{{asset "js/app.min.js"}}" type="text/javascript"></script>
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57004124cf559f51"></script>
     <script id="dsq-count-scr" src="//blog-ghost.disqus.com/count.js" async></script>
     {{!-- Agregando CSS dinámicamente --}}
     <script>
@@ -48,9 +47,9 @@
         }
       })();
     </script>
-    
     {{#is "post"}}
         {{> "scripstPost"}}
     {{/is}}
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57004124cf559f51"></script>
 </body>
 </html>

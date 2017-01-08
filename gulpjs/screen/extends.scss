@@ -45,3 +45,17 @@ justify-content: space-around;
 -webkit-flex-wrap: wrap;
 flex-wrap: wrap; 
 }
+//viñetas
+
+%vinietas{
+  display: inline-block;
+  color: $text-color;
+  content: "\f10c";
+  font-family: "FontAwesome";
+  speak: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+}

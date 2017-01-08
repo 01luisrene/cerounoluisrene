@@ -110,7 +110,14 @@
 .compartir-redes-sociales{
   margin-top: 1em;
   @extend %margen-inferior;
-  text-align: center;
+   table{
+    th, td{
+      border-bottom: 0;
+    }
+    tr{
+      background: transparent;
+    }
+  }
 }
 
 //================================OCULTAR ELEMENTOS=======================//
