@@ -17,13 +17,18 @@
       display: block;
       background: $bg-article;
       border: thin solid $grey-color-light;
-      border-radius: 12px;
+      border-radius: 15px;
       color: $text-color;
-      font-size: .8em;
-      padding: .1em .5em;
-      margin-top: .5em;
+      font-size: 0.8em;
+      padding: 0.1em 0.5em;
+      margin-top: 0.5em;
+      @include media-query($on-tablet){
+      //700px
+        border-radius: 30px;
+      }
       &:hover{
         text-decoration: none;
+        border: thin dotted $grey-color;
       }
     }
   }
@@ -43,7 +48,7 @@
   }
   //Estilos para las listas
   ul, ol{
-  padding-left: 2.5em;
+  padding-left: 2em;
   li {
     margin-bottom: 15px;
     @include media-query($on-tablet){
@@ -398,7 +403,6 @@
   padding: 5px 7px;
   p{
     color: $text-white;
-    font-family: $lato-font-family;
     font-weight: 300;
     margin-bottom: 0;
     > a{
@@ -423,11 +427,11 @@
     li{
       margin-bottom: 0.7em;
       a{
-        font-family: $lato-font-family;
         &::before{
           @extend %vinietas;
-          left: 5px;
-          margin-top: 4px;
+          left: 7px;
+          margin-top: 5px;
+          font-size: 14px;
         }
       }
     }

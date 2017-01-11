@@ -46,7 +46,7 @@ gulp.task('js', function () {
 
 //Comprimir archivos js
 gulp.task('vendor-post', function () {
-   return gulp.src(['./js-post/*js'])
+   return gulp.src(['./js-vendor-post/*js'])
     .pipe(concat('vendor.post.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('../assets/js/'))
@@ -86,7 +86,7 @@ gulp.task('watch', function(){
 	gulp.watch('./style/**/*', ['style']);
 	gulp.watch('./css/**/*', ['vendor-css']);
 	gulp.watch('./js/**/*', ['js']);
-	gulp.watch('./js-post/**/*', ['vendor-post']);
+	gulp.watch('./js-vendor-post/**/*', ['vendor-post']);
 	gulp.watch('./images/**/*', ['images']);
 });
 

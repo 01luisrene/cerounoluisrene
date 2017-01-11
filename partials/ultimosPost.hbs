@@ -1,0 +1,9 @@
+<script type="text/javascript" src="{{ asset "js/jquery.rss.min.js"}}"></script>
+<script>
+	$(".ultimos-post").rss("https://01luisrene.com/rss/",
+	  {
+	    entryTemplate:'<li><a href="{url}">{title}</a></li>',
+	    limit: 15,
+	    ssl: true
+	});
+</script>

@@ -83,7 +83,7 @@
 .contenedor___post{
   @extend %flexbox-space-between;
   flex-wrap: wrap;
-  & .post{
+  .post{
     width: 66%;
     @include media-query($content-block){
       width: 100%;
@@ -95,6 +95,7 @@
   -webkit-align-self: baseline;
   align-self: baseline;
   border: thin solid $grey-color-light;
+  font-family: $lato-font-family;
   padding-top: 5px;
   padding-left: 5px;
   padding-right:5px;
