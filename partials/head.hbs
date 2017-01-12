@@ -1,11 +1,12 @@
 {{!-- Document Settings --}}
 <meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!--[if IE]>
+<meta name="X-UA-Compatible" content="IE=edge">
+<![endif]-->
 
 {{!-- Page Meta --}}
 <title>{{meta_title}}</title>
 <meta name="description" content="{{meta_description}}" />
-
 
 {{!-- Mobile Meta --}}
 <meta name="HandheldFriendly" content="True" />
@@ -26,10 +27,10 @@
 .browser-antiguo .browserupgrade a {color: #1A5FBB;}
 .browser-antiguo .browserupgrade a:hover {color: #14488e;}
 </style>
-<!--[if IE]>
-<meta name="X-UA-Compatible" content="IE=edge">
-<![endif]-->
-<!-- Código CSS importante -->
+<link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" media="all" />
+<link rel="stylesheet" type="text/css" href="{{asset "css/vendor.css"}}" media="all" />
+<link rel="stylesheet" href="//use.fontawesome.com/40d6f03eee.css" media="all" />
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Lato:300,400,700" media="all" />
 
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>

@@ -65,29 +65,7 @@ function initMap(){
     content:"Ubicación!"
   });
   infowindow.open(map,marker);
-}
-(function(){
-//-- Agregando CSS dinámicamente
-document.addEventListener('DOMContentLoaded', css, false);
-function css() {
-  cargarCSS('{{asset "css/screen.css"}}');
-  cargarCSS('{{asset "css/vendor.css"}}');
-  cargarCSS('//use.fontawesome.com/40d6f03eee.css');
-  cargarCSS('//fonts.googleapis.com/css?family=Noto+Sans:400,700');
-  cargarCSS('//fonts.googleapis.com/css?family=Lato:300,400,700');
-}
-function cargarCSS(href) {
-  'use strict';
-  var css = window.document.createElement('link');
-  var ref = document.querySelector('head').lastChild;
-  css.rel = 'stylesheet';
-  css.type = 'text/css';
-  css.href = href;
-  css.media = 'all';
-  ref.parentNode.insertBefore(css, ref);
-  return css;
-}
-  })();
+} 
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAIokqr9g-NE7L0CZFH3sx9DHX4VgDkuqw&signed_in=true&callback=initMap">
     </script>
