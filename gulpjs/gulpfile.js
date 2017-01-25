@@ -1,15 +1,15 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var cleanCss = require('gulp-clean-css');
-var	postCss = require('gulp-postcss');
-var	autoprefixer = require('autoprefixer');
-var	concat = require('gulp-concat');
-var sourceMaps = require('gulp-sourcemaps');
-var gcmq = require('gulp-group-css-media-queries');
-var uglify = require('gulp-uglify');
-var notify = require('gulp-notify');
-var imagemin = require('gulp-imagemin');
-var pngcrush = require('imagemin-pngcrush');
+var gulp = require('gulp'),
+		sass = require('gulp-sass'),
+		cleanCss = require('gulp-clean-css'),
+		postCss = require('gulp-postcss'),
+		autoprefixer = require('autoprefixer'),
+		concat = require('gulp-concat'),
+		sourceMaps = require('gulp-sourcemaps'),
+		gcmq = require('gulp-group-css-media-queries'),
+		uglify = require('gulp-uglify'),
+		notify = require('gulp-notify'),
+		imagemin = require('gulp-imagemin'),
+		pngcrush = require('imagemin-pngcrush');
 
 gulp.task("vendor-css", function(){
 	return gulp.src('./css/**/*.css')
