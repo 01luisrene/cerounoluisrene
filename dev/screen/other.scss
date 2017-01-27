@@ -1,0 +1,98 @@
+//====================================COOKIES=====================================//
+.barra-aceptacion-cookie{
+  background: rgba(42,42,42, .8);
+  border-top: thin solid #606060;
+  border-right: thin solid #606060;
+  font-family: $font-family;
+  position: fixed;
+  bottom:0;
+  text-align: center;
+  padding: 0.7em 1.5em;
+  width: 35%;
+  z-index: 999999;
+  @include media-query($on-laptop){
+    border-right: 0;
+    width: 100%;
+  }
+  p{
+    color: #FEFF27;
+    font-size: .7em;
+    line-height: 20px;
+    margin-bottom: 0;
+    font-weight: 400;
+    letter-spacing: normal;
+  }
+}
+.info-cookie{
+  border: thin dotted;
+  color: $text-white;
+  &:hover{
+    border: thin solid transparent;
+    color: $text-white;
+  }
+  &:visited{
+    color: $text-white;
+  }
+}
+.btn-cookie{
+  background: $text-white;
+  display: inline-block;
+  border: 2px solid #2E2E2E;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1em;
+  height: 30px;
+  width: 30px;
+  padding: 7px 5px 5px 5px;
+  position: absolute;
+  top: -17px;
+  left: 10px;
+  @include media-query($on-laptop){
+    right: 5px;
+  }
+  span{
+    display: block;
+    color: #333333;
+  }
+  &:hover{
+    text-decoration: none;
+  }
+}
+//=====================================BOTÓN SUBIR=========================//
+a.boton-subir{
+  display: none;
+  background: lighten($color-theme, 5%);
+  border: 3px solid darken($color-theme, 3%);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  padding: 10px 10px 10px 9px;
+  position: fixed;
+  right: 15px;
+  bottom:15px;
+  z-index: 999999999;
+  @include media-query($on-small-tablet){
+    background: rgba(0,151,75, .6);
+    height: 80px;
+    width: 80px;
+    right: 50%;
+    bottom: -40px;
+    margin-right: -40px;
+    padding: 10px 10px 10px 23px;
+  }
+  &:focus{
+    outline: none;
+  }
+  &:hover{
+    background: lighten($color-theme, 2%);
+    text-decoration: none;
+    @include media-query($on-small-tablet){
+      background: rgba(0,151,75, .6);
+    }
+  }
+  i{
+    color: #fff;
+    font-size: 1.5em;
+  }
+}
+

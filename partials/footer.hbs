@@ -3,31 +3,46 @@
   <div class="contenedor footer-col-wrapper">
       <section class="footer-col footer-col-1">
           <h3 class="footer-titulo inspiracion">Toda mi inspiración y conocimiento esta aquí!!</h3>
-          <p>{"code" :{ "HTML5", "CSS3", "JS"}}</p>      
+<pre><code>
+{
+ "code" : { "HTML5", "CSS3", "JS"}
+}</code></pre>      
       </section>
 
       <section class="footer-col footer-col-2">
-        <ul class="footer-nav-redes">
+        <ul class="nav-redes no-list">
           {{#if @blog.twitter}}
           <li>
-            <i class="fa fa-twitter" aria-hidden="true"></i> <a href="{{twitter_url @blog.twitter}}" target="_blank">Twitter</a>
+            <a href="{{twitter_url @blog.twitter}}" target="_blank">
+              <span class="icon-twitter"></span> 
+              <i class="hidden">Twitter</i>
+            </a>
           </li>
           {{/if}}
           {{#if @blog.facebook}}
           <li>
-          <i class="fa fa-facebook" aria-hidden="true"></i> <a href="{{facebook_url @blog.facebook}}" target="_blank">Facebook</a>
+            <a href="{{facebook_url @blog.facebook}}" target="_blank">
+              <span class="icon-facebook"></span>
+              <i class="hidden">Facebook</i>
+            </a>
           </li>
           {{/if}}
           <li>
-          <i class="fa fa-github" aria-hidden="true"></i> <a href="https://www.github.com/01luisrene" target="_blank">GitHub</a>
+            <a href="https://www.github.com/01luisrene" target="_blank">
+              <span class="icon-github"></span>
+              <i class="hidden">GitHub</i>
+            </a>
           </li>
           <li>
-          <i  class="fa fa-google-plus" aria-hidden="true"></i> <a href="https://plus.google.com/u/0/+01LuisRene" target="_blank">Google Plus</a>
+            <a href="https://plus.google.com/u/0/+01LuisRene" target="_blank">
+              <span class="icon-google-plus3"></span>
+              <i class="hidden">Google Plus</i> 
+            </a>
           </li>
         </ul>
       </section>
       <section class="footer-col footer-col-3">
-        <p class="copyright"><a href="{{@blog.url}}"><b>{{@blog.title}}</b></a> &copy; {{date format="YYYY"}}</a>
+        <p class="copyright"><a href="{{@blog.url}}"><b>{{@blog.title}}</b></a> <span class="icon-copyright"></span> {{date format="YYYY"}}</a>
         </p>
         {{#if @blog.logo}}
           <img src="{{@blog.logo}}" title="{{@blog.title}}" style="display: block; margin: 0 auto;" width="60">
@@ -36,14 +51,16 @@
   </div>
 </footer>
 <!-- Política de cookies  -->
-<div class="barra-aceptacion-cookie" id="js_barra_aceptacion_cookie" style="display: none;">
+<div class="barra-aceptacion-cookie" id="js_barra_aceptacion_cookie" style="display: block;">
   <p>Utilizo cookies de terceros y propios en este blog. Al continuar utilizando el blog entiendo que aceptas la política de cookies.
-  <a href="/politica-cookies/"  class="info-cookie" target="_blank">Más información</a>
-  <a href="javascript:void(0)" id="js_btn_cookie" class="btn-cookie"><i class="fa fa-times" aria-hidden="true"></i></a>
+  <a href="{{@blog.url}}/politica-cookies/"  class="info-cookie" target="_blank">Más información</a>
+  <a href="javascript:void(0)" id="js_btn_cookie" class="btn-cookie">
+    <span class="icon-close"></span>
+  </a>
   </p>
 </div>
 
 <!-- Botón up -->
 <a href="#" id="js_up" class="boton-subir">
-  <i class="fa fa-rocket" aria-hidden="true"></i>
+  <i class="icon-rocket"></i>
 </a>

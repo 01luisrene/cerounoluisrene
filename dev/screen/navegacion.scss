@@ -1,0 +1,186 @@
+.caja___menu{
+  background: $menu-bg;
+  box-shadow: 0px 1px 2px -1px rgba(245,245,245,1);
+}
+.caja___menu.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border: none;
+  z-index: 9999;
+}
+.caja__menu__inner{
+ padding-top: 6.5px;
+ padding-bottom: 6.5px;
+}
+//Titulo Blog
+.titulo-blog{
+  display: block;
+  color: $menu-link-color;
+  font-size: 1.5em;
+  font-family: $font-family;
+  font-weight: 400;
+  margin-top: 3px;
+  transition: 0.3s;
+  &:hover{
+    color: $menu-link-hover-color;
+  }
+}
+//icono logo
+.link-logo{
+  display: inline-block;
+  max-height: 50px;
+  .logo-figure{
+    display: block;
+    text-align: left;
+    height: 100%;
+    width: 100%;
+    img{
+      height: 100%;
+      @include media-query($on-laptop){
+        height: 40px;
+      }
+    }
+  }
+}
+
+//Estilos para el Menu main
+.nav{
+  .nav-item{
+    display: inline-block;
+    &:not(:last-child){
+      margin-right: 15px;
+      @include media-query($on-laptop){
+        display: none;
+      }
+    }
+    &:last-child{
+      display: none;
+      background: $grey-color-light;
+      border-radius: 3px;
+      font-size: 1.6em;
+      padding: 0.3em 0.3em;
+      height: 45px;
+      width: 45px;
+      @include media-query($on-laptop){
+        display: block;
+      }
+      a{
+        color: $menu-icono-color;
+        padding: 0;
+      }
+    }
+    .nav-link{
+      display: inline-block;
+      color: $menu-link-color;
+      font-family: $base-font-family;
+      font-weight: 400;
+      line-height: normal;
+      padding: .5em 0;
+      text-transform: capitalize;
+      &:hover{
+        color: $menu-link-hover-color;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+//============= Estilos menú móvil ========================
+.menu___mobile{
+  background: rgba(35,34,45,.95);
+  padding-top: 25px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  position: fixed;
+  right: 0;
+  top:0;
+  height: 100%;
+  width: 350px;
+  z-index: 999999999;
+  @media screen and (min-width: $on-laptop){
+    display: none !important;
+  }
+  @include media-query($on-small-tablet){
+    width: 75%;
+  }
+  //ESTILOS PARA SMARTPHONE DE 320PX POR 240PX
+  @include media-query($on-smartphone){
+    overflow-x: scroll;
+  }
+
+  .icon-cerrar{
+    color: $text-white;
+    cursor: pointer;
+    position: absolute;
+    top:16px;
+    left: 14px;
+    text-decoration: none;
+    font-size: 2.5em;
+  }
+  .titulo-blog{
+    @extend %display-block;
+    color: $menu-link-color;
+    font-size: 1.3em;
+    font-weight: 700;
+  	margin: 0 auto 40px auto;
+    min-height: 32px;
+    @include media-query($on-smartphone){
+      max-height: 45px;
+    }
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+//Menu mobile
+.nav__mobile{
+  .nav-item{
+    border-radius: 3px;
+    border-style: solid;
+    border-width: thin thin thin 8px;
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 100%;
+    &:nth-child(1){
+      background-color: #1FA3E7;
+      border-color: #41ADE5;
+      &:hover{
+        background-color: #BBDAEA;
+      }
+    }
+    &:nth-child(2){
+      background-color: #C52AF2;
+      border-color: #A40CD0;
+      &:hover{
+        background-color: #E487FF;
+      }
+    }
+    &:nth-child(3){
+      background-color: #F96A38;
+      border-color: #EA5622;
+      &:hover{
+        background-color: #FA9876;
+      }
+    }
+    .nav-link{
+      @extend %display-block;
+      color: $menu-link-color;
+      font-size: 0.9em;
+      font-weight: 700;
+      padding: 1.3em 0.7em;
+      text-transform: uppercase;
+      text-align: left;
+      transition: .500s;
+      &:hover{
+        color: $menu-link-hover-color;
+        text-decoration: none;
+      }
+      [class*="icon"]{
+        font-size: 1.5em;
+      }
+    }
+  }
+}

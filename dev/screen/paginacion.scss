@@ -1,0 +1,45 @@
+//===================================PAGINACIÓN=====================================//
+.pagination{
+  @extend %flexbox-center;
+  -webkit-align-items: center;
+  align-items: center;
+  margin: 2em auto;
+}
+.page-number{
+  font-size: 14px;
+  text-align: center;
+  @include media-query($on-smartphone){
+    font-size: 10px;
+  }
+}
+.newer-posts, .older-posts{
+  margin: 0 .5em;
+  padding: .7em .7em;
+  font-size: 0.8em;
+  font-family: $font-family;
+  font-weight: 400;
+  text-transform: uppercase;
+  @include media-query($on-smartphone){
+    //480px
+    font-size: 0.6em;
+    padding: .8em .3em;
+    text-align: center;
+  }
+}
+.newer-posts.active, .older-posts.active{
+  background: $color-paginacion-bg;
+  border: 2px solid darken($color-paginacion-bg, 5%);
+  color: $text-white;
+  &:hover{
+    border: 2px solid $text-color;
+    color: $text-color;
+    text-decoration: none;
+  }
+}
+.newer-posts.disabled, .older-posts.disabled{
+  background: $grey-color-light;
+  border: 2px solid $grey-color;
+  color: $grey-color;
+  cursor: default;
+  user-select: none;
+}

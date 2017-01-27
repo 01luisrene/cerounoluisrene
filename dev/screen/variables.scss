@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* ==============================================================================
+		TEMA GHOST DESARROLLADO PARA EL SITIO WEB 01luisrene.com (Luis Rene Mas Mas)
+   ==============================================================================*/
+
+// Mis variables
+$base-font-family: 'Roboto', Helvetica, Arial, sans-serif;
+$font-family: 'Lato', sans-serif;
+$monaco-font-family: 'monacoregular', 'Lato';
+$base-font-size:   18px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.15em;
+$spacing-unit:     30px; //usado
+
+//BTN
+$bg-boton: #359AFF;
+
+//COLORES DEL THEME
+$color-theme: 			#00974B; //usado
+$text-color:       	#111; //usado
+$text-white: 				#fff; //usado
+$grey-color:       	#828282;
+$grey-color-light: 	lighten($grey-color, 40%);
+$grey-color-dark:  	darken($grey-color, 25%);
+$color-calendario: 	$color-theme; //usado
+$color-no-cover: 		#D0DCDF; //usado
+
+
+//LOOP
+$bg-article: #D7E0E3; //usado
+$color-article-item: #151C20;
+
+//PAGINACIÓN
+$color-paginacion-bg: #44A8E1;
+
+//ANCHOS (responsive design)
+$content-block: 		1100px;
+$content-pc:    		1000px;
+$on-laptop: 				900px;
+$on-small-laptop:   800px;
+$on-tablet:					700px;
+$on-small-tablet:   600px;
+$on-smartphone:	   	480px;
+
+//MENU
+$menu-bg: 					#17AB6B;
+$menu-link-color: #fff;
+$menu-link-hover-color: #391F39;
+$menu-icono-color: #332D2D;
+//FOOTER
+$color-name-app: rgba(0,117,234,1);
+$color-link-footer: #FD7E00;
+
+//LISTA REDES FRONT
+$redes-height: 3em;
+$redes-width: 3em;
+$redes-font-size: 2em;
+//**********************
+$facebook: #3864a3;
+$twitter: #4391e8;
+$youtube: #cc181e;
+$google-plus: #db4437;
+$github: #002F5E;
+
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+//MEDIA QUERIES
+@include media-query($content-block){
+  //1100px
+}
+@include media-query($content-pc){
+  //1000px
+}
+@include media-query($on-laptop){
+//900px
+}
+@include media-query($on-small-laptop){
+//800px
+}
+@include media-query($on-tablet){
+//700px
+}
+@include media-query($on-small-tablet){
+//600px
+}
+@include media-query($on-smartphone){
+//480px
+}

@@ -1,0 +1,87 @@
+//==========================================FOOTER===================================//
+.site-footer {
+  background-color: $menu-bg;
+  position:relative;
+  border-top: 1px solid $grey-color-light;
+  padding: ($spacing-unit/2) 0;
+  z-index: 2;
+}
+.footer-col{
+  a{
+    text-decoration: none;
+  }
+}
+.footer-titulo.inspiracion{
+  color: $color-theme;
+  margin-top: 1em;
+  position: relative;
+  @include media-query($on-laptop) {
+
+  }
+  @include media-query($on-smartphone){
+    margin-top: 0;
+  }
+  &::before{
+    display: block;
+    background: $color-no-cover;
+    content: "";
+    height: 4px;
+    position: absolute;
+    bottom: -8px;
+    width: 25%;
+  }
+}
+.footer-col-wrapper {
+  @extend %flexbox-flex-end;
+  color: #EFEDED;
+  font-size: 15px;
+}
+.footer-col-1 {
+  width: 45%;
+}
+
+.footer-col-2 {
+  padding-left: 2%;
+  width: 35%;
+}
+
+.footer-col-3 {
+  text-align: center;
+  width: 20%;
+}
+
+@include media-query($on-laptop) {
+  .footer-col-1{
+    width: 50%;
+  }
+  .footer-col-2{
+    width: 50%;
+  }
+  .footer-col-3 {
+    border-top: thin dotted $color-theme;
+    margin-top: 1em;
+    padding-top: 1em;
+    width:100%;
+  }
+}
+@include media-query($on-smartphone){
+  .footer-col-2{
+    border-top: thin dotted $color-theme;
+    margin-top: 1em;
+    padding-top: 1em;
+    padding-left: 0;
+  }
+  .footer-col-1,.footer-col-2,.footer-col-3{
+    width:100%;
+  }
+}
+.footer-nav-redes{
+    list-style: none;
+    margin-left: 0;
+    .fa{
+      width: 20px;
+    }
+}
+.copyright{
+  font-size: 1em;
+}

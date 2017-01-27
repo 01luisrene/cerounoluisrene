@@ -1,7 +1,7 @@
 {{!< default}}
 {{#post}}
 <!-- Header principal -->
-<header class="main-header post-head{{#if image}}"style="background-image: url({{image}}){{else}} no-cover" style="background-image: url({{asset 'images/cover_default.jpg'}}){{/if}}">
+<header class="main-header post-head{{#if image}}"style="background-image: url({{image}}){{else}} no-cover{{/if}}">
     {{!-- Links de Navegación del Blog --}}
     {{navigation}}
 </header>
@@ -23,14 +23,14 @@
     <header>
       <h1 class="post-titulo">{{title}}</h1>
       <section class="post-meta">
-        <i class="fa fa-calendar-o"></i>
-        <small><time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time></small>
+        <span class="icon-clock"></span>
+        <small><time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date published_at timeago="true"}}</time></small>
         {{#if tags}}
-        <small> en </small>
+        <small> on </small>
         <ul class="post-lista-tags">
         {{#foreach tags limit="5"}}
           <li>
-            <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
+            <a href="{{url}}" title="{{name}}" class="tag-{{slug}}">{{name}}</a>
           </li>  
         {{/foreach}}
         </ul>
@@ -38,7 +38,6 @@
       </section>
     </header>
     <section class="post_contenido">
-      <div class="addthis_sharing_toolbox compartir-redes-sociales"></div>
       {{content}}
       {{!-- Publicidad Footer Post --}}
       <div class="post___publicidad" align="center">
@@ -105,52 +104,51 @@
     </section>
     {{/if}}
     </footer>
-    {{!-- Links to Previous/Next posts --}}
-    <aside class="read-next">
-      {{#next_post}}
-      <a class="read-next-story next" {{#if image}}style="background-image: url({{image}})"{{else}}style="background-image: url({{asset "images/cover_default.jpg"}})"{{/if}} href="{{url}}">
-          <h4 class="read-next-title">{{title}}</h4>
-          <p class="read-next-parrafo">{{excerpt words="12"}}&hellip;</p>
-      </a>
-      {{else}}
-      <span class="read-next-story disabled" style="background-image: url({{asset "images/cover_default.jpg"}})">
-          <button class="btn-read-next">« Siguiente</button>
-          <p class="read-next-parrafo">No hay más posts</p>
-      </span>
-      {{/next_post}}
-
-      {{#prev_post}}
-      <a class="read-next-story prev"{{#if image}}style="background-image: url({{image}})"{{else}}style="background-image: url({{asset "images/cover_default.jpg"}})"{{/if}} href="{{url}}">
-          <h4 class="read-next-title">{{title}}</h4>
-          <p class="read-next-parrafo">{{excerpt words="12"}}&hellip;</p>
-      </a>
-      {{else}}
-      <span class="read-next-story disabled" style="background-image: url({{asset "images/cover_default.jpg"}})">
-          <button class="btn-read-next">Anterior »</button>
-          <p class="read-next-parrafo">No hay más posts</p>
-      </span>
-      {{/prev_post}}
-    </aside>
-    <!--Formulario de Comentarios-->
-    <section class="post__disqus">
-      <h2>Comparte tu Opinión</h2>
-      <div id="disqus_thread"></div>  
-      <script>  
-      var disqus_config = function () {  
-      this.page.url = '{{url absolute="true"}}';
-      this.page.identifier = 'ghost-{{id}}';
-      };
-      (function() {
-      var d = document, s = d.createElement('script');
-      s.src = '//blog-ghost.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());  
-      (d.head || d.body).appendChild(s);
-      })();
-      </script>  
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
-    </section>
   </article>
-  {{> "aside"}}
 </div>
+{{!-- Links to Previous/Next posts --}}
+<aside class="read-next">
+  {{#next_post}}
+  <a class="read-next-story next" {{#if image}}style="background-image: url({{image}})"{{else}}style="background-image: url({{asset "images/cover_default.jpg"}})"{{/if}} href="{{url}}">
+      <h4 class="read-next-title">{{title}}</h4>
+      <p class="read-next-parrafo">{{excerpt words="12"}}&hellip;</p>
+  </a>
+  {{else}}
+  <span class="read-next-story disabled" style="background-image: url({{asset "images/cover_default.jpg"}})">
+      <button class="btn-read-next">« Siguiente</button>
+      <p class="read-next-parrafo">No hay más posts</p>
+  </span>
+  {{/next_post}}
+
+  {{#prev_post}}
+  <a class="read-next-story prev"{{#if image}}style="background-image: url({{image}})"{{else}}style="background-image: url({{asset "images/cover_default.jpg"}})"{{/if}} href="{{url}}">
+      <h4 class="read-next-title">{{title}}</h4>
+      <p class="read-next-parrafo">{{excerpt words="12"}}&hellip;</p>
+  </a>
+  {{else}}
+  <span class="read-next-story disabled" style="background-image: url({{asset "images/cover_default.jpg"}})">
+      <button class="btn-read-next">Anterior »</button>
+      <p class="read-next-parrafo">No hay más posts</p>
+  </span>
+  {{/prev_post}}
+</aside>
+<!--Formulario de Comentarios-->
+<section class="post__disqus">
+  <h2>Comparte tu Opinión</h2>
+  <div id="disqus_thread"></div>  
+  <script>  
+  var disqus_config = function () {  
+  this.page.url = '{{url absolute="true"}}';
+  this.page.identifier = 'ghost-{{id}}';
+  };
+  (function() {
+  var d = document, s = d.createElement('script');
+  s.src = '//blog-ghost.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());  
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>  
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+</section>
 </main>
 {{/post}}

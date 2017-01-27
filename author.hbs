@@ -15,12 +15,12 @@
   {{/if}}
   <div class="autor-meta">
       {{#if location}}
-        <span class="autor-ubicacion fa fa-map-marker"> {{location}}</span>
+        <span class="autor-ubicacion icon-location"> {{location}}</span>
       {{/if}}
       {{#if website}}
-      	<span class="autor-web fa fa-globe"><a href="{{website}}"> {{website}}</a></span>
+      	<span class="autor-web icon-link"><a href="{{website}}"> {{website}}</a></span>
       {{/if}}
-      <span class="autor-estadisticas fa fa-bar-chart">
+      <span class="autor-estadisticas icon-stats-dots">
       	{{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
       </span>
   </div>

@@ -1,0 +1,269 @@
+//==========================================SOBRE MI - STACKS======================================//
+ul.lista-stack{
+  @extend %flexbox-space-around-wrap;
+  list-style-type: none;
+  padding-left: 0;
+  li{
+    display: inline-block;
+    width: 33%;
+  }
+}
+//=====================SOBRE MI - MI FAMILIA=======================================//
+img.familia-mas{
+    display: block;
+    margin: 0 auto;
+}
+p.familia-texto-descripcion{
+    text-align: center;
+    margin-top: 15px;
+}
+
+//================================LISTA ARTICULOS - BUSCADOR==============================//
+.buscador-caja{
+  position: relative;
+  font-size: 18px;
+  label {
+    position: absolute;
+    left: 13px;
+    top: 7px;
+  }
+  form{
+    margin-bottom: 0;
+  }
+  .buscador-campo{
+    border: thin solid $color-theme;
+    border-radius: 20px;
+    padding: 0.3em 1.5em 0.3em 2em;
+    height: 40px;
+    width: 70%;
+    margin-bottom: 10px;
+    @include media-query($on-smartphone){
+      width: 100%;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+  .buscador-caja-resultados{
+    margin-top: 1.5em;
+    @include media-query($on-smartphone){
+      margin-top: 0;
+    }
+  }
+}
+.buscador-caja-resultados .buscador-lista-articulos{
+  position: relative;
+  padding-left: 1.2em;
+  list-style-type: none;
+}
+.buscador-lista-articulos {
+  .buscador-items{
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+.buscador-items{
+    &::before{
+      @extend %vinietas;
+      left: 3px;
+      margin-top: 4px;
+      @include media-query($on-tablet){
+      //700px
+        margin-top: 7px;
+      }
+    }
+}
+.buscador-mensaje-resultados{
+  font-size: 12px;
+  margin-left: -1.2em;
+}
+//======================================TAGS - AUTOR===================================//
+.vertical{
+  display: table-cell;
+  vertical-align: middle;
+}
+.main-header-content{
+  margin-top: 64px;
+  padding-top: $spacing-unit / 2;
+  padding-bottom: $spacing-unit / 2;
+}
+.tag-titulo, .autor-titulo{
+  color: darken($bg-article, 60%);
+}
+.tag-titulo{
+  text-indent: 0;
+  text-shadow: 1px -1px 0px rgba(255, 255, 255, 1);
+}
+.tag-descripcion{
+  background: rgba(255,255,255, .7);
+  color: #50585D;
+  display: inline-block;
+  font-size: 1.11em;
+  margin-bottom: 0;
+  padding: .3em;
+}
+
+//AUTOR
+.autor-perfil{
+  border-bottom: 1px solid $grey-color-light;
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 2em;
+  position: relative;
+  margin-bottom: 2.5em;
+  @include media-query($on-small-laptop){
+    //800px
+    margin-bottom: 2em;
+  }
+  &::after{
+    display: block;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: #E7EEF2 1px solid;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    background: #FFF;
+    border-radius: 100%;
+    box-shadow: #FFF 0 0 0 5px;
+  }
+  .autor-titulo{
+    text-indent: 0;
+    margin-top: $spacing-unit / 2;
+  }
+  //============.autor-bio: style compartido de post.scss=====================//
+
+  //============.autor-meta: style compartido de post.scss====================//
+
+
+  .autor-imagen{
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 120px;
+    height: 120px;
+    padding: 3px;
+    margin: -100px auto 0 auto;
+    box-shadow: none;
+    @include media-query($on-small-laptop){
+      //800px
+      margin: -70px auto 0 auto;
+    }
+  }
+}
+
+//================================CONTACTO=================================//
+.box-contacto{
+  margin-top: 1em;
+  width: 100%;
+}
+.formulario-contacto, .container-geo{
+  display: block;
+  padding: 5px;
+  @include media-query($on-laptop){
+    width: 100%;
+  }
+}
+.formulario-contacto{
+  width:80%;
+  .form-imput{
+    input[type='text'], input[type='email'], textarea{
+    border: thin solid $color-theme;
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-bottom: 15px;
+    padding: 5px;
+    transition: 1s;
+      &:focus{
+        outline: none;
+        border-bottom:thin solid $color-theme;
+        }
+    }
+    input{
+      width: 100%;
+    }
+    textarea{
+      height: 200px;
+      resize: vertical;
+      width: 100%;
+    }
+  }
+}
+
+.map{
+  background: transparent;
+  border: thin solid $color-theme;
+  height: 450px;
+  width: 100%;
+  @include media-query($on-tablet){
+  //700px
+    height: 400px;
+  }
+  @include media-query($on-small-tablet){
+  //600px
+    height: 350px;
+  }
+  @include media-query($on-smartphone){
+  //480px
+    height: 300px;
+  }
+}
+.title-geo{
+  display: block;
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 1em;
+}
+
+.box-item-contacto{
+  border: thin solid $color-theme;
+  padding: 5px;
+  margin-top: .5em;
+  width: 100%;
+  @include media-query($on-small-tablet){
+    padding: 0;
+  }
+}
+.item-contacto{
+  display: inline-block;
+  margin:0;
+  padding-left: 10px;
+  vertical-align: top;
+  height: 100%;
+  width: 49.5%;
+  &:nth-child(2){
+    border-left: thin solid $color-theme;
+  }
+  @include media-query($on-small-tablet){
+    width: 100%;
+    border-bottom: thin solid $color-theme;
+    padding: 5px;
+    &:nth-child(2){
+      border-left: 0;
+      border-bottom: 0;
+    }
+  }
+  a{
+    font-weight: 400;
+    text-decoration: none;
+  }
+}
+.ico-email{
+  color: #F1C43A;
+}
+.ico-phone{
+  color: $menu-bg;
+  font-size: 25px !important;
+}
+//====================================AGRADECIMIENTO====================================//
+.mensaje-bien{
+  display: block;
+  color: $color-theme;
+  font-size: 5em;
+  line-height: 0;
+  margin-bottom: 15px;
+}

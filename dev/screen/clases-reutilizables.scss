@@ -1,0 +1,154 @@
+//================================HEADER===========================//
+.main-header{
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: thin solid $grey-color-light;
+  display: table;
+  text-align: center;
+  margin-top: 63px;
+  margin-bottom: 2.5em;
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  @include media-query($on-small-laptop){
+    //800px
+    margin-bottom: 2em;
+  }
+  @include media-query($on-small-laptop){
+    //480px
+   
+  }
+}
+.main-header.home{
+  @include media-query($content-block){
+    height: auto;
+  }
+}
+.main-header.post-head{
+  min-height: 180px;
+  height: 65vh;
+}
+.main-header.autor-head, .main-header.tag-head{
+  min-height: 180px;
+  height: 40vh;
+}
+.main-header.suscribete-head{
+    height: auto;
+}
+//==================================NO COVER========================================//
+.main-header.no-cover{
+  border-bottom: 0;
+  min-height: 0;
+  height: 1px;
+}
+//================================RELLENOS CONTENEDORES ============================//
+//====CLASE PRINCIPAL -> BG=======//
+.main{
+  padding: 0 0 1em 0;
+}
+//=======================CONTENEDORES============================//
+.contenedor, .contenedor___post, .inner{
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
+  @include media-query($on-laptop) {
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
+  @include media-query($on-tablet){//600px
+    width: 100%;
+  }
+}
+.contenedor, .contenedor___post{
+  max-width: 860px;
+  width: 100%;  
+}
+.contenedor___post{
+  @include media-query($content-block){
+    max-width: 710px;
+    width: 80%;
+  }
+}
+.inner{
+  max-width: 710px;
+  @include media-query($content-block){
+    width: 80%;
+  }
+  
+}
+
+//==================================CAJA ADDTHIS==========================//
+.compartir-redes-sociales{
+  margin-top: 1em;
+}
+
+//================================OCULTAR ELEMENTOS=======================//
+.hidden{
+  display: none !important;
+}
+
+//=================================BOTONES================================//
+.btn{
+  border-radius: 3px;
+  border: thin solid transparent;
+  display: inline-block;
+  cursor:pointer;
+  color: $text-white;
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 0.7em;
+  line-height: normal;
+  padding:10px 13px;
+  text-decoration:none;
+  text-transform: uppercase;
+  width: auto;
+  &:focus{
+    outline: none;
+  }
+}
+
+.btn.btn-green{
+  background: lighten($color-theme, 8%);
+  border: thin solid $color-theme;
+  &:hover{
+    background: lighten($color-theme, 7%);
+    border-bottom:thin solid darken($color-theme, 3%);
+  }
+}
+
+//============================COLOR ICONOS==============================//
+.icon-clock{
+  color: $color-calendario;
+}
+
+//===============FLEX=================//
+[class*="flex"]{
+  display: flex;
+}
+//================WRAP================//
+[class*="wrap"]{
+  flex-wrap: wrap;
+}
+//=============SPACE-BETWEEN============//
+[class*="sb"]{
+  justify-content: space-between;
+}
+//=============SPACE-AROUND============//
+[class*="sa"]{
+  justify-content: space-around;
+}
+//================CENTER================//
+[class*="center"]{
+  align-items: center;
+}
+
+//=============NO LISTAS================//
+[class*="no-list"]{
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}

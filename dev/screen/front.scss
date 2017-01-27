@@ -1,0 +1,63 @@
+//==========================================FRONT====================================//
+.front{
+  background-color: rgba(0, 178, 89, 0.01);
+  margin-top: 50px;
+  padding-top: $spacing-unit / 2;
+  padding-bottom: $spacing-unit / 2;
+}
+.author-name{
+  color: $color-theme;
+  font-size: 10vh;
+  text-transform: capitalize;
+  text-shadow: 0.3vh 0.2vh 0.1vh $text-color;
+  margin-bottom: 0;
+  @include media-query($content-block) {
+    font-size: 5vw;  
+    text-shadow: 0.1vw 0.5vw 0.1vw $text-color;
+  }
+  @include media-query($on-small-tablet) {
+    font-size: 7vw;  
+    text-shadow: 0.1vw 0.5vw 0.1vw $text-color;
+  }
+}
+
+.btn-suscribete{
+  background-color: lighten(#FF5F11, 5%);
+  border: thin solid darken(#FF5F11, 3%);
+  color: $text-white;
+  margin-top: 1.75em;
+  padding: 10px 15px;
+  &:hover{
+    background-color: #FF5F11;
+    color: $text-white;
+    text-decoration: none;
+  }
+  &:visited{
+    color: $text-white;
+  }
+}
+
+.blog-description{
+  background-color: rgba(255,255,255, .5);
+  color: darken($bg-article, 60%);
+  font-size: 1.25em;
+  line-height: normal;
+  @include media-query($content-block) { //1100px
+    font-size: 1em;
+  }
+  @include media-query($on-small-tablet) { //800px
+    font-size: 3vw;
+    max-width: 90%;
+  }
+  @include media-query($on-smartphone){ //480px
+    font-size: 4vw;
+    max-width: 100%;
+  }
+}
+
+//=======================================PUBLICIDAD HOME =========================================//
+
+.home___publicidad{
+  margin-top: -.5em;
+  margin-bottom: 1.5em;
+}

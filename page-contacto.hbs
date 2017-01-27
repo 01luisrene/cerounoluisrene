@@ -24,8 +24,6 @@
             {{content}}
         </section>
     </article>
-    {{!-- ASIDE --}}
-    {{> "aside"}}
 </div>
 </main>
 {{/post}}
@@ -35,8 +33,10 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 {{!-- Ghost genera scripts y datos importantes con esta etiqueta --}}
 {{ghost_foot}}
+{{!-- Vendor js --}}
+<script src="{{asset "js/vendor.min.js"}}" type="text/javascript"></script>
 {{!-- Archivo JavaScript principal para 01luisrene --}}
-<script src="{{asset "js/app.min.js"}}" type="text/javascript"></script>
+<script src="{{asset "js/app.js"}}" type="text/javascript"></script>
 <script type="text/javascript">
 var map;
 var mi_Latlng; 
@@ -69,8 +69,7 @@ function initMap(){
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAIokqr9g-NE7L0CZFH3sx9DHX4VgDkuqw&signed_in=true&callback=initMap">
     </script>
-{{!-- Carga los últimos posts --}}
-{{> "ultimosPost"}}
+
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57004124cf559f51"></script> 
 </body>
 </html>

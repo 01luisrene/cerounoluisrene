@@ -1,62 +1,47 @@
 <nav class="caja___menu overlay">
-  <div class="caja__menu__inner contenedor">
+  <div class="caja__menu__inner contenedor flex-sb-wrap">
     {{#if @blog.logo}}
-      <figure class="figure-logo" id="js_img_logo">
-        <a href="{{@blog.url}}" title="{{@blog.title}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
+    <a class="logo-link" href="{{@blog.url}}" title="{{@blog.title}}">
+      <figure class="logo-figure">
+        <img src="{{@blog.logo}}" alt="{{@blog.title}}">
       </figure>
+    </a>
     {{else}}
-    <span class="titulo-blog">{{@blog.title}}</span>
+    <a class="logo-link" href="{{@blog.url}}" title="{{@blog.title}}">
+      <span class="titulo-blog">{{@blog.title}}</span>
+    </a>
     {{/if}}
-    <div class="main_nav">
-      <ul class="nav">
-          {{#foreach navigation}}
-            <li class="nav-item nav-{{slug}}" role="presentation">
-            {{#if current}}
-                <span class="nav-link-active" title="{{label}}">{{label}}</span>
-            {{else}}
-              <a class="nav-link" href="{{url absolute="true"}}" title="{{label}}">
-               {{label}}
-              </a>
-            {{/if}}
-            </li>
-          {{/foreach}}
-      </ul>
-      <div class="caja_iconos">
-        <ul class="nav-iconos">          
-          <li class="nav-item">
-            <a class="nav-link" href="/contacto/" title="Contacto"><img src="{{asset "images/nav/ic_contact_mail_white_24dp_1x.png"}}" alt="Contacto" height="24" width="24"/></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/sobre-mi/" title="Sobre mí"><img src="{{asset "images/nav/ic_face_white_24dp_1x.png"}}" alt="Sobre mí" height="24" width="24"/></a>
-          </li>
-          <li class="nav-item">
-            <a href="/lista-articulos" class="nav-link icon-buscador" title="Buscador" id="js_icon_buscador" aria-hidden="true"><i class="fa fa-search"></i></a>
-          </li>
-        </ul>
-        <a href="javascript:void(0)" class="icon-menu" id="js_icon_menu">
-          <span class="ico"></span>
-        </a>
-      </div>
-    </div>
+    <ul class="nav no-list flex-center">
+        <li class="nav-item">
+          <a class="nav-link" href="{{@blog.url}}/digital-ocean/">Digital Ocean</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{@blog.url}}/contacto/">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{@blog.url}}/sobre-mi/">Sobre mí</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="js_icon_menu" href="javascript:void(0)"><span class="icon-th-menu"></span></a>
+        </li>
+    </ul>
   </div>
 </nav>
 {{!--Menú Mobile--}}
 <div class="menu___mobile animated" id="js_menu_mobile" style="display:none;">
-    <i class="fa fa-times icon-cerrar" id="js_icon_cerrar"  aria-hidden="true" title="Cerrar"></i>
-    {{#if @blog.logo}}
-    <a href="{{@blog.url}}"><img class="logo-menu-mobile" src="{{@blog.logo}}" alt="{{@blog.title}}"/></a>
-    {{/if}}
-   <ul class="nav__mobile">
-      {{#foreach navigation}}
-          <li class="nav-item nav-{{slug}}" role="presentation">
-          {{#if current}}
-              <span class="nav-link active-mobile">{{label}}</span>
-          {{else}}
-            <a class="nav-link" href="{{url absolute="true"}}">
-             {{label}}
-            </a>
-          {{/if}}
-          </li>
-      {{/foreach}}
+    <i class="icon-close icon-cerrar" id="js_icon_cerrar" title="Cerrar"></i>
+    <a class="titulo-blog" href="{{@blog.url}}" title="{{@blog.title}}">
+        {{@blog.title}}
+    </a>
+   <ul class="nav__mobile no-list">
+      <li class="nav-item">
+        <a class="nav-link" href="{{@blog.url}}/digital-ocean/"><span class="icon-server"></span>&nbsp; &nbsp;Digital Ocean</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{@blog.url}}/contacto/"><span class="icon-contact_mail"></span>&nbsp;&nbsp;Contacto</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{@blog.url}}/sobre-mi/"><span class="icon-avatar"></span>&nbsp;&nbsp;Sobre mí</a>
+      </li>
    </ul>
 </div>
