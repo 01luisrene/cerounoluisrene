@@ -1,0 +1,407 @@
+//==========================TITULO PRINCIPAL============================//
+.post-titulo {
+    margin-top:  -10px;
+    margin-bottom: 0;
+}
+//==========================SECCIÓN META============================//
+.post-meta{
+  @extend %margen-inferior;
+}
+//==========================LISTA TAGS============================//
+.post-lista-tags{
+  display: inline;
+  margin-bottom: 0;
+  li{
+    display: inline-block;
+    a[class*="tag-"]{
+      display: block;
+      background: $bg-article;
+      border: thin solid $grey-color-light;
+      border-radius: 15px;
+      color: $text-color;
+      font-size: 0.8em;
+      padding: 0.1em 0.5em;
+      margin-top: 0.5em;
+      @include media-query($on-tablet){
+      //700px
+        border-radius: 30px;
+      }
+      &:hover{
+        text-decoration: none;
+        border: thin dotted $grey-color;
+      }
+    }
+  }
+}
+//==========================POST CONTENT============================//
+.post_contenido{
+  margin-bottom: $spacing-unit / 2;
+  word-wrap: break-word;
+  p{
+    @include media-query($on-smartphone){ //480px
+      text-align: justify;
+    }
+    a img, img{
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  blockquote {
+    border-radius: 0 5px 5px 0;
+    margin: 1.75em 0 1.75em -1.5em;
+    padding: 0 0.8em 0 1.75em;
+    letter-spacing: -1px;
+    @include media-query($on-tablet){//600px
+      margin-left: 0;
+      padding-left: 0;
+    }
+    p{
+      margin: 0.8em 0;
+      @include media-query($on-tablet){//600px
+        margin: 0.8em;
+      }
+    }
+  }
+  //Estilos para las listas
+  ul, ol{
+  padding-left: 2em;
+  li {
+    margin-bottom: 15px;
+    @include media-query($on-tablet){
+    //700px
+    margin-bottom: 10px;
+    }
+    > ul, > ol {
+      margin-top: 15px;
+      margin-bottom: 0;
+      @include media-query($on-tablet){
+      //700px
+        margin-top: 10px;
+      }
+      li{
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+  ol{
+    list-style-type: decimal-leading-zero;
+    li > ol{
+      list-style-type: decimal-leading-zero;
+    }
+  }
+  ul{
+    list-style-type: disc;
+    li > ul{
+      
+      list-style-type: circle;
+    }
+  }
+
+  hr{
+    background: transparent;
+    display: block;
+    border-width:0;
+    line-height: 0;
+    position: relative;
+    padding: 0;
+    text-rendering: geometricPrecision;
+    margin: 2em 0;
+    height: 1px;
+    width: 100%;
+    &::before{
+      display: block;
+      color: $color-theme;   
+      content: ". . .";
+      font-size: 3em;
+      line-height: 0;
+      margin-left: -28px;
+      position: absolute;
+      text-align: center;
+      left: 50%;
+      top: -18px;
+      height: 36px;
+      width: 56px;
+    }
+  }
+}
+//=============================PUBLICIDAD================================//
+.post___publicidad{
+  margin-bottom: 1.5em;
+}
+//==========================FOOTER DEL POST============================//
+// .post-footer {
+//     position: relative;
+//     margin: 3em 0 2em 0;
+//     padding: 3em 0 0 0;
+//     border-top: 1px solid $grey-color-light;
+// }
+.autor-imagen {
+  background: $text-white;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  margin-left: -40px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  padding: 6px;
+  z-index: 2;
+  box-shadow: #E7EEF2 0 0 0 1px;
+  .img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 50%;
+  }
+}
+.autor{
+  text-align: center;
+  margin-bottom: 2em;
+}
+.autor-nombre{
+  display: inline-block;
+}
+
+.autor-bio, .autor-mas-post{
+  font-size: $base-font-size;
+  line-height: 1.5em;
+  font-weight: 400;
+  color: #50585D;
+  letter-spacing: 0;
+  text-indent: 0;
+  margin-bottom: $spacing-unit / 2; //15px
+}
+.autor-meta{
+  span, span > a{
+    font-size: $small-font-size;
+    color: darken($bg-article, 40%);
+    font-style: italic;
+  }
+  span{
+    &:not(:last-child){
+      margin-right: 15px;
+    }
+    @include media-query($on-laptop){
+    //900px
+      display: block;
+      margin: 15px auto;
+    }
+    a{
+      &:hover{
+        color: $text-color;
+      }
+    }
+  }
+}
+//==========================FORMULARIO DE SUSCRIPCIÓN============================//
+.gh-subscribe{
+  background: lighten($color-theme, 65%);
+  border: lighten($color-theme, 55%) 1px solid;
+  padding: 2.5em;
+  margin-top: 2.5em;
+  text-align: center;
+  border-radius: 5px;
+  @include media-query($on-tablet){
+  //700px
+    padding: 2em;
+  }
+  @include media-query($on-small-tablet){
+  //600px
+    padding: 1.5em;
+  }
+  @include media-query($on-smartphone){
+  //480px
+    padding: 1em;
+  }
+  .gh-subscribe-title{
+    font-size: 1.33em;
+    margin-bottom: 0;
+  }
+  p{
+    font-size: 0.8em;
+    text-align: center;
+  }
+  form{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 0 0;
+  }
+  .form-group{
+    flex-grow: 1;
+    max-width: 300px;
+  }
+  .subscribe-email{
+    border-radius: 4px 0 0 4px;
+  }
+  button{
+    border-radius: 0 4px 4px 0;
+    margin-left: -1px;
+    padding: 8px;
+    @include media-query($on-smartphone){
+    //480px
+      padding: 6px;
+    }
+  }
+  .gh-subscribe-rss{
+      font-size: 0.7em;
+      line-height: 1.4em;
+  }
+}
+
+//==========================PAGINACIÓN DE POST============================//
+.read-next{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  margin: 1em 0;
+  @include media-query($on-tablet){
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+.read-next-story{
+  background: no-repeat center center;
+  background-size: cover;
+  color: $text-color;
+  overflow: hidden;
+  padding: .5em;
+  width: 49.5%;
+  &:visited, &:hover{
+    color: $text-color;
+  }
+  @include media-query($on-tablet){//700px
+    min-height: 200px;
+    width: 100%;
+    &:not(:last-child){
+      margin-bottom: 15px;
+    }
+  }
+  &:hover .read-next-title{
+    color: lighten($bg-article, 10%);
+    text-shadow: none;
+  }
+  p{
+    line-height: 25px;
+    margin-left: .5em;
+    margin-right: .5em;
+    margin-bottom: .5em;
+  }
+}
+.read-next-title, .btn-read-next, .read-next-parrafo{
+  position: relative;
+  z-index: 1;
+}
+.read-next-title{
+  color: darken($bg-article, 50%);
+  margin-top: 40px;
+  font-weight: 900;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);
+  padding: 0 .5em;
+}
+//
+.btn-read-next{
+  background: rgba(0,0,0, .2);
+  border: thin solid #8D8C8C;
+  border-radius: 5px;
+  display: block;
+  font-size: $small-font-size - 2;
+  line-height: normal;
+  text-transform: uppercase;
+  margin: 10px auto 0 auto;
+  padding: .2em .4em;
+  z-index: 1;
+  &:hover{
+    background: rgba(0,0,0, .4);
+  }
+}
+.read-next-parrafo{
+  background: rgba(255,255,255, .6);
+  text-align: center;
+  padding: .5em;
+  margin-top: 15px;
+  z-index: 1;
+}
+
+
+.read-next-story.next, .read-next-story.prev{
+  position: relative;
+  text-decoration: none;
+  &:hover::after{
+    background: rgba(0,0,0,.5);
+  }
+  &::after{
+    background: rgba(0,0,0,.01);
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  &:hover::before{
+    color: $text-white;
+  }
+  &::before{
+    background: rgba(0,0,0, .8);
+    border: thin solid $color-theme;
+    border-radius: 5px;
+    color: $text-white;
+    line-height: normal;
+    font-size: $small-font-size - 2;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: .2em .4em;
+    margin-left: 0;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    z-index: 1;
+  }
+}
+.read-next-story.next.next::before{
+  content: "« Siguiente";
+  margin-left: -47.5px;
+}
+.read-next-story.prev::before{
+  content: "Anterior »";
+  margin-left: -45px;
+}
+.read-next-story.disabled{
+  border: thin solid $grey-color-light;
+}
+
+//====DIGITAL OCEAN=====//
+.digital-ocean{
+  background-color: #F93E84;
+  background: radial-gradient(circle, #F970A3, #FA1168);
+  border: thin solid $grey-color-light;
+  margin-left: -8px;
+  margin-right: -8px;
+  padding: 5px 7px;
+  p{
+    color: $text-white;
+    font-weight: 300;
+    margin-bottom: 0;
+    > a{
+      color: #312F2F;
+      display: inline-block;
+      &:visited, &:hover{
+        color: #312F2F;
+      }
+    }
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
