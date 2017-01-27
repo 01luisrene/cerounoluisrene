@@ -737,6 +737,8 @@ ul.lista-stack {
 }
 
 .main-header.no-cover {
+  background: #DE8B8B;
+  margin-top: 53px;
   border-bottom: 0;
   min-height: 0;
   height: 1px;
@@ -1178,7 +1180,7 @@ ul.lista-stack {
 
 .___articulos___ .post-footer .tags {
   display: inline-block;
-  margin-top: -0.5em;
+  margin-top: -0.3em;
 }
 
 .___articulos___ .post-footer .tags li {
