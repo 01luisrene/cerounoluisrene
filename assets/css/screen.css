@@ -489,7 +489,7 @@ p {
 a {
   color: #00974B;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.5s linear;
   text-decoration: none;
 }
 
@@ -715,7 +715,6 @@ ul.lista-stack {
   border-bottom: thin solid #e8e8e8;
   display: table;
   text-align: center;
-  margin-top: 63px;
   margin-bottom: 2.5em;
   position: relative;
   height: 70vh;
@@ -2306,10 +2305,6 @@ a.boton-subir i {
     height: 6px;
   }
 
-  .first-post .post-extracto {
-    margin-bottom: 35px;
-  }
-
   .autor-meta span {
     display: block;
     margin: 15px auto;
@@ -2369,10 +2364,6 @@ a.boton-subir i {
   .___articulos___ .post-titulo::before {
     bottom: -4px;
     height: 4px;
-  }
-
-  .first-post .post-extracto {
-    margin-bottom: 30px;
   }
 
   .autor-perfil {
@@ -2454,10 +2445,6 @@ a.boton-subir i {
     font-size: 1em;
     letter-spacing: 1px;
     line-height: 1.5;
-  }
-
-  .first-post .post-extracto {
-    margin: 0 0 25px 0;
   }
 
   .post-lista-tags li a[class*="tag-"] {

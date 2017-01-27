@@ -246,17 +246,6 @@
         line-height: 1.2;
       }
     }
-    @include media-query($on-laptop){
-    //900px
-      margin-bottom: 35px;
-    }
-    @include media-query($on-small-laptop){
-    //800px
-      margin-bottom: 30px;
-    }
-    @include media-query($on-tablet) { //700px
-      margin: 0 0 25px 0;
-    }
   }
   .post-footer{
     background: rgba(0,0,0, 0.5);

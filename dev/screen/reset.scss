@@ -414,8 +414,7 @@ p{
 a {
   color: $color-theme;
   cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  transition: all 0.5s linear;
   text-decoration: none;
   &:visited{
     color: lighten($color-theme, 5%);
