@@ -627,11 +627,11 @@ form fieldset textarea {
   margin-bottom: 1em;
 }
 
-.tabla-contenedor {
+.table-container {
   overflow-x: auto;
 }
 
-table {
+table.table {
   border: 1px solid rgba(181, 213, 144, 0.5);
   border-collapse: collapse;
   min-width: 800px;
@@ -639,34 +639,30 @@ table {
   margin-right: auto;
 }
 
-table td p {
+table.table td p {
   line-height: normal;
   margin-bottom: 0;
 }
 
-table td,
-table th {
+table.table td,
+table.table th {
   padding: .8em;
   border-bottom: 1px solid rgba(181, 213, 144, 0.5);
 }
 
-table th {
+table.table th {
   background: #00974B;
   color: #fff;
   font-weight: normal;
   text-align: right;
 }
 
-table tr:hover {
+table.table tr:hover {
   background: rgba(181, 213, 144, 0.2);
 }
 
-table tr td:nth-child(2n) {
+table.table tr td:nth-child(2n) {
   background: rgba(181, 213, 144, 0.2);
-}
-
-.post-meta {
-  margin-bottom: 15px;
 }
 
 .menu___mobile .titulo-blog,
@@ -756,8 +752,8 @@ ul.lista-stack {
 .contenedor,
 .contenedor___post,
 .inner {
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
   padding-right: 30px;
   padding-left: 30px;
 }
@@ -819,9 +815,9 @@ ul.lista-stack {
   display: flex;
 }
 
-[class*="wrap"] {
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+[class*="fs"] {
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 [class*="sb"] {
@@ -837,6 +833,29 @@ ul.lista-stack {
 [class*="center"] {
   -ms-flex-align: center;
   align-items: center;
+}
+
+[class*="wrap"] {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+a[class*="tag"] {
+  display: inline-block;
+  background: #D7E0E3;
+  border: thin solid #e8e8e8;
+  border-radius: 15px;
+  color: #111;
+  font-size: 80%;
+  line-height: normal;
+  margin-left: 0.3em;
+  margin-bottom: 0.5em;
+  padding: 0.3em 0.5em;
+}
+
+a[class*="tag"]:hover {
+  text-decoration: none;
+  border: thin dotted #828282;
 }
 
 [class*="no-list"] {
@@ -1012,7 +1031,6 @@ ul.lista-stack {
   padding: 1.3em 0.7em;
   text-transform: uppercase;
   text-align: left;
-  transition: .500s;
 }
 
 .nav__mobile .nav-item .nav-link:hover {
@@ -1163,49 +1181,6 @@ ul.lista-stack {
 .___articulos___ .post-contenido .excerpt {
   line-height: 21px;
   margin: 15px 0;
-}
-
-.___articulos___ .post-footer {
-  border: 0;
-  padding-bottom: 15px;
-}
-
-.___articulos___ .post-footer a {
-  color: #111;
-}
-
-.___articulos___ .post-footer a:hover {
-  text-decoration: underline;
-}
-
-.___articulos___ .post-footer time {
-  margin-right: 10px;
-  margin-bottom: 0.5em;
-}
-
-.___articulos___ .post-footer .tags {
-  display: inline-block;
-  margin-top: -0.3em;
-}
-
-.___articulos___ .post-footer .tags li {
-  display: inline-block;
-}
-
-.___articulos___ .post-footer .tags li a[class*="tag-"] {
-  display: block;
-  background: #D7E0E3;
-  border: thin solid #e8e8e8;
-  border-radius: 15px;
-  color: #111;
-  font-size: 0.8em;
-  padding: 0.1em 0.5em;
-  margin-top: 0.5em;
-}
-
-.___articulos___ .post-footer .tags li a[class*="tag-"]:hover {
-  text-decoration: none;
-  border: thin dotted #828282;
 }
 
 .first-post {
@@ -1375,34 +1350,20 @@ ul.lista-stack {
   user-select: none;
 }
 
-.post-titulo {
-  margin-top: -10px;
-  margin-bottom: 0;
+.post-meta {
+  margin-bottom: 0.5em;
 }
 
-.post-lista-tags {
-  display: inline;
-  margin-bottom: 0;
+.post-meta .box-time {
+  border-right: thin solid #e8e8e8;
+  margin-right: 0.2em;
+  margin-bottom: 0.5em;
+  padding: 0.5em 0.5em 0.5em 0;
 }
 
-.post-lista-tags li {
-  display: inline-block;
-}
-
-.post-lista-tags li a[class*="tag-"] {
-  display: block;
-  background: #D7E0E3;
-  border: thin solid #e8e8e8;
-  border-radius: 15px;
-  color: #111;
-  font-size: 0.8em;
-  padding: 0.1em 0.5em;
-  margin-top: 0.5em;
-}
-
-.post-lista-tags li a[class*="tag-"]:hover {
-  text-decoration: none;
-  border: thin dotted #828282;
+.post-meta .time {
+  margin-left: 0.3em;
+  font-size: 80%;
 }
 
 .post_contenido {
@@ -2434,10 +2395,6 @@ a.boton-subir i {
     height: 3px;
   }
 
-  .___articulos___ .post-footer .tags li a[class*="tag-"] {
-    border-radius: 30px;
-  }
-
   .first-post {
     margin: 0 0 0.5em 0;
     width: 100%;
@@ -2452,10 +2409,6 @@ a.boton-subir i {
     font-size: 1em;
     letter-spacing: 1px;
     line-height: 1.5;
-  }
-
-  .post-lista-tags li a[class*="tag-"] {
-    border-radius: 30px;
   }
 
   .post_contenido blockquote {

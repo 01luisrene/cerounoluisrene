@@ -1,38 +1,22 @@
 //==========================TITULO PRINCIPAL============================//
 .post-titulo {
-    margin-top:  -10px;
-    margin-bottom: 0;
+    
 }
 //==========================SECCIÓN META============================//
 .post-meta{
-  @extend %margen-inferior;
-}
-//==========================LISTA TAGS============================//
-.post-lista-tags{
-  display: inline;
-  margin-bottom: 0;
-  li{
-    display: inline-block;
-    a[class*="tag-"]{
-      display: block;
-      background: $bg-article;
-      border: thin solid $grey-color-light;
-      border-radius: 15px;
-      color: $text-color;
-      font-size: 0.8em;
-      padding: 0.1em 0.5em;
-      margin-top: 0.5em;
-      @include media-query($on-tablet){
-      //700px
-        border-radius: 30px;
-      }
-      &:hover{
-        text-decoration: none;
-        border: thin dotted $grey-color;
-      }
-    }
+  margin-bottom: 0.5em;
+  .box-time{
+    border-right: thin solid $grey-color-light;
+    margin-right: 0.2em;
+    margin-bottom: 0.5em;
+    padding: 0.5em 0.5em 0.5em 0;
+  }
+  .time{
+    margin-left: 0.3em;
+    font-size: 80%;
   }
 }
+
 //==========================POST CONTENT============================//
 .post_contenido{
   margin-bottom: $spacing-unit / 2;

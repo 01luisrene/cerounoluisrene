@@ -66,10 +66,10 @@ gulp.task('images', function() {
 //Comprimir fuentes
 gulp.task('fonts', function () {
   return gulp.src([
-									'./dev/fonts/*.ttf',
-									'./dev/fonts/*.eot',
-									'./dev/fonts/*.woff',
-									'./dev/fonts/*.svg'
+			'./dev/fonts/*.ttf',
+			'./dev/fonts/*.eot',
+			'./dev/fonts/*.woff',
+			'./dev/fonts/*.svg'
   	])
     .pipe(fontmin())
     .pipe(gulp.dest('./assets/fonts/'));

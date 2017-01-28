@@ -1,18 +1,17 @@
 // Clearfix
 %clearfix {
-
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+  &:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
 }
 //margin-bottom: 15px
 %margen-inferior{
   margin-bottom: ($spacing-unit / 2);
 }
 //Display bloque
-%display-block{
+%block{
   display: block;
 }
 //flexbox

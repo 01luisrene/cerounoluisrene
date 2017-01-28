@@ -121,7 +121,7 @@
     font-size: 2.5em;
   }
   .titulo-blog{
-    @extend %display-block;
+    @extend %block;
     color: $menu-link-color;
     font-size: 1.3em;
     font-weight: 700;
@@ -166,14 +166,13 @@
       }
     }
     .nav-link{
-      @extend %display-block;
+      @extend %block;
       color: $menu-link-color;
       font-size: 0.9em;
       font-weight: 700;
       padding: 1.3em 0.7em;
       text-transform: uppercase;
       text-align: left;
-      transition: .500s;
       &:hover{
         color: $menu-link-hover-color;
         text-decoration: none;

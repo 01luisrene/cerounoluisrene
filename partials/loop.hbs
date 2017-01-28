@@ -56,19 +56,18 @@
       </a>
       <p class="excerpt">{{excerpt words="20"}}[...]</p>
     </section>
-    <footer class="post-footer flex-sb-wrap">
-      <time class="flex-center" datetime="{{date format="YYYY-MM-DD"}}">
-        <span class="icon-clock"></span>&nbsp;<small>{{date published_at timeago="true"}}</small>
+    <footer class="post-meta flex-sb-wrap">
+    <div class="flex-fs-wrap box-time">
+      <span class="icon-clock"></span>
+      <time class="time" datetime="{{date format="YYYY-MM-DD"}}">
+        {{date published_at timeago="true"}}
       </time>
-      {{#if tags}}
-        <ul class="tags no-list">
-          {{#foreach tags limit="2"}}
-            <li>
-              <a href="{{url}}" title="{{name}}" class="tag-{{slug}}">{{name}}</a>
-            </li>
-          {{/foreach}}
-        </ul>
-      {{/if}}
+    </div>
+    {{#if tags}}
+      {{#foreach tags limit="2"}}
+        <a href="{{url}}" title="{{name}}" class="tag-{{slug}}">{{name}}</a>
+      {{/foreach}}
+    {{/if}}
     </footer>
   {{/if}}
   </article>

@@ -22,18 +22,16 @@
   <article class="{{post_class}}">
     <header>
       <h1 class="post-titulo">{{title}}</h1>
-      <section class="post-meta">
-        <span class="icon-clock"></span>
-        <small><time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date published_at timeago="true"}}</time></small>
+      <section class="post-meta flex-fs-center-wrap">
+        <div class="flex-center-wrap box-time">
+          <span class="icon-clock"></span>
+          <time class="time" datetime="{{date format="YYYY-MM-DD"}}">{{date published_at timeago="true"}}</time>
+        </div>
+        
         {{#if tags}}
-        <small> on </small>
-        <ul class="post-lista-tags">
-        {{#foreach tags limit="5"}}
-          <li>
-            <a href="{{url}}" title="{{name}}" class="tag-{{slug}}">{{name}}</a>
-          </li>  
-        {{/foreach}}
-        </ul>
+          {{#foreach tags limit="5"}}
+            <a href="{{url}}" title="{{name}}" class="tag-{{slug}}">{{name}}</a> 
+          {{/foreach}}
         {{/if}}
       </section>
     </header>
