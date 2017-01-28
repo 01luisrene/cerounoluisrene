@@ -249,7 +249,7 @@ blockquote, pre, hr, figure {
 //.fluid-width-video-wrapper: Contenedor de los videos YouTube y más.
 //.cp_embed_wrapper: Contenedor del código de Codepen
 
-table, form, pre, .fluid-width-video-wrapper, .cp_embed_wrapper{
+[class*="tabla"],form, pre, .fluid-width-video-wrapper, .cp_embed_wrapper{
   margin-bottom: 1.5em;
 }
 form fieldset{
@@ -533,30 +533,40 @@ form fieldset{
 }
 
 //=====================================TABLA=========================================//
-table.table{
+.tabla-contenedor {
+  overflow-x: auto;
+}
+
+table {
+  border: 1px solid rgba($table-secondary-color,.5);
+  color: #666;
   border-collapse: collapse;
-  empty-cells: hide;
-  th, td{
-    border-bottom: 1px solid $grey-color-light;
-    padding: 10px;
-    text-align: left;
+  min-width: $table-width;
+  @include center;
+  td p{
+    line-height: normal;
+    margin-bottom: 0;
   }
+  td, th {
+    padding : .8em;
+    border-bottom: 1px solid rgba($table-secondary-color,.5);
+  }
+
+  //estilo de las cabeceras
   th {
-    background-color: lighten($color-theme, 5%);
-    color: $text-white;
+    background : $table-bg;
+    color: $table-third-color;
+    font-weight : normal;
+    text-align : right;
   }
-  tr{
-    &:hover{
-      background-color: $grey-color-light;
+
+  // Resaltado de filas y columnas
+  tr {
+    &:hover {
+      background : rgba($table-secondary-color,.2);
     }
-    &:nth-child(odd) {
-      background-color: lighten($grey-color-light, 3%);
+    td:nth-child(2n){
+      background : rgba($table-secondary-color,.2);
     }
-  }
-  tr:nth-child(even) {
-    background-color: transparent;
-  }
-  td{
-    vertical-align: middle;
   }
 }
