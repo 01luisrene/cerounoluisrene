@@ -31,8 +31,7 @@
     width: 25%;
   }
 }
-.footer-col-wrapper {
-  @extend %flexbox-flex-end;
+.footer-contenedor {
   color: #EFEDED;
   font-size: 15px;
 }
@@ -75,11 +74,17 @@
     width:100%;
   }
 }
-.footer-nav-redes{
+.nav-redes{
     list-style: none;
     margin-left: 0;
-    .fa{
-      width: 20px;
+    li{
+      display: inline-block;
+      a{
+        color: $text-white;
+        [class*="icon"]{
+          font-size: 2.5em;
+        }
+      }
     }
 }
 .copyright{

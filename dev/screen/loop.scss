@@ -97,7 +97,7 @@
       background: $color-theme;
     }
   }
-  .post-contenido, .post-footer{
+  .post-contenido, .post-meta{
     padding-left: $spacing-unit / 2;
     padding-right: $spacing-unit / 2;
   }
@@ -109,6 +109,17 @@
     .excerpt{
       line-height: 21px;
       margin: 15px 0;
+    }
+  }
+  .post-meta{
+    margin-bottom: 0;
+    .box-time{
+      border-right: 0;
+      padding: 0.5em 0 0.5em 0;
+    }
+    .time{
+      margin-left: 0.3em;
+      font-size: 80%;
     }
   }
 }

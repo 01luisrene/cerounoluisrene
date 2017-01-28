@@ -677,15 +677,6 @@ table.table tr td:nth-child(2n) {
   justify-content: center;
 }
 
-.footer-col-wrapper {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
 ul.lista-stack {
   display: -ms-flexbox;
   display: flex;
@@ -749,17 +740,23 @@ ul.lista-stack {
   padding: 0 0 1em 0;
 }
 
-.contenedor,
+.contenedor {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+}
+
 .contenedor___post,
-.inner {
+.inner,
+.post__disqus {
   margin-left: auto;
   margin-right: auto;
   padding-right: 30px;
   padding-left: 30px;
 }
 
-.contenedor,
-.contenedor___post {
+.contenedor___post,
+.post__disqus {
   max-width: 860px;
   width: 100%;
 }
@@ -818,6 +815,11 @@ ul.lista-stack {
 [class*="fs"] {
   -ms-flex-pack: start;
   justify-content: flex-start;
+}
+
+[class*="fe"] {
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 [class*="sb"] {
@@ -1169,7 +1171,7 @@ a[class*="tag"]:hover {
 }
 
 .___articulos___ .post-contenido,
-.___articulos___ .post-footer {
+.___articulos___ .post-meta {
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -1181,6 +1183,20 @@ a[class*="tag"]:hover {
 .___articulos___ .post-contenido .excerpt {
   line-height: 21px;
   margin: 15px 0;
+}
+
+.___articulos___ .post-meta {
+  margin-bottom: 0;
+}
+
+.___articulos___ .post-meta .box-time {
+  border-right: 0;
+  padding: 0.5em 0 0.5em 0;
+}
+
+.___articulos___ .post-meta .time {
+  margin-left: 0.3em;
+  font-size: 80%;
 }
 
 .first-post {
@@ -2060,7 +2076,7 @@ p.familia-texto-descripcion {
   width: 25%;
 }
 
-.footer-col-wrapper {
+.footer-contenedor {
   color: #EFEDED;
   font-size: 15px;
 }
@@ -2079,13 +2095,21 @@ p.familia-texto-descripcion {
   width: 20%;
 }
 
-.footer-nav-redes {
+.nav-redes {
   list-style: none;
   margin-left: 0;
 }
 
-.footer-nav-redes .fa {
-  width: 20px;
+.nav-redes li {
+  display: inline-block;
+}
+
+.nav-redes li a {
+  color: #fff;
+}
+
+.nav-redes li a [class*="icon"] {
+  font-size: 2.5em;
 }
 
 .copyright {
@@ -2250,9 +2274,9 @@ a.boton-subir i {
     font-size: 1em;
   }
 
-  .contenedor,
   .contenedor___post,
-  .inner {
+  .inner,
+  .post__disqus {
     padding-right: 15px;
     padding-left: 15px;
   }
@@ -2372,9 +2396,9 @@ a.boton-subir i {
     margin: 0.8em;
   }
 
-  .contenedor,
   .contenedor___post,
-  .inner {
+  .inner,
+  .post__disqus {
     width: 100%;
   }
 

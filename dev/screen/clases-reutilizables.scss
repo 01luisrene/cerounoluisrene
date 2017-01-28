@@ -50,7 +50,11 @@
   padding: 0 0 1em 0;
 }
 //=======================CONTENEDORES============================//
-.contenedor, .contenedor___post, .inner{
+.contenedor{
+  @include center;
+  max-width: 1000px;
+}
+.contenedor___post, .inner, .post__disqus{
   @include center;
   padding-right: $spacing-unit;
   padding-left: $spacing-unit;
@@ -62,7 +66,7 @@
     width: 100%;
   }
 }
-.contenedor, .contenedor___post{
+.contenedor___post, .post__disqus{
   max-width: 860px;
   width: 100%;  
 }
@@ -128,9 +132,13 @@
 [class*="flex"]{
   display: flex;
 }
-//
+//=============FLEX-START============//
 [class*="fs"]{
   justify-content: flex-start;
+}
+//=============FLEX-END============//
+[class*="fe"]{
+  justify-content: flex-end;
 }
 //=============SPACE-BETWEEN============//
 [class*="sb"]{
