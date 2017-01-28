@@ -418,7 +418,7 @@ figure {
   padding: 0;
 }
 
-table,
+[class*="tabla"],
 form,
 pre,
 .fluid-width-video-wrapper,
@@ -627,37 +627,43 @@ form fieldset textarea {
   margin-bottom: 1em;
 }
 
-table.table {
+.tabla-contenedor {
+  overflow-x: auto;
+}
+
+table {
+  border: 1px solid rgba(181, 213, 144, 0.5);
+  color: #666;
   border-collapse: collapse;
-  empty-cells: hide;
+  min-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-table.table th,
-table.table td {
-  border-bottom: 1px solid #e8e8e8;
-  padding: 10px;
-  text-align: left;
+table td p {
+  line-height: normal;
+  margin-bottom: 0;
 }
 
-table.table th {
-  background-color: #00b158;
+table td,
+table th {
+  padding: .8em;
+  border-bottom: 1px solid rgba(181, 213, 144, 0.5);
+}
+
+table th {
+  background: #00974B;
   color: #fff;
+  font-weight: normal;
+  text-align: right;
 }
 
-table.table tr:hover {
-  background-color: #e8e8e8;
+table tr:hover {
+  background: rgba(181, 213, 144, 0.2);
 }
 
-table.table tr:nth-child(odd) {
-  background-color: #f0f0f0;
-}
-
-table.table tr:nth-child(even) {
-  background-color: transparent;
-}
-
-table.table td {
-  vertical-align: middle;
+table tr td:nth-child(2n) {
+  background: rgba(181, 213, 144, 0.2);
 }
 
 .post-meta {
