@@ -78,7 +78,7 @@ var  displayMenu = function(){
       e.preventDefault();
         $("body,html").animate({
         scrollTop: 0
-      },700);
+      },1000);
       return false;
     });
   },
@@ -105,7 +105,7 @@ var  displayMenu = function(){
   init = function () {
     displayMenu();
     closeMenu();
-    //politicaCookies();
+    politicaCookies();
     botonUp();
     digitalOcean();
   };

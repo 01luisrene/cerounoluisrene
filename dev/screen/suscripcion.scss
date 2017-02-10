@@ -10,8 +10,8 @@
   text-align: center;
 }
 .contenedor-suscribete .formulario__suscripcion {
-  background: lighten($color-theme, 65%);
-  border: lighten($color-theme, 55%) 1px solid;
+  background: lighten($color-tema, 65%);
+  border: lighten($color-tema, 55%) 1px solid;
   margin: 30px auto;
   padding: 40px;
   max-width: 400px;
@@ -19,14 +19,14 @@
   border-radius: 5px;
   text-align: left;
   .form-group input{
-    margin-bottom: $spacing-unit / 2;
+    margin-bottom: $espacio-inicial / 2;
   }
   button{
     width: 100%;
   }
 }
 .subscribe-email{
-  border: thin solid lighten($color-theme, 10%);
+  border: thin solid lighten($color-tema, 10%);
   font-family: $font-family;
   font-size: $small-font-size;
   transition: all ease 0.1s;
@@ -34,7 +34,7 @@
   padding: 7px;
   width: 100%;
   &:focus{
-    border: thin solid $color-theme;
+    border: thin solid $color-tema;
     outline: none;
   }
 }

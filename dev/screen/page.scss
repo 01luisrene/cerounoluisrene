@@ -1,8 +1,5 @@
 //==========================================SOBRE MI - STACKS======================================//
 ul.lista-stack{
-  @extend %flexbox-space-around-wrap;
-  list-style-type: none;
-  padding-left: 0;
   li{
     display: inline-block;
     width: 33%;
@@ -31,7 +28,7 @@ p.familia-texto-descripcion{
     margin-bottom: 0;
   }
   .buscador-campo{
-    border: thin solid $color-theme;
+    border: thin solid $color-tema;
     border-radius: 20px;
     padding: 0.3em 1.5em 0.3em 2em;
     height: 40px;
@@ -86,11 +83,11 @@ p.familia-texto-descripcion{
 }
 .main-header-content{
   margin-top: 64px;
-  padding-top: $spacing-unit / 2;
-  padding-bottom: $spacing-unit / 2;
+  padding-top: $espacio-inicial / 2;
+  padding-bottom: $espacio-inicial / 2;
 }
 .tag-titulo, .autor-titulo{
-  color: darken($bg-article, 60%);
+  color: darken($loop-border-color, 60%);
 }
 .tag-titulo{
   text-indent: 0;
@@ -107,7 +104,7 @@ p.familia-texto-descripcion{
 
 //AUTOR
 .autor-perfil{
-  border-bottom: 1px solid $grey-color-light;
+  border-bottom: 1px solid $color-gris-light;
   text-align: center;
   padding-top: 0;
   padding-bottom: 2em;
@@ -133,12 +130,12 @@ p.familia-texto-descripcion{
   }
   .autor-titulo{
     text-indent: 0;
-    margin-top: $spacing-unit / 2;
+    margin-top: $espacio-inicial / 2;
   }
+
   //============.autor-bio: style compartido de post.scss=====================//
 
   //============.autor-meta: style compartido de post.scss====================//
-
 
   .autor-imagen{
     position: relative;
@@ -172,7 +169,7 @@ p.familia-texto-descripcion{
   width:80%;
   .form-imput{
     input[type='text'], input[type='email'], textarea{
-    border: thin solid $color-theme;
+    border: thin solid $color-tema;
     font-size: 1em;
     line-height: 1.5em;
     margin-bottom: 15px;
@@ -180,7 +177,7 @@ p.familia-texto-descripcion{
     transition: 1s;
       &:focus{
         outline: none;
-        border-bottom:thin solid $color-theme;
+        border-bottom:thin solid $color-tema;
         }
     }
     input{
@@ -196,7 +193,7 @@ p.familia-texto-descripcion{
 
 .map{
   background: transparent;
-  border: thin solid $color-theme;
+  border: thin solid $color-tema;
   height: 450px;
   width: 100%;
   @include media-query($on-tablet){
@@ -220,7 +217,7 @@ p.familia-texto-descripcion{
 }
 
 .box-item-contacto{
-  border: thin solid $color-theme;
+  border: thin solid $color-tema;
   padding: 5px;
   margin-top: .5em;
   width: 100%;
@@ -236,11 +233,11 @@ p.familia-texto-descripcion{
   height: 100%;
   width: 49.5%;
   &:nth-child(2){
-    border-left: thin solid $color-theme;
+    border-left: thin solid $color-tema;
   }
   @include media-query($on-small-tablet){
     width: 100%;
-    border-bottom: thin solid $color-theme;
+    border-bottom: thin solid $color-tema;
     padding: 5px;
     &:nth-child(2){
       border-left: 0;
@@ -262,8 +259,34 @@ p.familia-texto-descripcion{
 //====================================AGRADECIMIENTO====================================//
 .mensaje-bien{
   display: block;
-  color: $color-theme;
+  color: $color-tema;
   font-size: 5em;
   line-height: 0;
   margin-bottom: 15px;
+}
+
+//====DIGITAL OCEAN=====//
+.digital-ocean{
+  background-color: #F93E84;
+  background: radial-gradient(circle, #F970A3, #FA1168);
+  border: thin solid $color-gris-light;
+  margin-left: -8px;
+  margin-right: -8px;
+  padding: 5px 7px;
+  p{
+    color: $color-blanco;
+    font-weight: 300;
+    margin-bottom: 0;
+    > a{
+      color: #312F2F;
+      display: inline-block;
+      &:visited, &:hover{
+        color: #312F2F;
+      }
+    }
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+  }
 }

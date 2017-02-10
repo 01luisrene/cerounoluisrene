@@ -8,46 +8,17 @@
 }
 //margin-bottom: 15px
 %margen-inferior{
-  margin-bottom: ($spacing-unit / 2);
+  margin-bottom: $espacio-inicial / 2;
 }
 //Display bloque
 %block{
   display: block;
 }
-//flexbox
-%flexbox-center{
-display: -webkit-flex;
-display: flex;
--webkit-justify-content: center;
-justify-content: center;
-}
 
-%flexbox-flex-end{
-display: -webkit-flex;
-display: flex;
--webkit-justify-content: flex-end;
-justify-content: flex-end;
--webkit-flex-wrap: wrap;
-flex-wrap: wrap; 
-}
-%flexbox-space-between{
-	display: -webkit-flex;
-	display: flex;
-	-webkit-justify-content: space-between;
-	justify-content: space-between;
-}
-%flexbox-space-around-wrap{
-display: -webkit-flex;
-display: flex;
--webkit-justify-content: space-around;
-justify-content: space-around;
--webkit-flex-wrap: wrap;
-flex-wrap: wrap; 
-}
 //viñetas
 %vinietas{
   display: inline-block;
-  color: $text-color;
+  color: $color-negro;
   content: "\f10c";
   font-family: "FontAwesome";
   speak: none;

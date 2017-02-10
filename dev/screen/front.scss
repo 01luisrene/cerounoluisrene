@@ -2,44 +2,43 @@
 .front{
   background-color: rgba(0, 178, 89, 0.01);
   margin-top: 50px;
-  padding-top: $spacing-unit / 2;
-  padding-bottom: $spacing-unit / 2;
+  padding-top: $espacio-inicial / 2;
+  padding-bottom: $espacio-inicial / 2;
 }
 .author-name{
-  color: $color-theme;
+  color: $front-nombre-autor-color;
   font-size: 10vh;
   text-transform: capitalize;
-  text-shadow: 0.3vh 0.2vh 0.1vh $text-color;
+  text-shadow: 0.3vh 0.2vh 0.1vh $color-negro;
   margin-bottom: 0;
   @include media-query($content-block) {
     font-size: 5vw;  
-    text-shadow: 0.1vw 0.5vw 0.1vw $text-color;
+    text-shadow: 0.1vw 0.5vw 0.1vw $color-negro;
   }
   @include media-query($on-small-tablet) {
     font-size: 7vw;  
-    text-shadow: 0.1vw 0.5vw 0.1vw $text-color;
+    text-shadow: 0.1vw 0.5vw 0.1vw $color-negro;
   }
 }
 
 .btn-suscribete{
-  background-color: lighten(#FF5F11, 5%);
-  border: thin solid darken(#FF5F11, 3%);
-  color: $text-white;
+  background-color: transparent;
+  border: thin solid transparent;
+  color: $color-negro;
   margin-top: 1.75em;
   padding: 10px 15px;
   &:hover{
-    background-color: #FF5F11;
-    color: $text-white;
+    color: $color-negro;
     text-decoration: none;
   }
   &:visited{
-    color: $text-white;
+    color: $color-negro;
   }
 }
 
 .blog-description{
-  background-color: rgba(255,255,255, .5);
-  color: darken($bg-article, 60%);
+  @include transparencia-bg-blanco(0.5);
+  color: $front-descripcion-color;
   font-size: 1.25em;
   line-height: normal;
   @include media-query($content-block) { //1100px

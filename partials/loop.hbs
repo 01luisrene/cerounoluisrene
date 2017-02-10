@@ -1,8 +1,8 @@
 {{!-- Loop Posts --}}
-<section class="___articulos___ flex-sa-wrap">
+<section class="___articulos___ flex wrap jcsa">
 {{#foreach posts}}
 {{!-- Primer Articulo --}}
-  <article {{#if @first}}class="first-post" {{#if image}}style="background-image: url({{image}})"{{/if}} {{#if tags}}data-tag="{{#foreach tags limit="1"}}{{name}}{{/foreach}}"{{/if}}{{else}}class="{{post_class}}"{{/if}}>
+  <article {{#if @first}}class="primer-post" {{#if image}}style="background-image: url({{image}})"{{/if}} {{#if tags}}data-tag="{{#foreach tags limit="1"}}{{name}}{{/foreach}}"{{/if}}{{else}}class="{{post_class}}"{{/if}}>
   {{#if @first}}
     <header>
       <a class="post-vinculo" href="{{url}}">
@@ -14,16 +14,17 @@
     <section class="post-extracto">
       <p>{{excerpt words="40"}}[...]</p>
     </section>
-    <footer class="post-footer">
-      <span class="flex-center">
-        {{#author}}
-          {{#if image}}
+    <footer class="post-footer flex wrap aicenter">
+      {{#author}}
+        {{#if image}}
           <img src="{{image}}" alt="{{name}}'s Picture" />
-          {{/if}}
-          <small>&nbsp;<a href="{{url}}">{{name}}</a>&nbsp;</small> 
-        {{/author}} 
-        <time class="flex-center" datetime="{{date format="YYYY-MM-DD"}}"><span class="icon-clock"></span>&nbsp;<small>{{date published_at timeago="true"}}</small></time>
-      </span>
+        {{/if}}
+        <a class="post-autor" href="{{url}}">{{name}}</a> 
+      {{/author}} 
+      <div class="box-time flex wrap aicenter">
+        <span class="icon-clock"></span>
+        <time class="time" datetime="{{date format="YYYY-MM-DD"}}">{{date published_at timeago="true"}}</time>
+      </div>
     </footer>
 
   {{else}}
@@ -56,12 +57,10 @@
       </a>
       <p class="excerpt">{{excerpt words="20"}}[...]</p>
     </section>
-    <footer class="post-meta flex-fs-center-wrap">
-    <div class="flex-fs-wrap box-time">
+    <footer class="post-meta flex wrap jcfs aicenter">
+    <div class="box-time flex wrap jcfs">
       <span class="icon-clock"></span>
-      <time class="time" datetime="{{date format="YYYY-MM-DD"}}">
-        {{date published_at timeago="true"}}
-      </time>
+      <time class="time" datetime="{{date format="YYYY-MM-DD"}}">{{date published_at timeago="true"}}</time>
     </div>
     {{#if tags}}
       {{#foreach tags limit="2"}}

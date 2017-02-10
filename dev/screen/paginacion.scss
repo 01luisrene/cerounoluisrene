@@ -1,8 +1,5 @@
 //===================================PAGINACIÓN=====================================//
 .pagination{
-  @extend %flexbox-center;
-  -webkit-align-items: center;
-  align-items: center;
   margin: 2em auto;
 }
 .page-number{
@@ -12,10 +9,10 @@
     font-size: 10px;
   }
 }
-.newer-posts, .older-posts{
-  margin: 0 .5em;
-  padding: .7em .7em;
-  font-size: 0.8em;
+.newer-posts, 
+.older-posts{
+  margin: 0 0.5em;
+  padding: 0.3em 0.5em 0.1em 0.5em;
   font-family: $font-family;
   font-weight: 400;
   text-transform: uppercase;
@@ -26,20 +23,26 @@
     text-align: center;
   }
 }
-.newer-posts.active, .older-posts.active{
-  background: $color-paginacion-bg;
-  border: 2px solid darken($color-paginacion-bg, 5%);
-  color: $text-white;
+.newer-posts.active, 
+.older-posts.active{
+  border-radius: 3px;
+  background: $paginacion-bg;
+  border: 2px solid darken($paginacion-bg, 5%);
+  color: $color-blanco;
+  font-size: 1em;
+  height: 35px;
+  width: 35px;
   &:hover{
-    border: 2px solid $text-color;
-    color: $text-color;
+    border: 2px solid $paginacion-border-color;
+    color: $color-negro;
     text-decoration: none;
   }
 }
-.newer-posts.disabled, .older-posts.disabled{
-  background: $grey-color-light;
-  border: 2px solid $grey-color;
-  color: $grey-color;
+.newer-posts.disabled, 
+.older-posts.disabled{
+  background: $color-gris-light;
+  border: 2px solid $color-gris;
+  color: $color-gris;
   cursor: default;
   user-select: none;
 }

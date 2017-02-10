@@ -1,5 +1,6 @@
 //=================================CONTENEDOR ARTICULOS==============================//
 .___articulos___{
+  align-items: flex-start;
   max-width: 980px;
   margin-right: auto;
   margin-left: auto;
@@ -14,8 +15,7 @@
     max-width: 480px;
   }
   .post{
-    align-self: baseline;
-    border: thin solid darken($bg-article, 15%);
+    border: thin solid darken($loop-border-color, 15%);
     flex: 0 31.3%;
     border-radius: 3px;
     font-family: $base-font-family;
@@ -23,57 +23,64 @@
     margin: 0.5em;
     overflow: hidden;
     word-wrap: break-word;
-    @include media-query($on-tablet) { //700px
-      margin: 0.5em 0.2em;
-    }
     @include media-query($on-small-tablet) { //600px
-      margin: 0 0 1.5em 0;
       flex: 0 100%;
+    }
+    @include media-query($on-tablet) { //700px
+      flex: 0 46.5%;
+    }
+    @include media-query($on-laptop){
+      //900px
+      flex: 0 47%;
+    }
+    @include media-query($content-pc){
+      //1000px
+      flex: 0 31%;
     }
   }
 //======================================ARTICULOS ITEM===============================//
   .post-header{
-    margin-bottom: 2em; //15px
+    margin-bottom: 1.5em;
     position: relative;
     .post-cover{
       height: auto;
     }
     .autor-img{
+      background-color: $color-blanco;
+      box-shadow: #E7EEF2 0 0 0 2px;
       overflow: hidden;
       height: 50px;
       width: 50px;
       margin-left: -25px;
+      padding: 3px;
       position: absolute;
       left: 50%;
       bottom: -20px;
     }
-    .autor-foto{
-      background: #FBF4F4;
-      border: thin solid #E9E9E9;
+    .autor-img, .autor-foto{
       border-radius: 100%;
-      padding: 3px;
     }
   }
   .post-vinculo{
-    color: $color-article-item;
+    color: $loop-item-link-color;
     cursor: pointer;
     transition: .200s;
     &:hover{
       text-decoration: none;
-      color: $color-theme;
+      color: $color-tema;
     }
   }
   .post-titulo{
     font-size: 1.2em;
-    margin-top: $spacing-unit / 2; //15px
-    margin-bottom: $spacing-unit / 2; //15px
+    margin-top: $espacio-inicial / 2; //15px
+    margin-bottom: $espacio-inicial / 2; //15px
     position: relative;
     @include media-query($on-tablet){
       font-size: 20px;
     }
     &::before{
       display: block;
-      background: $text-color;
+      background: $loop-item-link-color;
       content: "";
       height: 4px;
       width: 15%;
@@ -94,17 +101,17 @@
       }
     }
     &:hover::before{
-      background: $color-theme;
+      background: $color-tema;
     }
   }
   .post-contenido, .post-meta{
-    padding-left: $spacing-unit / 2;
-    padding-right: $spacing-unit / 2;
+    padding-left: $espacio-inicial / 2;
+    padding-right: $espacio-inicial / 2;
   }
   .post-contenido{
     line-height: 1.33em;
     @include media-query($on-smartphone) {
-      padding: 7px 7px 10px 7px;
+      
     }
     .excerpt{
       line-height: 21px;
@@ -112,23 +119,27 @@
     }
   }
   .post-meta{
-    margin-bottom: 0;
+    margin-bottom: 0.5em;
     .box-time{
       border-right: 0;
+      margin-bottom: 0;
       padding: 0.5em 0 0.5em 0;
     }
     .time{
       margin-left: 0.3em;
       font-size: 80%;
     }
+    a{
+      margin-top: 0.5em;
+    }
   }
 }
 
 //==========================================PRIMER POST ===============================//
-.first-post{
+.primer-post{
   background: no-repeat center center;
   background-size: cover;
-  border: thin solid $color-theme;
+  border: thin solid $color-tema;
   border-radius: 5px;
   overflow: initial;
   margin-left: auto;
@@ -153,9 +164,9 @@
   }
   &[data-tag]::after{
     background: #fefefe;
-    border: 2px solid $bg-boton;
+    border: 2px solid $color-azul;
     border-radius: 16px;
-    color: $text-color;
+    color: $color-negro;
     font-size: 1em;
     font-weight: 700;
     text-transform: uppercase;
@@ -176,7 +187,7 @@
     font-size: 1.4em;
     text-transform: uppercase;
     margin-top: 5px;
-    margin-bottom: $spacing-unit / 2;
+    margin-bottom: $espacio-inicial / 2;
     @include media-query($on-tablet) { //700px
       margin-left: 0;
       margin-right: 0;
@@ -199,7 +210,7 @@
     }
   }
   .post-extracto{
-    color: $text-color;
+    color: $color-negro;
     margin-bottom: 60px;
     p{
       background: rgba(255,255,255,.7);
@@ -220,21 +231,22 @@
     }
   }
   .post-footer{
-    background: rgba(0,0,0, 0.5);
-
-    padding-top: 15px;
+    background: $loop-primer-articulo-bg;
+    padding: 15px;
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    time, a{
-      color: $text-white;
+    .time, .post-autor, [class*="icon"]{
+      color: $color-blanco;
+
     }
-    time{
-      margin-bottom: 0;
-      [class*="icon"]{
-        color: $text-white;
-      }
+    .post-autor{
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+    }
+    [class*="icon"]{
+      margin-right: 0.3em;
     }
     img{
       border-radius: 100%;

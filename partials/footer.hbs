@@ -1,55 +1,53 @@
 <!-- Footer -->
 <footer class="site-footer">
-  <div class="contenedor footer-contenedor flex-fe-wrap">
-      <section class="footer-col footer-col-1">
-          <h3 class="footer-titulo inspiracion">Toda mi inspiración y conocimiento esta aquí!!</h3>      
-      </section>
-
-      <section class="footer-col footer-col-2">
-        <ul class="nav-redes no-list">
+  <div class="contenedor footer-contenedor flex fdc">
+      <section>
+        <ul class="footer-redes no-lista flex jcc">
           {{#if @blog.twitter}}
-          <li>
-            <a href="{{twitter_url @blog.twitter}}" target="_blank">
+          <li class="redes-item">
+            <a class="redes-link flex jcc aicenter" href="{{twitter_url @blog.twitter}}" target="_blank">
               <span class="icon-twitter"></span> 
               <i class="hidden">Twitter</i>
             </a>
           </li>
           {{/if}}
           {{#if @blog.facebook}}
-          <li>
-            <a href="{{facebook_url @blog.facebook}}" target="_blank">
+          <li class="redes-item">
+            <a class="redes-link flex jcc aicenter" href="{{facebook_url @blog.facebook}}" target="_blank">
               <span class="icon-facebook"></span>
               <i class="hidden">Facebook</i>
             </a>
           </li>
           {{/if}}
-          <li>
-            <a href="https://www.github.com/01luisrene" target="_blank">
+          <li class="redes-item">
+            <a class="redes-link flex jcc aicenter" href="https://www.github.com/01luisrene" target="_blank">
               <span class="icon-github"></span>
               <i class="hidden">GitHub</i>
             </a>
           </li>
-          <li>
-            <a href="https://plus.google.com/u/0/+01LuisRene" target="_blank">
+          <li class="redes-item">
+            <a class="redes-link flex jcc aicenter" href="https://plus.google.com/u/0/+01LuisRene" target="_blank">
               <span class="icon-google-plus3"></span>
               <i class="hidden">Google Plus</i> 
             </a>
           </li>
         </ul>
       </section>
-      <section class="footer-col footer-col-3">
-        <p class="copyright"><a href="{{@blog.url}}"><b>{{@blog.title}}</b></a> <span class="icon-copyright"></span> {{date format="YYYY"}}</a>
+      <section class="flex wrap jcc">
+        <p class="copyright">
+          <a href="{{@blog.url}}">
+            <b>{{@blog.title}}</b></a> 
+            <span class="icon-copyright"></span> 
+            {{date format="YYYY"}}
+          </a>
         </p>
-        {{#if @blog.logo}}
-          <img src="{{@blog.logo}}" title="{{@blog.title}}" style="display: block; margin: 0 auto;" width="60">
-        {{/if}}
       </section>
   </div>
 </footer>
 <!-- Política de cookies  -->
-<div class="barra-aceptacion-cookie" id="js_barra_aceptacion_cookie" style="display: block;">
-  <p>Utilizo cookies de terceros y propios en este blog. Al continuar utilizando el blog entiendo que aceptas la política de cookies.
-  <a href="{{@blog.url}}/politica-cookies/"  class="info-cookie" target="_blank">Más información</a>
+<div class="barra-aceptacion-cookie" id="js_barra_aceptacion_cookie" style="display: none;">
+  <p>Utilizo cookies de terceros y propios. Al continuar navegando por el blog entiendo que aceptas la política de cookies.
+  <a href="{{@blog.url}}/politica-cookies/"  class="info-cookie" target="_blank">Más&nbsp;información</a>
   <a href="javascript:void(0)" id="js_btn_cookie" class="btn-cookie">
     <span class="icon-close"></span>
   </a>
@@ -57,6 +55,6 @@
 </div>
 
 <!-- Botón up -->
-<a href="#" id="js_up" class="boton-subir">
+<a href="javascript:void(0)" id="js_up"  class="boton-subir" title="Subir">
   <i class="icon-rocket"></i>
 </a>

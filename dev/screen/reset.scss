@@ -74,13 +74,13 @@ td, th{ padding: 0; }
 //==========================================================================
 
 ::-moz-selection { 
-    color: $text-white;
-    background: lighten($color-theme, 7%);
+    color: $color-blanco;
+    background: #21B469;
 }
 
 ::selection {
-    color: $text-white; 
-    background: lighten($color-theme, 7%);
+    color: $color-blanco; 
+    background: #21B469;
 }
 
 *, *::before, *::after{
@@ -229,7 +229,7 @@ td, th{ padding: 0; }
 }
 
 body {
-  color: $text-color;
+  color: $color-negro;
   font-family: $base-font-family;
   font-weight: $base-font-weight;
   font-size: $base-font-size;
@@ -257,6 +257,7 @@ form fieldset{
 }
 
 img, input[type="image"] {
+  border-radius: 3px;
   border:none;
   max-width: 100%;
   vertical-align: middle;
@@ -369,31 +370,68 @@ address {
 
 ul, ol{
 	li {
+    //Comienza en 18px
 		@include media-query($on-tablet){
-	  //700px
-	  font-size: 0.88em; //16px
-	  line-height: 28px;
+      //700px
+  	  font-size: 0.88em; //16px
+  	  line-height: 28px;
 	  }
 	  @include media-query($on-smartphone){
-	    //480px
-	    font-size: 0.77em; //14px
-	    line-height: 26px;
-	  }
-	  > ul, > ol {
-	    li{
-	    	@include media-query($on-tablet){
-			  //700px
-			  font-size: 0.84em; //16px
-			  line-height: 24px;
-			  }
-			  @include media-query($on-smartphone){
-			    //480px
-			    font-size: 0.73em; //14px
-			    line-height: 22px;
-			  }
-	    }
+        //480px
+  	    font-size: 0.77em; //14px
+  	    line-height: 26px;
 	  }
 	}
+}
+
+//Tamaños para las etiquetas li de las listas desordenadas
+ul{
+  li{
+    > ul {
+      li{
+        @media screen and (min-width: $on-tablet){
+          //700px
+          font-size: 0.88em; //16px
+          line-height: 28px;
+        }
+        @include media-query($on-tablet){
+        //700px
+        font-size: 0.9em; //14px
+        line-height: 24px;
+        }
+        @include media-query($on-smartphone){
+          //480px
+          font-size: 0.9em; //12
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}
+
+//Tamaños para las etiquetas li de las listas ordenadas
+ol{
+  li{
+    > ol {
+      li{
+        @media screen and (min-width: $on-tablet){
+          //700px
+          font-size: 0.88em; //16px
+          line-height: 28px;
+        }
+        @include media-query($on-tablet){
+        //700px
+        font-size: 0.9em; //14px
+        line-height: 24px;
+        }
+        @include media-query($on-smartphone){
+          //480px
+          font-size: 0.9em; //12
+          line-height: 22px;
+        }
+      }
+    }
+  }
 }
 
 p{
@@ -412,32 +450,29 @@ p{
 }
 
 a {
-  color: $color-theme;
+  color: $color-tema;
   cursor: pointer;
   transition: all 0.5s linear;
   text-decoration: none;
   &:visited{
-    color: lighten($color-theme, 5%);
+    color: inherit;
     text-decoration: none;
   }
   &:hover {
-    color: lighten($color-theme, 5%);
+    color: lighten($color-tema, 5%);
     text-decoration: underline;
   }
 }
 
 blockquote {
-  color: darken($grey-color, 15%);
-  border-radius: 5px;
+  color: lighten($color-negro, 10%);
   border-style: solid;
-  border-width: thin thin thin 0.4em;
-  border-color: $color-theme;
+  border-width: 0 0 0 0.5em;
+  border-color: $color-tema;
   margin: 1.75em 0;
   padding: 0 0.8em;
   letter-spacing: -1px;
   @include media-query($on-tablet){//600px
-    margin-left: 0;
-    padding-left: 0;
   }
   p{
     margin: 0.8em 0;
@@ -450,7 +485,7 @@ blockquote {
 kbd{
     padding: 2px 4px;
     font-size: 90%;
-    color: #ffffff;
+    color: $color-blanco;
     background-color: #333333;
     border-radius: 3px;
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -474,7 +509,7 @@ pre {
 }
 //=================================FORM: INPUTS - TEXTAREA=======================================//
 input, fieldset, textarea{
- border: thin solid lighten($bg-boton, 5%);
+ border: thin solid lighten($boton-bg, 5%);
  &:focus{
   outline: none;
  }
@@ -487,7 +522,7 @@ button, input[type="submit"], input[type="button"], input[type="image"], input[t
   border-radius: 3px;
   display: inline-block;
   cursor:pointer;
-  color: $text-white;
+  color: $color-blanco;
   font-family: $font-family;
   font-weight: 400;
   font-size: 0.8em;
@@ -500,23 +535,23 @@ button, input[type="submit"], input[type="button"], input[type="image"], input[t
 }
 
 button, input[type="submit"], input[type="button"]{
-  background: lighten($bg-boton, 5%);
-  border: thin solid lighten($bg-boton, 5%);
+  background: lighten($boton-bg, 5%);
+  border: thin solid lighten($boton-bg, 5%);
   &:hover{
-    background: $bg-boton;
+    background: $boton-bg;
   }
 }
 input[type="image"]{
-  background: $bg-article;
-  border: thin solid $grey-color-light;
+  background: $loop-border-color;
+  border: thin solid $color-gris-light;
   padding:7px;
   height: auto;
 }
 
 input[type="reset"]{
   background: #F9F8F8;
-  border: thin solid $grey-color;
-  color: $text-color;
+  border: thin solid $color-gris;
+  color: $color-negro;
 }
 
 input[type="color"]{

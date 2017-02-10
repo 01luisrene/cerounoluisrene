@@ -2,14 +2,6 @@
   background: $menu-bg;
   box-shadow: 0px 1px 2px -1px rgba(245,245,245,1);
 }
-.caja___menu.overlay{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  border: none;
-  z-index: 9999;
-}
 .caja__menu__inner{
  padding-top: 6.5px;
  padding-bottom: 6.5px;
@@ -28,7 +20,7 @@
   }
 }
 //icono logo
-.link-logo{
+.logo-link{
   display: inline-block;
   max-height: 50px;
   .logo-figure{
@@ -38,9 +30,6 @@
     width: 100%;
     img{
       height: 100%;
-      @include media-query($on-laptop){
-        height: 40px;
-      }
     }
   }
 }
@@ -57,7 +46,7 @@
     }
     &:last-child{
       display: none;
-      background: $grey-color-light;
+      background: $color-gris-light;
       border-radius: 3px;
       font-size: 1.6em;
       padding: 0.3em 0.3em;
@@ -112,7 +101,7 @@
   }
 
   .icon-cerrar{
-    color: $text-white;
+    color: $color-blanco;
     cursor: pointer;
     position: absolute;
     top:16px;

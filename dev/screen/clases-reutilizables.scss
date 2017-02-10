@@ -4,7 +4,7 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-bottom: thin solid $grey-color-light;
+  border-bottom: thin solid $color-gris-light;
   display: table;
   text-align: center;
   margin-bottom: 2.5em;
@@ -26,11 +26,9 @@
   }
 }
 .main-header.post-head{
-  min-height: 180px;
   height: 65vh;
 }
 .main-header.autor-head, .main-header.tag-head{
-  min-height: 180px;
   height: 40vh;
 }
 .main-header.suscribete-head{
@@ -38,11 +36,8 @@
 }
 //==================================NO COVER========================================//
 .main-header.no-cover{
-  background: #DE8B8B;
-  margin-top: 53px;
   border-bottom: 0;
-  min-height: 0;
-  height: 1px;
+  height: 63px;
 }
 //================================RELLENOS CONTENEDORES ============================//
 //====CLASE PRINCIPAL -> BG=======//
@@ -50,33 +45,34 @@
   padding: 0 0 1em 0;
 }
 //=======================CONTENEDORES============================//
-.contenedor{
+.contenedor, .contenedor___post, .interior, .autor-interior{
   @include center;
-  max-width: 1000px;
-}
-.contenedor___post, .inner, .post__disqus{
-  @include center;
-  padding-right: $spacing-unit;
-  padding-left: $spacing-unit;
+  padding-right: $espacio-inicial;
+  padding-left: $espacio-inicial;
   @include media-query($on-laptop) {
-    padding-right: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
+    padding-right: $espacio-inicial / 2;
+    padding-left: $espacio-inicial / 2;
   }
   @include media-query($on-tablet){//600px
     width: 100%;
   }
 }
-.contenedor___post, .post__disqus{
-  max-width: 860px;
-  width: 100%;  
+//Menu & Footer
+.contenedor{
+  max-width: 1000px;
 }
-.contenedor___post{
+
+.contenedor___post, .interior{
+  max-width: $tema-contenedor-width;
+  width: 100%;
   @include media-query($content-block){
-    max-width: 710px;
+    max-width: $tema-contenedor-width - 140;
     width: 80%;
   }
 }
-.inner{
+
+//Autor
+.autor-interior{
   max-width: 710px;
   @include media-query($content-block){
     width: 80%;
@@ -100,7 +96,7 @@
   border: thin solid transparent;
   display: inline-block;
   cursor:pointer;
-  color: $text-white;
+  color: $color-blanco;
   font-family: $font-family;
   font-weight: 400;
   font-size: 0.7em;
@@ -115,11 +111,11 @@
 }
 
 .btn.btn-green{
-  background: lighten($color-theme, 8%);
-  border: thin solid $color-theme;
+  background: lighten($color-tema, 8%);
+  border: thin solid $color-tema;
   &:hover{
-    background: lighten($color-theme, 7%);
-    border-bottom:thin solid darken($color-theme, 3%);
+    background: lighten($color-tema, 7%);
+    border-bottom:thin solid darken($color-tema, 3%);
   }
 }
 
@@ -127,59 +123,65 @@
 .icon-clock{
   color: $color-calendario;
 }
-
 //===============FLEX=================//
 [class*="flex"]{
   display: flex;
 }
 //=============FLEX-START============//
-[class*="fs"]{
+[class*="jcfs"]{
   justify-content: flex-start;
 }
 //=============FLEX-END============//
-[class*="fe"]{
+[class*="jcfe"]{
   justify-content: flex-end;
 }
+//=============JUSTIFY-CONTENT: CENTER============//
+[class*="jcc"]{
+  justify-content: center;
+}
 //=============SPACE-BETWEEN============//
-[class*="sb"]{
+[class*="jcsb"]{
   justify-content: space-between;
 }
 //=============SPACE-AROUND============//
-[class*="sa"]{
+[class*="jcsa"]{
   justify-content: space-around;
 }
+[class*="fdc"]{
+  flex-direction: column;
+}
 //================CENTER================//
-[class*="center"]{
+[class*="aicenter"]{
   align-items: center;
 }
 //================WRAP================//
 [class*="wrap"]{
   flex-wrap: wrap;
 }
+
 //=============TAGS=====================//
 a[class*="tag"]{
   display: inline-block;
-  background: $bg-article;
-  border: thin solid $grey-color-light;
+  background: $tag-btn-bg;
   border-radius: 15px;
-  color: $text-color;
+  color: $color-blanco;
   font-size: 80%;
   line-height: normal;
   margin-left: 0.3em;
   margin-bottom: 0.5em;
   padding: 0.3em 0.5em;
+  text-decoration: none;
   @include media-query($on-tablet){
   //700px
     
   }
   &:hover{
-    text-decoration: none;
-    border: thin dotted $grey-color;
+    background: $tag-btn-bg-hover;
   }
 }
 
 //=============NO LISTAS================//
-[class*="no-list"]{
+[class*="no-lista"]{
   list-style-type: none;
   padding-left: 0;
   margin-top: 0;

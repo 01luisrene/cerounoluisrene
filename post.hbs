@@ -18,12 +18,11 @@
 </script>
 </div>
 <main class="main" role="main">
-<div class="contenedor___post">
-  <article class="{{post_class}}">
+  <article class="contenedor___post {{post_class}}">
     <header>
       <h1 class="post-titulo">{{title}}</h1>
-      <section class="post-meta flex-fs-center-wrap">
-        <div class="flex-center-wrap box-time">
+      <section class="post-meta flex wrap jcfs aicenter ">
+        <div class="box-time flex wrap aicenter">
           <span class="icon-clock"></span>
           <time class="time" datetime="{{date format="YYYY-MM-DD"}}">{{date published_at timeago="true"}}</time>
         </div>
@@ -103,13 +102,12 @@
     {{/if}}
     </footer>
   </article>
-</div>
 {{!-- Links to Previous/Next posts --}}
-<aside class="read-next">
+<aside class="post__leer__mas flex">
   {{#next_post}}
   <a class="read-next-story next" {{#if image}}style="background-image: url({{image}})"{{else}}style="background-image: url({{asset "images/cover_default.jpg"}})"{{/if}} href="{{url}}">
-      <h4 class="read-next-title">{{title}}</h4>
-      <p class="read-next-parrafo">{{excerpt words="12"}}&hellip;</p>
+      <h2 class="read-next-title">{{title}}</h2>
+      <p class="read-next-parrafo">{{excerpt words="25"}}&hellip;</p>
   </a>
   {{else}}
   <span class="read-next-story disabled" style="background-image: url({{asset "images/cover_default.jpg"}})">
@@ -120,8 +118,8 @@
 
   {{#prev_post}}
   <a class="read-next-story prev"{{#if image}}style="background-image: url({{image}})"{{else}}style="background-image: url({{asset "images/cover_default.jpg"}})"{{/if}} href="{{url}}">
-      <h4 class="read-next-title">{{title}}</h4>
-      <p class="read-next-parrafo">{{excerpt words="12"}}&hellip;</p>
+      <h2 class="read-next-title">{{title}}</h2>
+      <p class="read-next-parrafo">{{excerpt words="25"}}&hellip;</p>
   </a>
   {{else}}
   <span class="read-next-story disabled" style="background-image: url({{asset "images/cover_default.jpg"}})">
@@ -131,7 +129,7 @@
   {{/prev_post}}
 </aside>
 <!--Formulario de Comentarios-->
-<section class="post__disqus">
+<section class="post__disqus interior">
   <h2>Comparte tu Opinión</h2>
   <div id="disqus_thread"></div>  
   <script>  

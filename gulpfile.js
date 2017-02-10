@@ -32,7 +32,7 @@ gulp.task('screen', function(){
 gulp.task("vendor-css", function(){
 	return gulp.src('./dev/vendor-css/*.css')
 	.pipe(cleanCss())
-  .pipe(concat('vendor.min.css'))
+  .pipe(concat('vendor.css'))
   .pipe(gulp.dest('./assets/css/'));
 });
 
@@ -47,7 +47,7 @@ gulp.task('fichero-js', function () {
 //Comprimir archivos js de terceros
 gulp.task('vendor-js', function () {
    return gulp.src(['./dev/vendor-js/*.js'])
-    .pipe(concat('vendor.min.js'))
+    .pipe(concat('vendor.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./assets/js/'));
 });
