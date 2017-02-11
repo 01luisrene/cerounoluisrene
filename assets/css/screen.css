@@ -693,7 +693,7 @@ table.table tr td:nth-child(2n) {
 }
 
 .main-header.post-head {
-  height: 65vh;
+  height: 60vh;
 }
 
 .main-header.autor-head,
@@ -1185,10 +1185,17 @@ a[class*="tag"]:hover {
 }
 
 .primer-post .post-titulo {
+  color: #384a50;
+  text-shadow: 1px -1px 0px white;
   font-size: 1.4em;
   text-transform: uppercase;
+  transition: text-shadow 0.3s ease;
   margin-top: 5px;
   margin-bottom: 15px;
+}
+
+.primer-post .post-titulo:hover {
+  text-shadow: none;
 }
 
 .primer-post .post-titulo::before {
@@ -1723,7 +1730,7 @@ p.familia-texto-descripcion {
 }
 
 .main-header-content {
-  margin-top: 64px;
+  margin-top: 40px;
   padding-top: 15px;
   padding-bottom: 15px;
 }
@@ -1984,6 +1991,8 @@ p.familia-texto-descripcion {
 
 .footer-redes .redes-item {
   margin-right: 10px;
+  height: 3em;
+  width: 3em;
 }
 
 .footer-redes .redes-item:last-child {
@@ -1993,24 +2002,23 @@ p.familia-texto-descripcion {
 .footer-redes .redes-link {
   color: #fff;
   text-decoration: none;
-  transition: none;
-  height: 3.5em;
-  width: 3.5em;
-}
-
-.footer-redes .redes-link:hover [class*="icon"] {
-  font-size: 2.3em;
-}
-
-.footer-redes .redes-link [class*="icon"] {
   font-size: 2em;
-  transition: font-size 0.2s linear 0.01s;
+  transition: all 0.2s ease;
+}
+
+.footer-redes .redes-link:hover {
+  font-size: 2.2em;
+}
+
+.footer-redes .redes-link:hover::before {
+  height: 2.4em;
+  width: 2.4em;
 }
 
 .copyright {
   font-size: 1em;
   text-align: center;
-  margin: 1em 0;
+  margin: 0.5em 0;
   width: 100%;
 }
 
@@ -2251,6 +2259,10 @@ a.boton-subir i {
     display: block;
     color: #fff;
     z-index: 90;
+  }
+
+  .titulo-blog-mobile:hover {
+    text-decoration: none;
   }
 
   .titulo-blog-mobile:visited {

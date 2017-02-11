@@ -14,6 +14,8 @@
 .footer-redes{
   .redes-item{
     margin-right: 10px;
+    height: 3em;
+    width: 3em;
     &:last-child{
       margin-right: 0;
     }
@@ -21,23 +23,20 @@
   .redes-link{
     color: $color-blanco;
     text-decoration: none;
-    transition: none;
-    height: 3.5em;
-    width: 3.5em;
+    font-size: 2em;
+    transition: all 0.2s ease;
     &:hover{
-      [class*="icon"]{
-        font-size: 2.3em;
+      font-size: 2.2em;
+      &::before{
+        height: 2.4em;
+        width: 2.4em;
       }
-    }
-    [class*="icon"]{
-      font-size: 2em;
-      transition: font-size 0.2s linear 0.01s;
     }
   }
 }
 .copyright{
   font-size: 1em;
   text-align: center;
-  margin: 1em 0;
+  margin: 0.5em 0;
   width: 100%;
 }

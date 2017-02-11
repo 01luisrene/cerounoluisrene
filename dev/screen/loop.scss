@@ -184,10 +184,16 @@
     padding-right: 0;
   }
   .post-titulo{
+    color: darken($loop-border-color, 60%);
+    text-shadow: 1px -1px 0px rgba(255, 255, 255, 1);
     font-size: 1.4em;
     text-transform: uppercase;
+    transition: text-shadow 0.3s ease;
     margin-top: 5px;
     margin-bottom: $espacio-inicial / 2;
+    &:hover{
+      text-shadow: none;
+    }
     @include media-query($on-tablet) { //700px
       margin-left: 0;
       margin-right: 0;
@@ -231,7 +237,7 @@
     }
   }
   .post-footer{
-    background: $loop-primer-articulo-bg;
+    background: $loop-primer-articulo-pf-bg ;
     padding: 15px;
     position: absolute;
     bottom: 0;

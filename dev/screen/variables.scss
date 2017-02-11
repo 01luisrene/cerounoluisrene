@@ -47,9 +47,10 @@ $front-nombre-autor-color   : $color-tema;
 $front-descripcion-color    : #384a50;
 
 //LOOP
-$loop-border-color          : #D7E0E3;
+$loop-primer-articulo-color	: #D7E0E3;
+$loop-border-color          : $loop-primer-articulo-color;
 $loop-item-link-color       : #008340;
-$loop-primer-articulo-bg    : #21B469;
+$loop-primer-articulo-pf-bg : #21B469; //Primer post footer background
 
 //PAGINACIÓN
 $paginacion-bg              : $color-naranja;

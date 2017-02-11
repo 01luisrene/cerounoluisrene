@@ -82,7 +82,7 @@ p.familia-texto-descripcion{
   vertical-align: middle;
 }
 .main-header-content{
-  margin-top: 64px;
+  margin-top: $espacio-inicial + 10;
   padding-top: $espacio-inicial / 2;
   padding-bottom: $espacio-inicial / 2;
 }

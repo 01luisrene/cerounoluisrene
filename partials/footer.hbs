@@ -4,31 +4,27 @@
       <section>
         <ul class="footer-redes no-lista flex jcc">
           {{#if @blog.twitter}}
-          <li class="redes-item">
-            <a class="redes-link flex jcc aicenter" href="{{twitter_url @blog.twitter}}" target="_blank">
-              <span class="icon-twitter"></span> 
+          <li class="redes-item flex jcc aicenter">
+            <a class="redes-link icon-twitter" href="{{twitter_url @blog.twitter}}" target="_blank">
               <i class="oculto">Twitter</i>
             </a>
           </li>
           {{/if}}
           {{#if @blog.facebook}}
-          <li class="redes-item">
-            <a class="redes-link flex jcc aicenter" href="{{facebook_url @blog.facebook}}" target="_blank">
-              <span class="icon-facebook"></span>
+          <li class="redes-item flex jcc aicenter">
+            <a class="redes-link icon-facebook" href="{{facebook_url @blog.facebook}}" target="_blank">
               <i class="oculto">Facebook</i>
             </a>
           </li>
           {{/if}}
-          <li class="redes-item">
-            <a class="redes-link flex jcc aicenter" href="https://www.github.com/01luisrene" target="_blank">
-              <span class="icon-github"></span>
+          <li class="redes-item flex jcc aicenter">
+            <a class="redes-link icon-github" href="https://www.github.com/01luisrene" target="_blank">
               <i class="oculto">GitHub</i>
             </a>
           </li>
-          <li class="redes-item">
-            <a class="redes-link flex jcc aicenter" href="https://plus.google.com/u/0/+01LuisRene" target="_blank">
-              <span class="icon-google-plus3"></span>
-              <i class="oculto">Google Plus</i> 
+          <li class="redes-item flex jcc aicenter">
+            <a class="redes-link icon-google-plus3" href="https://plus.google.com/u/0/+01LuisRene" target="_blank">
+              <i class="oculto">Google Plus</i>
             </a>
           </li>
         </ul>
@@ -38,7 +34,7 @@
           <a href="{{@blog.url}}">
             <b>{{@blog.title}}</b></a> 
             <span class="icon-copyright"></span> 
-            {{date format="YYYY"}}
+            2016 - {{date format="YYYY"}}
           </a>
         </p>
       </section>

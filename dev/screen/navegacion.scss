@@ -159,6 +159,9 @@
     display: block;
     color: $color-blanco;
     z-index: 90;
+    &:hover{
+      text-decoration: none;
+    }
     &:visited{
       color: $color-blanco;
     }
