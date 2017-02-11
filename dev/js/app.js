@@ -1,23 +1,15 @@
 'use strict';
-var menu_mobile = $('#js_menu_mobile');
+var menu_mobile = $('.js_menu_desktop_mobile');
+var altura_menu = $('.js_caja___menu').height();
 var cerounoluisrene = (function ($) {
 
 var  displayMenu = function(){
-  	$('#js_icon_menu').on('click', function(e) {
+    $("#js_icono_menu, #js_icono_cerrar").on("click", function(e){
       e.preventDefault();
-      menu_mobile.css({
-        display: 'block'
-      });
-      menu_mobile.addClass('bounceInRight').removeClass('fadeOutRight');
+      $("body").toggleClass("nav-abierto nav-cerrado");
     });
-  },
-  closeMenu = function(){
-    $('#js_icon_cerrar').on('click', function(event) {
-      event.preventDefault();
-      menu_mobile.removeAttr('style');
-      menu_mobile.addClass('fadeOutRight').removeClass('bounceInRight');
-      setTimeout(function(){ menu_mobile.css('display', 'none'); }, 500);
-    });
+    //Margen top del HEADER principal
+    $('.main-header').css('marginTop', altura_menu);
   },
   politicaCookies = function(){
   	function setCookie(cname,cvalue,exdays) {
@@ -82,32 +74,11 @@ var  displayMenu = function(){
       return false;
     });
   },
-  //Colocar Digital Ocean Fixed
-  digitalOcean = function(){
-    //Comprobamos si existe el contenedor con el ID js_digital_ocean
-    if($('#js_digital_ocean').length > 0){ 
-    setTimeout(function(){
-    var post = $(".ultimos-post").offset().top,
-        altura = $('.ultimos-post').height(),
-        fixed = post + altura;
-    
-    $(window).scroll(function () {
-      if ($(window).scrollTop() >= fixed) {
-        $('#js_digital_ocean').addClass('ditigal_ocean_fixed slideInDown');
-      }else{
-        $('#js_digital_ocean').removeClass('ditigal_ocean_fixed slideInDown');
-      }
-    });
-    }, 10000);
-    }
-  },
  // 01luisrene javascripts initialization
   init = function () {
     displayMenu();
-    closeMenu();
     politicaCookies();
     botonUp();
-    digitalOcean();
   };
 
   return {

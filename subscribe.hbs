@@ -29,7 +29,7 @@
   {{!-- Ghost outputs important style and meta data with this tag --}}
   {{ghost_head}}
 </head>
-<body>
+<body class="nav-cerrado">
 <!--[if lt IE 9]>
 <div class="browser-antiguo">
     <p class="browserupgrade">Está utilizando un navegador <strong>antiguo</strong>. Por favor <a href="http://browsehappy.com/">actualice su navegador</a> para mejorar su experiencia.</p>
@@ -40,7 +40,7 @@
 </header>
 <main class="main">
   {{#if success}}
-    <article class="contenedor-suscribete inner">
+    <article class="contenedor-suscribete interior">
       <header>
           <h1 class="post-titulo">Suscripción Exitosa!</h1>
           <div class="addthis_sharing_toolbox compartir-redes-sociales"></div>
@@ -73,7 +73,7 @@
       </section>
     </article>
   {{else if error}}
-    <article class="contenedor-suscribete inner">
+    <article class="contenedor-suscribete interior">
       <header>
           <h1 class="post-titulo">Error!</h1>
       </header>
@@ -82,7 +82,7 @@
       </section>
     </article>
   {{else}}
-    <article class="contenedor-suscribete inner">
+    <article class="contenedor-suscribete interior">
       <header>
           <h1 class="post-titulo">Suscribete</h1>
           <small>Suscribete a mi blog para recibir las ultimas publicaciones en tu bandeja de correo electónico.</small>

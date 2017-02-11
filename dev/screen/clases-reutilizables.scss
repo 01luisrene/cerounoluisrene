@@ -37,7 +37,7 @@
 //==================================NO COVER========================================//
 .main-header.no-cover{
   border-bottom: 0;
-  height: 63px;
+  height: 0;
 }
 //================================RELLENOS CONTENEDORES ============================//
 //====CLASE PRINCIPAL -> BG=======//
@@ -86,7 +86,7 @@
 }
 
 //================================OCULTAR ELEMENTOS=======================//
-.hidden{
+.oculto{
   display: none !important;
 }
 

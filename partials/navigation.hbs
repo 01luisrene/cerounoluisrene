@@ -1,5 +1,5 @@
-<nav class="caja___menu overlay">
-  <div class="caja__menu__inner contenedor flex wrap jcsb">
+<nav class="caja___menu js_caja___menu">
+  <div class="caja__menu__inner contenedor flex wrap jcsb aicenter">
     {{#if @blog.logo}}
     <a class="logo-link" href="{{@blog.url}}" title="{{@blog.title}}">
       <figure class="logo-figure">
@@ -11,37 +11,26 @@
       <span class="titulo-blog">{{@blog.title}}</span>
     </a>
     {{/if}}
-    <ul class="nav no-lista flex aicenter">
-        <li class="nav-item">
-          <a class="nav-link" href="{{@blog.url}}/digital-ocean/">Digital Ocean</a>
+    {{!-- Icono del menú para móviles --}}
+    <a class="icono-menu jcc aicenter" id="js_icono_menu" href="javascript:void(0)">
+      <span class="icon-th-menu"></span>
+    </a>
+    {{!-- Contenedor de la lista tanto para PC & Mobile --}}
+    <div class="menu-desktop-mobile js_menu_desktop_mobile">
+      {{!-- Icono para cerrar el menú en móvil --}}
+      <i class="icon-close icono-cerrar" id="js_icono_cerrar" title="Cerrar"></i>
+      {{!-- Titulo del blog --}}
+      <a class="titulo-blog-mobile" href="{{@blog.url}}" title="{{@blog.title}}">
+          {{@blog.title}}
+      </a>
+      {{!-- Lista de items menú --}}
+      <ul class="nav no-lista">
+        {{#foreach navigation}}
+        <li class="nav-item nav-{{slug}}{{#if current}} nav-current{{/if}}">
+          <a class="nav-link" href="{{url absolute="true"}}">{{label}}</a></li>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{@blog.url}}/contacto/">Contacto</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{@blog.url}}/sobre-mi/">Sobre mí</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="js_icon_menu" href="javascript:void(0)"><span class="icon-th-menu"></span></a>
-        </li>
-    </ul>
+        {{/foreach}}
+      </ul>
+    </div>
   </div>
 </nav>
-{{!--Menú Mobile--}}
-<div class="menu___mobile animated" id="js_menu_mobile" style="display:none;">
-    <i class="icon-close icon-cerrar" id="js_icon_cerrar" title="Cerrar"></i>
-    <a class="titulo-blog" href="{{@blog.url}}" title="{{@blog.title}}">
-        {{@blog.title}}
-    </a>
-   <ul class="nav__mobile no-list">
-      <li class="nav-item">
-        <a class="nav-link" href="{{@blog.url}}/digital-ocean/"><span class="icon-server"></span>&nbsp; &nbsp;Digital Ocean</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{@blog.url}}/contacto/"><span class="icon-contact_mail"></span>&nbsp;&nbsp;Contacto</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{@blog.url}}/sobre-mi/"><span class="icon-avatar"></span>&nbsp;&nbsp;Sobre mí</a>
-      </li>
-   </ul>
-</div>
