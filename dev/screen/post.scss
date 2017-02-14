@@ -107,6 +107,26 @@
       z-index: 99;
     }
   }
+  a.codepen{
+    display: inline-block;
+    background: #070707;
+    background: linear-gradient(90deg, #070707 0,lighten(#070707, 25%) 85%);
+    border-radius: 3px;
+    color: $color-verde-limon;
+    padding: 1em 1.5em 1em 2.5em;
+    position: relative;
+    &:hover{
+      background: linear-gradient(90deg, lighten(#070707, 25%) 0,#070707 90%);
+    }
+    &::before{
+      content: "\e907";
+      color: $color-blanco;
+      font-family: iconos!important;
+      font-size: 1.5em;
+      position: absolute;
+      left: 10px;
+    }
+  }
 }
 
 .post-footer{
