@@ -5,11 +5,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   border-bottom: thin solid $color-gris-light;
-  display: table;
   text-align: center;
-  margin-bottom: 2.5em;
-  position: relative;
-  height: 70vh;
+  margin-bottom: 1em;
   width: 100%;
   @include media-query($on-small-laptop){
     //800px
@@ -21,6 +18,8 @@
   }
 }
 .main-header.home{
+  height: 100vh;
+  margin-bottom: 1.5em;
   @include media-query($content-block){
     height: auto;
   }
@@ -37,7 +36,7 @@
 //==================================NO COVER========================================//
 .main-header.no-cover{
   border-bottom: 0;
-  height: 0;
+  height: 1px;
 }
 //================================RELLENOS CONTENEDORES ============================//
 //====CLASE PRINCIPAL -> BG=======//
@@ -66,7 +65,7 @@
   max-width: $tema-contenedor-width;
   width: 100%;
   @include media-query($content-block){
-    max-width: $tema-contenedor-width - 140;
+    max-width: $tema-contenedor-width-small;
     width: 80%;
   }
 }
@@ -82,7 +81,7 @@
 
 //==================================CAJA ADDTHIS==========================//
 .compartir-redes-sociales{
-  margin-top: 1em;
+  margin-bottom: 1.5em;
 }
 
 //================================OCULTAR ELEMENTOS=======================//
@@ -123,6 +122,7 @@
 .icon-clock{
   color: $color-calendario;
 }
+//============================FLEXBOX===================================//
 //===============FLEX=================//
 [class*="flex"]{
   display: flex;
@@ -181,9 +181,9 @@ a[class*="tag"]{
 }
 
 //=============NO LISTAS================//
-[class*="no-lista"]{
-  list-style-type: none;
-  padding-left: 0;
+.no-lista{
+  list-style-type: none !important;
+  padding-left: 0 !important;
   margin-top: 0;
   margin-bottom: 0;
 }

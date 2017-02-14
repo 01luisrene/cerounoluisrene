@@ -125,6 +125,27 @@ td, th{ padding: 0; }
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-chevron-down:before {
+  content: "\e911";
+}
+.icon-chevron-right:before {
+  content: "\e90c";
+}
+.icon-chevron-left:before {
+  content: "\e90b";
+}
+.icon-codepen:before {
+  content: "\e907";
+}
+.icon-close:before {
+  content: "\e908";
+}
+.icon-remove:before {
+  content: "\e908";
+}
+.icon-times:before {
+  content: "\e908";
+}
 .icon-like:before {
   content: "\e90e";
 }
@@ -148,6 +169,15 @@ td, th{ padding: 0; }
 }
 .icon-link:before {
   content: "\e90a";
+}
+.icon-th-menu:before {
+  content: "\e902";
+}
+.icon-copyright:before {
+  content: "\e90d";
+}
+.icon-contact_mail:before {
+  content: "\e903";
 }
 .icon-mobile:before {
   content: "\e906";
@@ -194,39 +224,6 @@ td, th{ padding: 0; }
 .icon-github:before {
   content: "\eab0";
 }
-.icon-th-menu:before {
-  content: "\e902";
-}
-.icon-copyright:before {
-  content: "\e90d";
-}
-.icon-contact_mail:before {
-  content: "\e903";
-}
-.icon-th-list:before {
-  content: "\e90f";
-}
-.icon-th:before {
-  content: "\e910";
-}
-.icon-chevron-right:before {
-  content: "\e90c";
-}
-.icon-chevron-left:before {
-  content: "\e90b";
-}
-.icon-codepen:before {
-  content: "\e907";
-}
-.icon-close:before {
-  content: "\e908";
-}
-.icon-remove:before {
-  content: "\e908";
-}
-.icon-times:before {
-  content: "\e908";
-}
 
 body {
   color: $color-negro;
@@ -257,7 +254,6 @@ form fieldset{
 }
 
 img, input[type="image"] {
-  border-radius: 3px;
   border:none;
   max-width: 100%;
   vertical-align: middle;
@@ -460,7 +456,6 @@ a {
   }
   &:hover {
     color: lighten($color-tema, 5%);
-    text-decoration: underline;
   }
 }
 
@@ -468,16 +463,33 @@ blockquote {
   color: lighten($color-negro, 10%);
   border-style: solid;
   border-width: 0 0 0 0.5em;
-  border-color: $color-tema;
+  border-color: $color-gris;
   margin: 1.75em 0;
-  padding: 0 0.8em;
+  padding: 0.8em;
   letter-spacing: -1px;
-  @include media-query($on-tablet){//600px
+  @include media-query($on-tablet){//700px
+    padding: 0.5em;
   }
   p{
-    margin: 0.8em 0;
-    @include media-query($on-tablet){//600px
-      margin: 0.8em;
+    font-size: 23px;
+    margin-bottom: 0;
+    @include media-query($on-laptop){
+    //900px
+      font-size: 20px;
+    }
+    @include media-query($on-small-laptop){
+    //800px
+      font-size: 18px;
+    }
+    @include media-query($on-tablet){//700px
+      font-size: 17px;
+    }
+    @include media-query($on-small-tablet){
+    //600px
+      font-size: 16px;
+    }
+    @include media-query($on-smartphone){
+    //480px
     }
   }
 }
@@ -568,11 +580,11 @@ form fieldset{
 }
 
 //=====================================TABLA=========================================//
-.table-container {
+.tabla-contenedor {
   overflow-x: auto;
 }
 
-table.table {
+table.tabla {
   border: 1px solid rgba($table-secondary-color,.5);
   border-collapse: collapse;
   min-width: $table-width;

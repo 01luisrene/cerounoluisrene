@@ -1,8 +1,12 @@
 //==========================================SOBRE MI - STACKS======================================//
 ul.lista-stack{
+  margin-bottom: 1.5em;
   li{
-    display: inline-block;
-    width: 33%;
+    width: 32.5%;
+    img{
+      border: thin solid $color-gris-light;
+      padding: 3px;
+    }
   }
 }
 //=====================SOBRE MI - MI FAMILIA=======================================//
@@ -15,74 +19,11 @@ p.familia-texto-descripcion{
     margin-top: 15px;
 }
 
-//================================LISTA ARTICULOS - BUSCADOR==============================//
-.buscador-caja{
-  position: relative;
-  font-size: 18px;
-  label {
-    position: absolute;
-    left: 13px;
-    top: 7px;
-  }
-  form{
-    margin-bottom: 0;
-  }
-  .buscador-campo{
-    border: thin solid $color-tema;
-    border-radius: 20px;
-    padding: 0.3em 1.5em 0.3em 2em;
-    height: 40px;
-    width: 70%;
-    margin-bottom: 10px;
-    @include media-query($on-smartphone){
-      width: 100%;
-    }
-    &:focus{
-      outline: none;
-    }
-  }
-  .buscador-caja-resultados{
-    margin-top: 1.5em;
-    @include media-query($on-smartphone){
-      margin-top: 0;
-    }
-  }
+//======================================TAGS - AUTOR===================================/
+.tag-head-contenedor{
+  height: 100%;
 }
-.buscador-caja-resultados .buscador-lista-articulos{
-  position: relative;
-  padding-left: 1.2em;
-  list-style-type: none;
-}
-.buscador-lista-articulos {
-  .buscador-items{
-    text-decoration: none;
-    &:hover{
-      text-decoration: underline;
-    }
-  }
-}
-.buscador-items{
-    &::before{
-      @extend %vinietas;
-      left: 3px;
-      margin-top: 4px;
-      @include media-query($on-tablet){
-      //700px
-        margin-top: 7px;
-      }
-    }
-}
-.buscador-mensaje-resultados{
-  font-size: 12px;
-  margin-left: -1.2em;
-}
-//======================================TAGS - AUTOR===================================//
-.vertical{
-  display: table-cell;
-  vertical-align: middle;
-}
-.main-header-content{
-  margin-top: $espacio-inicial + 10;
+.tag{
   padding-top: $espacio-inicial / 2;
   padding-bottom: $espacio-inicial / 2;
 }

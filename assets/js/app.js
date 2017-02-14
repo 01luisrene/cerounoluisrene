@@ -1,1 +1,73 @@
-"use strict";var menu_mobile=$(".js_menu_desktop_mobile"),altura_menu=$(".js_caja___menu").height(),cerounoluisrene=function(e){var n=function(){e("#js_icono_menu, #js_icono_cerrar").on("click",function(n){n.preventDefault(),e("body").toggleClass("nav-abierto nav-cerrado")}),e(".main-header").css("marginTop",altura_menu)},o=function(){function n(e,n,o){var i=new Date;i.setTime(i.getTime()+24*o*60*60*1e3);var t="expires="+i.toGMTString();document.cookie=e+"="+n+"; "+t+"; path=/"}function o(e){for(var n=e+"=",o=document.cookie.split(";"),i=0;i<o.length;i++){for(var t=o[i];" "==t.charAt(0);)t=t.substring(1);if(0==t.indexOf(n))return t.substring(n.length,t.length)}return""}function i(){t="01luisrene",""!=t&&null!=t&&(n("_01lr",t,30),e("#js_barra_aceptacion_cookie").addClass("animated zoomOutDown"),setTimeout(function(){e("#js_barra_aceptacion_cookie").css({display:"none"})},300),console.log("Haz aceptado el uso de cookies de nuestra web 01luisrene.com ❤"))}var t=o("_01lr");""==t&&(e("#js_barra_aceptacion_cookie").css({display:"block"}),setTimeout(function(){i()},5e4)),e("#js_btn_cookie").on("click",function(e){e.preventDefault(),i()})},i=function(){e(window).scroll(function(){e(this).scrollTop()>300?e("#js_up").slideDown(300):e("#js_up").slideUp(300)}),e("#js_up i").on("click",function(n){return n.preventDefault(),e("body,html").animate({scrollTop:0},1e3),!1})},t=function(){n(),o(),i()};return{init:t}}(jQuery);!function(){cerounoluisrene.init()}();
+'use strict';
+var menu_mobile = $('.js_menu_desktop_mobile'),
+    menu_height = $('.js_caja___menu ').height();
+var cerounoluisrene = (function ($) {
+
+var  displayMenu = function(){
+    $("#js_icono_menu, #js_icono_cerrar").on("click", function(e){
+      e.preventDefault();
+      $("body").toggleClass("nav-abierto nav-cerrado");
+    });
+  },
+  margenTop = function(){
+    $('.front').css('marginTop', menu_height);
+    $('.cover-top').css('marginTop', menu_height);
+  },
+  politicaCookies = function(){
+
+    if(localStorage.getItem('pc') == '01luisrene') {
+      $('#js_barra_aceptacion_cookie').css('display', 'none');
+    }else{
+      $('#js_barra_aceptacion_cookie').css('display', 'block');
+    }
+
+    $('#js_btn_cookie').on('click', function(e) {
+      e.preventDefault();
+      localStorage.setItem('pc', '01luisrene');
+      $('#js_barra_aceptacion_cookie').addClass('zoomOutDown')
+      setTimeout(function(){
+        $('#js_barra_aceptacion_cookie').css('display', 'none');
+        console.log('Haz aceptado el uso de cookies en nuestra web 01luisrene.com ❤');
+      }, 500);
+    });
+
+  },
+  botonUp = function(){
+    $(window).scroll(function(){
+      if($(this).scrollTop() > 300){
+        $("#js_up").slideDown(300);
+      }else{
+        $("#js_up").slideUp(300);
+      }
+    });
+    $("#js_up").on('click', function (e) {
+      e.preventDefault();
+        $("body,html").animate({
+        scrollTop: 0
+      },1000);
+      return false;
+    });
+  },
+  scroll_abajo = function(){
+    $('#scroll_top').arctic_scroll({
+      speed: 800
+    });
+  },
+ // 01luisrene javascripts initialization
+  init = function () {
+    displayMenu();
+    margenTop();
+    politicaCookies();
+    botonUp();
+    scroll_abajo();
+  };
+
+  return {
+      init: init
+  };
+
+})(jQuery);
+
+(function () {
+    cerounoluisrene.init();
+})();

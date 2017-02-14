@@ -164,7 +164,7 @@
   }
   &[data-tag]::after{
     background: #fefefe;
-    border: 2px solid $color-azul;
+    border: 2px solid $color-tema;
     border-radius: 16px;
     color: $color-negro;
     font-size: 1em;
@@ -237,9 +237,11 @@
     }
   }
   .post-footer{
-    background: $loop-primer-articulo-pf-bg ;
+    background: $loop-primer-articulo-pf-bg;
+    border-top: 0;
     padding: 15px;
     position: absolute;
+    margin: 0;
     bottom: 0;
     left: 0;
     right: 0;

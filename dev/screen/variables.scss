@@ -17,7 +17,8 @@ $espacio-inicial            : 30px;
 $boton-bg                   : #359AFF;
 
 //ANCHOS TEME
-$tema-contenedor-width      : 860px;
+$tema-contenedor-width      : 800px;
+$tema-contenedor-width-small: $tema-contenedor-width - 80;
 
 //COLORES DEL TEME
 $color-tema                 : #00A451;
@@ -32,8 +33,6 @@ $color-azul                 : #468AB3;
 $color-azul-light           : lighten($color-azul, 10%);
 $color-naranja              : #EA3800;
 $color-naranja-light        : #FF602E;
-
-$color-calendario           : $color-tema;
 $color-no-cover             : #D0DCDF;
 
 //MENU
@@ -45,16 +44,18 @@ $menu-icono-color           : #332D2D;
 //FRONT
 $front-nombre-autor-color   : $color-tema;
 $front-descripcion-color    : #384a50;
+$front-down-color						: $color-verde-limon;
 
 //LOOP
 $loop-primer-articulo-color	: #D7E0E3;
 $loop-border-color          : $loop-primer-articulo-color;
 $loop-item-link-color       : #008340;
-$loop-primer-articulo-pf-bg : #21B469; //Primer post footer background
+$loop-primer-articulo-pf-bg : $color-verde-light; //Primer post footer background
+$color-calendario           : $color-azul;
 
 //PAGINACIÓN
-$paginacion-bg              : $color-naranja;
-$paginacion-border-color    : $color-naranja-light;
+$paginacion-bg              : $color-tema;
+$paginacion-border-color    : $color-verde-limon;
 
 //TAGS
 $tag-btn-bg                 : $color-azul-light;

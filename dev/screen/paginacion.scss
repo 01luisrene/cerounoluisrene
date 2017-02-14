@@ -19,7 +19,7 @@
   @include media-query($on-smartphone){
     //480px
     font-size: 0.6em;
-    padding: .8em .3em;
+    padding: 0.8em 0.3em;
     text-align: center;
   }
 }
@@ -33,16 +33,8 @@
   height: 35px;
   width: 35px;
   &:hover{
-    border: 2px solid $paginacion-border-color;
+    background: $paginacion-border-color;
     color: $color-negro;
     text-decoration: none;
   }
-}
-.newer-posts.disabled, 
-.older-posts.disabled{
-  background: $color-gris-light;
-  border: 2px solid $color-gris;
-  color: $color-gris;
-  cursor: default;
-  user-select: none;
 }

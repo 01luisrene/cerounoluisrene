@@ -1,16 +1,22 @@
 //==========================================FRONT====================================//
+.front-contenedor{
+  height: 100%;
+  padding-bottom: 70px;
+  position: relative;
+}
 .front{
-  background-color: rgba(0, 178, 89, 0.01);
-  margin-top: 50px;
   padding-top: $espacio-inicial / 2;
   padding-bottom: $espacio-inicial / 2;
 }
-.author-name{
+.blog-nombre{
   color: $front-nombre-autor-color;
   font-size: 10vh;
   text-transform: capitalize;
   text-shadow: 0.3vh 0.2vh 0.1vh $color-negro;
   margin-bottom: 0;
+  @include media-query($content-block){
+    margin-top: 30px;
+  }
   @include media-query($content-block) {
     font-size: 5vw;  
     text-shadow: 0.1vw 0.5vw 0.1vw $color-negro;
@@ -22,12 +28,12 @@
 }
 
 .btn-suscribete{
-  background-color: transparent;
-  border: thin solid transparent;
+  background-color: $color-verde-limon;
+  border: thin solid $color-gris-light;
   color: $color-negro;
-  margin-top: 1.75em;
-  padding: 10px 15px;
+  padding: 10px 25px;
   &:hover{
+    background-color: darken($color-verde-limon, 5%);
     color: $color-negro;
     text-decoration: none;
   }
@@ -38,6 +44,7 @@
 
 .blog-description{
   @include transparencia-bg-blanco(0.5);
+  border-left: 0;
   color: $front-descripcion-color;
   font-size: 1.25em;
   line-height: normal;
@@ -53,10 +60,33 @@
     max-width: 100%;
   }
 }
+.scroll_top{
+  display: block;
+  color: $front-down-color;
+  -webkit-animation: bounce 4s 2s infinite;
+  animation: bounce 4s 2s infinite;
+  font-size: 2em;
+  margin-left: -25px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  height: 50px;
+  width: 50px;
+  @include media-query($content-block){
+    bottom: -5px;
+  }
+  &:visited{
+    color: $front-down-color;
+  }
+  &:hover{
+    -webkit-animation: none;
+    animation: none;
+    color: darken($front-down-color, 10%);
+  }
+}
 
 //=======================================PUBLICIDAD HOME =========================================//
 
 .home___publicidad{
-  margin-top: -.5em;
-  margin-bottom: 1.5em;
+  margin-bottom: 1.7em;
 }

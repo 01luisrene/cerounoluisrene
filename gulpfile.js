@@ -20,7 +20,7 @@ gulp.task('screen', function(){
 	.pipe(sourceMaps.init())
 	.pipe(autoprefixer({browsers: ['last 2 versions'], cascade: true }))
 	.pipe(gcmq())
-	//.pipe(cleanCss())
+	.pipe(cleanCss())
 	.pipe(rename('screen.css'))
 	.pipe(sourceMaps.write('.'))
   .pipe(gulp.dest('./assets/css/'))

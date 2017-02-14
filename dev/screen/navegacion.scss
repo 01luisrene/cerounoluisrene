@@ -1,11 +1,11 @@
+//======================CONTENEDOR MENU===================//
 .caja___menu{
   background: $menu-bg;
   box-shadow: 0px 1px 2px -1px rgba(245,245,245,1);
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  z-index: 99999;
+  width: 100%;
+  z-index: 999;
 }
 .caja__menu__inner{
  padding-top: 6.5px;
@@ -18,8 +18,7 @@
   font-size: 1.5em;
   font-family: $font-family;
   font-weight: 400;
-  margin-top: 3px;
-  transition: 0.3s;
+  transition: all 0.5s ease-out;
   &:hover{
     color: $menu-link-hover-color;
   }
@@ -40,14 +39,20 @@
     }
   }
 }
+//Contenedor del logo & icono menu
+.logo-iconoMenu{
+   @include media-query($on-laptop){
+    width: 100%;
+  }
+}
 //Contenedor menú PC & Mobile
 .menu-desktop-mobile{
   @include media-query($on-laptop){
     background: mix($menu-bg , $color-verde-limon);
     background: linear-gradient($menu-bg 0%, $menu-bg 70%, $color-verde-limon 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00A452', endColorstr='#00d76c',GradientType=1 );
+    -webkit-transition: -webkit-transform 0.5s ease, opacity 0.3s ease 0.7s;
     transition: transform 0.5s ease, opacity 0.3s ease 0.7s;
-    position: relative;
     border-top: 6px solid #FFA12E;
     opacity: 0;
     padding: 0.5em;
@@ -55,6 +60,7 @@
     top: 0;
     right: 0;
     bottom: 0;
+    height: 100%;
     width: 250px;
     z-index: 100;
   }
@@ -69,15 +75,17 @@
   }
   .nav-item{
     display: inline-block;
-    &:not(:last-child){
-      margin-right: 15px;
+    + .nav-item{
+      margin-left: 15px;
+      @include media-query($on-laptop){
+        margin-left: 0;
+      }
     }
     @include media-query($on-laptop){
       display: block;
       border-bottom: thin dashed lighten($color-negro, 10%);
       &:not(:last-child){
-        margin-bottom: 10px;
-        margin-right: 0;
+        margin-bottom: 10px; 
       }
     }
     //Colocar iconos en el item menú
@@ -125,7 +133,6 @@
       text-transform: uppercase;
       &:hover{
         color: $menu-link-hover-color;
-        text-decoration: none;
       }
       @include media-query($on-laptop){
         display: block;
@@ -159,9 +166,6 @@
     display: block;
     color: $color-blanco;
     z-index: 90;
-    &:hover{
-      text-decoration: none;
-    }
     &:visited{
       color: $color-blanco;
     }
@@ -199,17 +203,19 @@
 
 //===============================MENU MOBILE (ABIERTO & CERRADO)=================================//
 @include media-query($on-laptop){
-body{
-  &.nav-abierto .menu-desktop-mobile{
-    opacity: 1;
-    -webkit-transition: -webkit-transform 0.3s ease,
-    opacity 0s ease 0s;
-    transition: transform 0.3s ease,
-    opacity 0s ease 0s;
-    transform: translate3D(0, 0, 0);
+  body{
+    &.nav-abierto .menu-desktop-mobile{
+      opacity: 1;
+      transform: translate3D(0, 0, 0);
+      -webkit-transform: translate3D(0, 0, 0);
+      -ms-transform: translate3D(0, 0, 0);
+      -webkit-transition: -webkit-transform 0.3s ease, opacity 0s ease 0s;
+      transition: transform 0.3s ease, opacity 0s ease 0s;
+    }
+    &.nav-cerrado .menu-desktop-mobile{
+      transform: translate3D(250px, 0, 0);
+      -webkit-transform: translate3D(250px, 0, 0);
+      -ms-transform: translate3D(250px, 0, 0);
+    }
   }
-  &.nav-cerrado .menu-desktop-mobile{
-    transform: translate3D(250px, 0, 0);
-  }
-}
 }
