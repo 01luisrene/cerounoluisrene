@@ -59,6 +59,9 @@
 //Menu & Footer
 .contenedor{
   max-width: 1000px;
+  @include media-query($on-laptop) {
+    max-width: 100%;
+  }
 }
 
 .contenedor___post, .interior{
