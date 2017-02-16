@@ -1,5 +1,4 @@
 {{!< default}}
-{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 	<!-- Header principal -->
  	<header class="main-header home {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
     {{!-- Links de Navegación del Blog --}}
@@ -19,8 +18,8 @@
     (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
   </div>
-  {{!-- The main content area on the homepage --}}
+  {{!-- El área de contenido principal en la página principal --}}
   <main id="main" class="main" role="main">
-    {{!-- The tag below includes the post loop - partials/loop.hbs --}}
+    {{!-- Loop incluye el bucle de posts - partials/loop.hbs --}}
     {{> "loop"}}
   </main>

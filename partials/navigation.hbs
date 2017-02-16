@@ -5,8 +5,9 @@
       <a class="logo-link" href="{{@blog.url}}" title="{{@blog.title}}">
         {{#if @blog.logo}}
           <figure class="logo-figure">
-            <img src="{{@blog.logo}}" alt="{{@blog.title}}">
+            <img class="logo" src="{{@blog.logo}}" alt="{{@blog.title}}">
           </figure>
+          <span class="nombre">Luis Rene</span>
         {{else}}
           <span class="titulo-blog">{{@blog.title}}</span>
         {{/if}}

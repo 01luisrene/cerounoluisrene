@@ -43,3 +43,10 @@
   color: #F45959;
   text-align: center;
 }
+
+//Lista de lenguajes de programación
+.lista.code{
+  li + li{
+    margin-left: 10px;
+  }
+}

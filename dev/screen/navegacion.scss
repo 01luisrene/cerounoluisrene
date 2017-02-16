@@ -23,19 +23,40 @@
     color: $menu-link-hover-color;
   }
 }
+@keyframes girar {
+  from { transform: rotateY(0deg);    }
+  to   { transform: rotateY(360deg); }
+}
 //Icono logo
 .logo-link{
+  color: $menu-link-hover-color;
   display: inline-block;
+  &:hover{
+    color: $menu-link-hover-color;
+    .logo{
+      animation-name: girar;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
+      animation-duration: 3s;
+      transform-style: preserve-3d;
+    }
+  }
   .logo-figure{
     display: block;
     text-align: left;
-    height: 50px;
+    height: 35px;
     width: 100%;
+    perspective: 150px;  
     @include media-query($on-laptop){
-      height: 40px;
+      height: 30px;
     }
-    img{
+    .logo{
+      display: block;
+      margin: 0 auto;
       height: 100%;
+    }
+    .nombre{
+      color: $menu-link-hover-color;
     }
   }
 }
@@ -81,6 +102,16 @@
         margin-left: 0;
       }
     }
+    //Item seleccionado
+    &.nav-current{
+      a{
+        color: $menu-link-hover-color;
+        &::before{
+          color: $color-blanco;
+        }
+      }
+    }
+
     @include media-query($on-laptop){
       display: block;
       border-bottom: thin dashed lighten($color-negro, 10%);
@@ -126,7 +157,7 @@
     .nav-link{
       color: $menu-link-color;
       font-family: $base-font-family;
-      font-weight: 400;
+      font-weight: 500;
       font-size: $espacio-inicial / 2;
       line-height: normal;
       padding: 0.5em 0;

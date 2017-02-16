@@ -26,7 +26,6 @@
           <span class="icon-clock"></span>
           <time class="time" datetime="{{date format="YYYY-MM-DD"}}">{{date published_at timeago="true"}}</time>
         </div>
-        
         {{#if tags}}
           {{#foreach tags limit="5"}}
             <a href="{{url}}" title="{{name}}" class="tag-{{slug}}">{{name}}</a> 
@@ -55,7 +54,7 @@
       <div class="addthis_sharing_toolbox compartir-redes-sociales"></div>
     </section>
     <footer class="post-footer">
-    {{!-- Everything inside the #author tags pulls data from the author --}}
+    {{!-- Información sobre el autor del post --}}
     {{#author}}
       {{#if image}}
       <figure class="autor-imagen">
@@ -94,7 +93,7 @@
       </section>
     {{/author}}
 
-    {{!-- Email subscribe form at the bottom of the page --}}
+    {{!-- Formulario para suscripción vía email --}}
     {{#if @labs.subscribers}}
     <section class="gh-subscribe">
       <h3 class="gh-subscribe-title">Únete al Blog</h3>
@@ -105,7 +104,7 @@
     {{/if}}
     </footer>
   </article>
-{{!-- Links to Previous/Next posts --}}
+{{!-- Links para navegar por el siguiente y el anterior post --}}
 <aside class="post__leer__mas flex">
   {{#next_post}}
   <a class="read-next-story next" {{#if image}}style="background-image: url({{image}})"{{else}}style="background-image: url({{asset "images/cover_default.jpg"}})"{{/if}} href="{{url}}">

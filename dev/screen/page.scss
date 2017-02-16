@@ -1,3 +1,12 @@
+//==========================================PAGE======================================//
+.page {
+  .box-time{
+    span{
+      margin-right: 10px;
+    }
+  }
+}
+
 //==========================================SOBRE MI - STACKS======================================//
 ul.lista-stack{
   margin-bottom: 1.5em;
@@ -95,10 +104,7 @@ p.familia-texto-descripcion{
 }
 
 //================================CONTACTO=================================//
-.box-contacto{
-  margin-top: 1em;
-  width: 100%;
-}
+
 .formulario-contacto, .container-geo{
   display: block;
   padding: 5px;
@@ -107,7 +113,6 @@ p.familia-texto-descripcion{
   }
 }
 .formulario-contacto{
-  width:80%;
   .form-imput{
     input[type='text'], input[type='email'], textarea{
     border: thin solid $color-tema;
@@ -116,10 +121,10 @@ p.familia-texto-descripcion{
     margin-bottom: 15px;
     padding: 5px;
     transition: 1s;
-      &:focus{
-        outline: none;
-        border-bottom:thin solid $color-tema;
-        }
+    &:focus{
+      outline: none;
+      border-bottom:thin solid $color-tema;
+      }
     }
     input{
       width: 100%;

@@ -17,7 +17,7 @@
     {{!-- FOOTER --}}
     {{> "footer"}}
 
-    {{!-- jQuery insertar antes de `{{ghost_foot}}` para que jQuery pueda ser utilizado en la inyección de código --}}
+    {{!-- Insertar jQuery antes de `{{ghost_foot}}` para que jQuery pueda ser utilizado en la inyección de código --}}
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     {{!-- Ghost genera scripts y datos importantes con esta etiqueta --}}
     {{ghost_foot}}
@@ -27,12 +27,13 @@
     <script type="text/javascript" async src="{{asset "js/app.js"}}"></script>
     <script>
       $(document).ready(function() {
-        fitVids = function(){
-          $('.post_contenido').fitVids();
-        }
+        //Videos responsivos
+        $('.post_contenido').fitVids();
+        //Dar una buena presentación al código
         $('pre code').each(function(i, block) {
           hljs.highlightBlock(block);
         });
+        //Mostrar imágenes completas
         $('.post_contenido a.image').magnificPopup({
           type: 'image',
             closeOnContentClick: true,
@@ -52,6 +53,5 @@
     </script>
     {{!-- ADDTHIS --}}
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57004124cf559f51"></script>
-
 </body>
 </html>

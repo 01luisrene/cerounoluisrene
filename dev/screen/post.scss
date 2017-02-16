@@ -29,40 +29,48 @@
   img, input[type="image"]{
     border-radius: 3px;
   }
+  //Centrar imágenes que se encuentran dentro de la etiqueta p
   p{
-    @include media-query($on-smartphone){ //480px
-      text-align: justify;
-    }
     a img, img{
       display: block;
       margin: 0 auto;
     }
   }
+  //Etilos para los links
+  a {
+    color: $color-tema;
+    &:visited{
+      color: $color-tema;
+    }
+    &:hover{
+      text-decoration: underline;
+    }
+  }
   //Estilos para las listas
   ul, ol{
-  padding-left: 2em;
-  li {
-    margin-bottom: 15px;
-    @include media-query($on-tablet){
-    //700px
-    margin-bottom: 10px;
-    }
-    > ul, > ol {
-      margin-top: 15px;
-      margin-bottom: 0;
-      padding-left: 1.5em;
+    padding-left: 2em;
+    li {
+      margin-bottom: 15px;
       @include media-query($on-tablet){
       //700px
-        margin-top: 10px;
+      margin-bottom: 10px;
       }
-      li{
-        &:last-child{
-          margin-bottom: 0;
+      > ul, > ol {
+        margin-top: 15px;
+        margin-bottom: 0;
+        padding-left: 1.5em;
+        @include media-query($on-tablet){
+        //700px
+          margin-top: 10px;
+        }
+        li{
+          &:last-child{
+            margin-bottom: 0;
+          }
         }
       }
     }
   }
-}
   ol{
     list-style-type: decimal-leading-zero;
     li > ol{
@@ -112,11 +120,12 @@
     background: #070707;
     background: linear-gradient(90deg, #070707 0,lighten(#070707, 25%) 85%);
     border-radius: 3px;
-    color: $color-verde-limon;
+    color: $color-verde-limon; 
     padding: 1em 1.5em 1em 2.5em;
     position: relative;
     &:hover{
-      background: linear-gradient(90deg, lighten(#070707, 25%) 0,#070707 90%);
+      background: linear-gradient(90deg, #070707 0, lighten(#070707, 15%) 85%);
+      text-decoration: none;
     }
     &::before{
       content: "\e907";

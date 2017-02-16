@@ -16,7 +16,7 @@
   }
   .post{
     border: thin solid darken($loop-border-color, 15%);
-    flex: 0 31.3%;
+    flex: 0 31.2%;
     border-radius: 3px;
     font-family: $base-font-family;
     position: relative;
@@ -44,6 +44,7 @@
     position: relative;
     .post-cover{
       height: auto;
+      width: 100%;
     }
     .autor-img{
       background-color: $color-blanco;
