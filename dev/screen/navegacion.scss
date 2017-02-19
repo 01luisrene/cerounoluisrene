@@ -23,30 +23,18 @@
     color: $menu-link-hover-color;
   }
 }
-@keyframes girar {
-  from { transform: rotateY(0deg);    }
-  to   { transform: rotateY(360deg); }
-}
 //Icono logo
 .logo-link{
   color: $menu-link-hover-color;
   display: inline-block;
   &:hover{
     color: $menu-link-hover-color;
-    .logo{
-      animation-name: girar;
-      animation-timing-function: linear;
-      animation-iteration-count: 1;
-      animation-duration: 3s;
-      transform-style: preserve-3d;
-    }
   }
   .logo-figure{
     display: block;
     text-align: left;
     height: 35px;
-    width: 100%;
-    perspective: 150px;  
+    width: 100%;  
     @include media-query($on-laptop){
       height: 30px;
     }
