@@ -100,7 +100,7 @@
       content: "";
       display: block;
       background-color: $color-blanco;
-      background-image: url('/assets/images/bg_hr.png');
+      background-image: url('/assets/images/bg_hr.svg');
       background-size: 40px 11px;
       background-position: center center;
       background-repeat: no-repeat;
@@ -115,7 +115,7 @@
       z-index: 99;
     }
   }
-  a.codepen{
+  a.codepen, a.github{
     display: inline-block;
     background: #070707;
     background: linear-gradient(90deg, #070707 0,lighten(#070707, 25%) 85%);
@@ -127,6 +127,8 @@
       background: linear-gradient(90deg, #070707 0, lighten(#070707, 15%) 85%);
       text-decoration: none;
     }
+  }
+  a.codepen{
     &::before{
       content: "\e907";
       color: $color-blanco;
@@ -136,6 +138,17 @@
       left: 10px;
     }
   }
+  a.github{
+    &::before{
+      content: "\e907";
+      color: $color-blanco;
+      font-family: iconos!important;
+      font-size: 1.5em;
+      position: absolute;
+      left: 10px;
+    }
+  }
+  
 }
 
 .post-footer{

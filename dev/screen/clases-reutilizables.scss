@@ -130,6 +130,11 @@
 [class*="flex"]{
   display: flex;
 }
+
+//===========================================//
+//==============JUSTIFY-CONTENT=============//
+//==========================================//
+
 //=============FLEX-START============//
 [class*="jcfs"]{
   justify-content: flex-start;
@@ -138,7 +143,7 @@
 [class*="jcfe"]{
   justify-content: flex-end;
 }
-//=============JUSTIFY-CONTENT: CENTER============//
+//=============CENTER============//
 [class*="jcc"]{
   justify-content: center;
 }
@@ -150,6 +155,7 @@
 [class*="jcsa"]{
   justify-content: space-around;
 }
+//=============COLUMN==================//
 [class*="fdc"]{
   flex-direction: column;
 }

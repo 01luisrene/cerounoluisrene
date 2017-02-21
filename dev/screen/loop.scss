@@ -248,7 +248,10 @@
     right: 0;
     .time, .post-autor, [class*="icon"]{
       color: $color-blanco;
-
+      @include media-query($on-smartphone){
+      //480px
+      font-size: 14px;
+      }
     }
     .post-autor{
       margin-left: 0.5em;
@@ -262,5 +265,34 @@
       height: 30px;
       width: 30px;
     }
+  }
+}
+
+//===============================BOTÓN DEL PRIMER POST=====================================//
+.btn-first{
+  background-color: #FFA12E;
+  border-radius: 0;
+  box-shadow:  5px 5px 0px 0px rgba(50, 50, 50, 1);
+  color: $color-blanco;
+  position: relative;
+  &:hover{
+    background-color: #E0296A;
+    box-shadow:  5px 5px 0px 0px rgba(255, 161, 46, 1);
+    &::before{
+      background-color: #323232;
+    }
+  }
+  &::before{
+    background-color: #E0296A;
+    content: "";
+    height: 35px;
+    width: 88px;
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+    z-index: -3;
+  }
+  &:visited{
+    color: $color-blanco;
   }
 }

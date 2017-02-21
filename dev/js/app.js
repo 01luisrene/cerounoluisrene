@@ -53,6 +53,9 @@ var  displayMenu = function(){
       speed: 800
     });
   },
+  post_contenido = function(){
+    $('.post_contenido a.codepen, .post_contenido a.github').attr('target', '_blank');
+  },
  // 01luisrene javascripts initialization
   init = function () {
     displayMenu();
@@ -60,6 +63,7 @@ var  displayMenu = function(){
     politicaCookies();
     botonUp();
     scroll_abajo();
+    post_contenido();
   };
 
   return {
