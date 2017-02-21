@@ -44,9 +44,9 @@
      bordercolor="#666666"
      pagecolor="#ffffff"
      id="base"
-     inkscape:zoom="20.074706"
-     inkscape:cx="22.05901"
-     inkscape:cy="6.1600957"
+     inkscape:zoom="10.547062"
+     inkscape:cx="23.365033"
+     inkscape:cy="20.138909"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:current-layer="svg2"
@@ -56,7 +56,9 @@
      showgrid="false"
      inkscape:window-maximized="1"
      showguides="true"
-     inkscape:guide-bbox="true" />
+     inkscape:guide-bbox="true"
+     showborder="true"
+     inkscape:showpageshadow="false" />
   <defs
      id="defs4">
     <linearGradient
@@ -229,13 +231,14 @@
   <text
      xml:space="preserve"
      style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-     x="-2.22417"
-     y="9.358777"
+     x="-1.2760386"
+     y="9.5484037"
      id="text3019"
      sodipodi:linespacing="0%"><tspan
        sodipodi:role="line"
        id="tspan3021"
-       x="-2.22417"
-       y="9.358777"
-       style="font-size:70px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Lato;-inkscape-font-specification:Lato">...</tspan></text>
+       x="-1.2760386"
+       y="9.5484037"
+       style="font-size:70px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:-1.10000014px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lato;-inkscape-font-specification:Lato"
+       dx="0">...</tspan></text>
 </svg>

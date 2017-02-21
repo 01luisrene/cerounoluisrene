@@ -36,16 +36,7 @@
       margin: 0 auto;
     }
   }
-  //Etilos para los links
-  a {
-    color: $color-tema;
-    &:visited{
-      color: $color-tema;
-    }
-    &:hover{
-      text-decoration: underline;
-    }
-  }
+  
   //Estilos para las listas
   ul, ol{
     padding-left: 2em;
@@ -104,6 +95,7 @@
       background-size: 40px 11px;
       background-position: center center;
       background-repeat: no-repeat;
+      line-height: normal;
       margin-left: -24px;
       padding-left: 2px;
       padding-right: 2px;
@@ -115,41 +107,53 @@
       z-index: 99;
     }
   }
-  a.codepen, a.github{
-    display: inline-block;
-    background: #070707;
-    background: linear-gradient(90deg, #070707 0,lighten(#070707, 25%) 85%);
-    border-radius: 3px;
-    color: $color-verde-limon; 
-    padding: 1em 1.5em 1em 2.5em;
-    position: relative;
+  //Etilos para los links
+  a {
+    color: $color-tema;
+    &:visited{
+      color: $color-tema;
+    }
     &:hover{
-      background: linear-gradient(90deg, #070707 0, lighten(#070707, 15%) 85%);
-      text-decoration: none;
+      text-decoration: underline;
     }
-  }
-  a.codepen{
-    &::before{
-      content: "\e907";
-      color: $color-blanco;
-      font-family: iconos!important;
-      font-size: 1.5em;
-      position: absolute;
-      left: 10px;
+
+    &.codepen,
+    &.github{
+      display: inline-block;
+      background: #070707;
+      background: linear-gradient(90deg, #070707 0,lighten(#070707, 25%) 85%);
+      border-radius: 3px;
+      color: $color-verde-limon; 
+      padding: 1em 1.5em 1em 2.5em;
+      position: relative;
+      &:hover{
+        background: linear-gradient(90deg, #070707 0, lighten(#070707, 15%) 85%);
+        text-decoration: none;
+      }
+      &::before{
+        color: $color-blanco;
+        font-family: iconos!important;
+        font-size: 1.5em;
+        position: absolute;
+        left: 10px;
+      }
     }
-  }
-  a.github{
-    &::before{
-      content: "\e907";
-      color: $color-blanco;
-      font-family: iconos!important;
-      font-size: 1.5em;
-      position: absolute;
-      left: 10px;
+    
+    &.codepen{
+      &::before{
+        content: "\e907";
+      }
     }
-  }
+
+    &.github{
+      &::before{
+        content: "\eab0";
+      }
+    }
+    
+  }  
   
-}
+} //=========FIN POST CONTENT=============//
 
 .post-footer{
   position: relative;
