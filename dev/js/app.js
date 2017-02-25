@@ -10,8 +10,7 @@ var  displayMenu = function(){
     });
   },
   margenTop = function(){
-    $('.front').css('marginTop', menu_height);
-    $('.cover-top').css('marginTop', menu_height);
+    $('.front, .cover-top').css('marginTop', menu_height);
   },
   politicaCookies = function(){
 

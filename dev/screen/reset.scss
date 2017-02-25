@@ -516,6 +516,10 @@ pre {
   > code.hljs{
     overflow-x: auto;
     padding: 1em;
+    @include media-query($on-smartphone){
+    //480px
+      overflow-x: scroll;
+    }
   }
 }
 //=================================FORM: INPUTS - TEXTAREA=======================================//
