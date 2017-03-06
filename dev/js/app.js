@@ -9,9 +9,6 @@ var  displayMenu = function(){
       $("body").toggleClass("nav-abierto nav-cerrado");
     });
   },
-  margenTop = function(){
-    $('.front, .cover-top').css('marginTop', menu_height);
-  },
   politicaCookies = function(){
 
     if(localStorage.getItem('pc') == '01luisrene') {
@@ -29,7 +26,6 @@ var  displayMenu = function(){
         console.log('Haz aceptado el uso de cookies en nuestra web 01luisrene.com ❤');
       }, 500);
     });
-
   },
   botonUp = function(){
     $(window).scroll(function(){
@@ -58,7 +54,6 @@ var  displayMenu = function(){
  // 01luisrene javascripts initialization
   init = function () {
     displayMenu();
-    margenTop();
     politicaCookies();
     botonUp();
     scroll_abajo();

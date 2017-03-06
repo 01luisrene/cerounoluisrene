@@ -20,6 +20,7 @@
 .main-header.home{
   height: 100vh;
   margin-bottom: 1.5em;
+  position: relative;
   @include media-query($content-block){
     height: auto;
   }
@@ -37,7 +38,11 @@
 //==================================NO COVER========================================//
 .main-header.no-cover{
   border-bottom: 0;
-  height: 1px;
+  height: 70px;
+  @include media-query($on-laptop){
+  //900px
+    height: 65px;
+  }
 }
 //================================RELLENOS CONTENEDORES ============================//
 //====CLASE PRINCIPAL -> BG=======//
