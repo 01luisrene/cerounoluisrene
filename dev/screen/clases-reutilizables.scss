@@ -6,7 +6,7 @@
   background-size: cover;
   border-bottom: thin solid $color-gris-light;
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
   width: 100%;
   @include media-query($on-small-laptop){
     //800px
@@ -19,15 +19,13 @@
 }
 .main-header.home{
   height: auto;
-  margin-bottom: 1.5em;
   position: relative;
 }
 .main-header.post-head{
   height: 70vh;
 }
 .main-header.autor-head, .main-header.tag-head{
-  height: 40vh;
-  margin-bottom: 1.5em;
+  min-height: 40vh;
 }
 .main-header.suscribete-head{
     height: auto;

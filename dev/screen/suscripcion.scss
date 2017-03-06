@@ -2,12 +2,16 @@
 .contenedor-suscribete{
   display: flex;
   flex-direction: column;
-  margin-top: 5em;
+  margin-top: $espacio-inicial;
   max-width: 700px;
   width: 100%;
 }
 .contenedor-suscribete{
   text-align: center;
+}
+.suscribete-mensaje{
+  display: block;
+  margin: ($espacio-inicial / 2) 0;
 }
 .contenedor-suscribete .formulario__suscripcion {
   background: lighten($color-tema, 65%);

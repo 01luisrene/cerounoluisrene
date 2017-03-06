@@ -28,9 +28,9 @@ p.familia-texto-descripcion{
     margin-top: 15px;
 }
 
-//======================================TAGS - AUTOR===================================/
+//======================================TAGS===================================/
 .tag-head-contenedor{
-  height: 100%;
+  height: auto;
 }
 .tag{
   padding-top: $espacio-inicial / 2;
@@ -52,7 +52,7 @@ p.familia-texto-descripcion{
   padding: .3em;
 }
 
-//AUTOR
+//======================================AUTOR===================================/
 .autor-perfil{
   border-bottom: 1px solid $color-gris-light;
   text-align: center;
