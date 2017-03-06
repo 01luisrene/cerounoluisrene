@@ -1,6 +1,5 @@
 //==========================================FRONT====================================//
 .front{
-	margin-top: $espacio-inicial * 2;
   padding-top: $espacio-inicial * 2;
   padding-bottom: $espacio-inicial * 3;
   @include media-query($content-block){
@@ -32,6 +31,7 @@
   background-color: $color-verde-limon;
   border: thin solid $color-gris-light;
   color: $color-negro;
+  margin-bottom: $espacio-inicial;
   padding: 10px 25px;
   &:hover{
     background-color: darken($color-verde-limon, 5%);

@@ -18,15 +18,12 @@
   }
 }
 .main-header.home{
-  height: 100vh;
+  height: auto;
   margin-bottom: 1.5em;
   position: relative;
-  @include media-query($content-block){
-    height: auto;
-  }
 }
 .main-header.post-head{
-  height: 60vh;
+  height: 70vh;
 }
 .main-header.autor-head, .main-header.tag-head{
   height: 40vh;
