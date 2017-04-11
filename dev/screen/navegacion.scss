@@ -8,6 +8,11 @@
 .caja__menu__inner{
  padding-top: 6.5px;
  padding-bottom: 6.5px;
+ position: relative;
+ height: 70px;
+ @include media-query($on-laptop){
+  height: 52px;
+ }
 }
 //Titulo Blog
 .titulo-blog{
@@ -21,34 +26,61 @@
     color: $menu-link-hover-color;
   }
 }
-//Icono logo
-.logo-link{
-  color: $menu-link-hover-color;
-  display: inline-block;
-  &:hover{
-    color: $menu-link-hover-color;
+
+//Logo Rubik
+.logo-rubik{
+  position: absolute;
+  top: 6px;
+  left: 30px;
+  @include media-query($on-laptop){
+    left: 15px;
   }
-  .logo-figure{
-    display: block;
-    text-align: left;
-    height: 35px;
-    width: 100%;  
+  > div{
+    background: #F1E6E6;
+    height: 52px;
+    width: 154px;
     @include media-query($on-laptop){
-      height: 30px;
+      height: 32px;
+      width: 94px;
     }
-    .logo{
-      display: block;
-      margin: 0 auto;
-      height: 100%;
+    &:not(:last-child){
+      div{
+        margin-bottom: 2px;
+      }
     }
-    .nombre{
-      color: $menu-link-hover-color;
+    &:last-child{
+      height: 50px;
+      @include media-query($on-laptop){
+        height: 30px;
+      }
+    }
+    div{
+      background: #E55185;
+      border: 1px solid #D3D2D2;
+      height: 50px;
+      width: 50px;
+      @include media-query($on-laptop){
+        height: 30px;
+        width: 30px;
+      }
+      +div{
+        margin-left: 2px;
+      }
+      img{
+        height: 40px;
+        width: 40px;
+        @include media-query($on-laptop){
+          height: 100%;
+          widows: 100%;
+        }
+      }
     }
   }
 }
+
 //Contenedor del logo & icono menu
 .logo-iconoMenu{
-   @include media-query($on-laptop){
+  @include media-query($on-laptop){
     width: 100%;
   }
 }
@@ -142,8 +174,8 @@
     .nav-link{
       color: $menu-link-color;
       font-family: $base-font-family;
-      font-weight: 500;
-      font-size: $espacio-inicial / 2;
+      font-weight: 300;
+      font-size: $espacio-inicial /  2;
       line-height: normal;
       padding: 0.5em 0;
       text-transform: uppercase;

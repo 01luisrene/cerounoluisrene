@@ -54,13 +54,13 @@ gulp.task('vendor-js', function () {
 
 //Comprimir imagenes
 gulp.task('images', function() {
-  gulp.src('./images/**/*.{png,jpg,jpeg,gif,svg}')
+  gulp.src('./dev/images/**/*.{png,jpg,jpeg,gif,svg}')
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [{removeViewBox: false}],
       use: [pngcrush()]
     }))
-    .pipe(gulp.dest('./images-compress'));
+    .pipe(gulp.dest('./dev/images-compress'));
 });
 
 //Comprimir fuentes
