@@ -124,8 +124,8 @@ td, th{ padding: 0; }
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-chevron-down:before {
-  content: "\e911";
+.icon-search:before {
+  content: "\e90f";
 }
 .icon-chevron-right:before {
   content: "\e90c";
@@ -202,9 +202,6 @@ td, th{ padding: 0; }
 .icon-clock:before {
   content: "\e94e";
 }
-.icon-quotes-left:before {
-  content: "\e977";
-}
 .icon-stats-dots:before {
   content: "\e99b";
 }
@@ -216,9 +213,6 @@ td, th{ padding: 0; }
 }
 .icon-twitter:before {
   content: "\ea96";
-}
-.icon-rss:before {
-  content: "\ea9b";
 }
 .icon-github:before {
   content: "\eab0";

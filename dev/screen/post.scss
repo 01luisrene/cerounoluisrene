@@ -2,10 +2,13 @@
 .post___publicidad{
   margin-bottom: 0.5em;
 }
+//=============================BUSCADOR================================//
+.contenedor-search{
+  margin-top: 44vh;
 
-//==========================TITULO PRINCIPAL============================//
-.post-titulo {
-    
+  & .gsc-control-cse{
+    background-color: #eee !important;
+  }
 }
 //==========================SECCIÓN META============================//
 .post-meta{

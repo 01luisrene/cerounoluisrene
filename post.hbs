@@ -4,6 +4,21 @@
 <header class="main-header post-head {{#if image}}"style="background-image: url({{image}}){{else}} no-cover{{/if}}">
     {{!-- Links de Navegación del Blog --}}
     {{navigation}}
+
+    <section class="contenedor contenedor-search">
+      <script>
+        (function() {
+          var cx = '004510286827910837042:fae1lddv_yy';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:search></gcse:search>
+    </section>
 </header>
 {{!-- Publicidad Principal Post --}}
 <div class="post___publicidad" align="center">
@@ -150,3 +165,5 @@
 </section>
 </main>
 {{/post}}
+
+
