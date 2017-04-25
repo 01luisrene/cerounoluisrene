@@ -33,7 +33,8 @@ gulp.task("vendor-css", function(){
 	return gulp.src('./dev/vendor-css/*.css')
 	.pipe(cleanCss())
   .pipe(concat('vendor.css'))
-  .pipe(gulp.dest('./assets/css/'));
+  .pipe(gulp.dest('./assets/css/'))
+  .pipe(notify('Tarea vendor-css terminada!'));;
 });
 
 //Comprimir archivo app.js
@@ -95,6 +96,7 @@ gulp.task('watch', function(){
 	livereload.listen({ start: true })
 	gulp.watch('./dev/screen/**/*', ['screen'])
 	gulp.watch('./dev/js/**/*', ['fichero-js'])
+	gulp.watch('./dev/vendor-css/*.css', ['vendor-css'])
 });
 
 //Tarea por defecto

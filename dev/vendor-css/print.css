@@ -82,41 +82,44 @@ textarea {
   .contenedor___post, .post{
     width: 100%;
   }
+
   /*HOME*/
   .home-template .main-header{
     display: block;
     height: auto;
   }
-  h1.author-name{
-    font-size: 2em;
-    margin-top: 100px;
+  .nav .nav-item .nav-link{
+    text-decoration: none !important;
   }
-  .main-header.home {
-    height: 99vh !important;
+  .nav .nav-item .nav-link::before{
+    content: "" !important;
   }
-  .front {
-    margin-top: 0;
+  /*Nombre del blog*/
+  .blog-nombre{
+    font-size: 2.5em;
   }
-  .___articulos___ .post{
-    width: 100%;
+
+  .___articulos___ .post, 
+  .___articulos___ .primer-post{
+    flex: 0 80% !important;
   }
+
+
   .contenedor___post .post a[href]:after {
     content: " (" attr(href) ")";
   }
-  .contenedor___post .post .post-lista-tags li a[href]:after, .contenedor___post .post .autor-nombre a[href]:after, .contenedor___post .post .autor-imagen a[href]:after{
+  .contenedor___post .post .post-lista-tags li a[href]:after, 
+  .contenedor___post .post .autor-nombre a[href]:after, 
+  .contenedor___post .post .autor-imagen a[href]:after{
     content: "";
   }
 
-  /*POST*/
-  .main-header.post-head{
-    height: 450px !important;
-  }
   .home___publicidad,
   .post___publicidad,
   .pagination,
   .site-footer,
-  .widget-content,
   .gh-subscribe,
+  .post__leer__mas,
   .read-next,
   .post__disqus,
   .boton-subir{
@@ -144,14 +147,15 @@ textarea {
     a:visited {
         text-decoration: underline;
     }
-  /**
+    /**
     a[href]:after {
         content: " (" attr(href) ")";
     }
 
     abbr[title]:after {
         content: " (" attr(title) ")";
-    }*/
+    }
+    */
 
     /*
      * Don't show links that are fragment identifiers,
