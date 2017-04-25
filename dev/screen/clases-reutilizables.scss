@@ -31,12 +31,16 @@
     height: auto;
 }
 //==================================NO COVER========================================//
-.main-header.no-cover{
+.main-header.post-head.no-cover{
   border-bottom: 0;
-  height: 70px;
+  min-height: 70px;
   @include media-query($on-laptop){
   //900px
-    height: 65px;
+    min-height: 65px;
+  }
+  //Buscador Google
+  .contenedor-search{
+    margin-top: 5em;
   }
 }
 //================================RELLENOS CONTENEDORES ============================//
