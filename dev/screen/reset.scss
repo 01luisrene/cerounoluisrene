@@ -124,6 +124,9 @@ td, th{ padding: 0; }
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-chevron-down:before {
+  content: "\e90b";
+}
 .icon-search:before {
   content: "\e90f";
 }
@@ -131,7 +134,7 @@ td, th{ padding: 0; }
   content: "\e90c";
 }
 .icon-chevron-left:before {
-  content: "\e90b";
+  content: "\e910";
 }
 .icon-codepen:before {
   content: "\e907";
